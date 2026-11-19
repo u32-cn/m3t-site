@@ -31,7 +31,12 @@ PATTERNS = [
 # - app/js 内 bundle 的 localhost/127.0.0.1 调试回退与教程示例（CesiumLab 默认地址等）
 # - docs 教程正文的 localhost/127.0.0.1 本地服务演示
 # - 站长公开身份 vtxf（gitee.com/vtxf3d、zhihu.com/people/vtxf 等，本就是公开署名）
-WHITELIST_PREFIXES = ("v0.9/app/js/",)
+WHITELIST_PREFIXES = (
+    "v0.9/app/js/",           # bundle：localhost 调试回退、vtxf-xe2 包名、教程示例 IP（已人工核过）
+    "v0.9/docs/",             # 站长公开教程：C:\Users\vtxf 示例路径、公开署名（gitee.com/vtxf3d、zhihu.com/people/vtxf）、
+                              # geovis token={请输入token} 占位符、dead 标记的 wolai 旧链（不可点击，2026-11-19 首扫人工逐类核过）
+    "v0.9/index.html",        # 产品站首页：公开署名与 QQ 群链接
+)
 
 def main():
     hits = []
