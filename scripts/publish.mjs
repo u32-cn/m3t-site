@@ -1,17 +1,16 @@
 #!/usr/bin/env node
 /**
- * m3t-site 发布脚本
- * 链路：本地根目录(站点根) → 阿里云 OSS oss://u32-cn-data/_inner_/zt/p/m3t/web/ → EdgeOne → m3t.u32.cn
+ * m3t-site 发布脚本（GitHub Pages 链路）
+ * 链路：本仓库 git push → GitHub Pages（站点根 = 仓库根，main 分支）→ EdgeOne 回源加速 → m3t.u32.cn
+ * 参考 u32-local-server 的发布模式。
  *
  * 用法:
- *   node scripts/publish.mjs --check   仅校验结构与隐私扫描，不上传（默认）
- *   node scripts/publish.mjs --sync    实际推送 OSS（需 ossutil/OSS_ACCESS_KEY_ID/SECRET 已配置）
- *   node scripts/publish.mjs --purge   推送后刷新 EdgeOne 缓存（需 tccli + TENCENTCLOUD 密钥）
+ *   node scripts/publish.mjs            结构校验 + 隐私扫描（默认）
+ *   node scripts/publish.mjs --push     校验通过后 git push 到 GitHub（触发 Pages 部署）
+ *   node scripts/publish.mjs --purge    部署后刷新 EdgeOne 缓存（需 tccli + 腾讯云密钥）
+ *   node scripts/publish.mjs --status   查询 Pages 部署状态
  *
- * 设计要点：
- * - 上传前强制跑隐私扫描（privacy-scan.py），发现可疑项需人工确认后 --force 才能继续
- * - OSS 端点与 bucket 固定写死（u32-cn-data，杭州），凭证一律走环境变量，不落盘
- * - 增量上传：ossutil cp -r -u（只传有变化的文件）
+ * 发布前必须人工跑：node scripts/publish.mjs（校验）→ --push → 等 Pages 构建 → --purge → 验收
  */
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
@@ -19,17 +18,19 @@ import path from "node:path";
 import process from "node:process";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const OSS_TARGET = "oss://u32-cn-data/_inner_/zt/p/m3t/web/";
-const REQUIRED = ["index.html", "v0.9/index.html", "v0.9/app/index.html", "v0.9/docs/index.html"];
+const REQUIRED = ["index.html", "v0.9/index.html", "v0.9/app/index.html", "v0.9/docs/index.html", ".nojekyll"];
+const GITHUB_REMOTE = "github";
+const GITHUB_REPO = "u32-cn/m3t-site";
 const PURGE_URLS = [
   "https://m3t.u32.cn/",
   "https://m3t.u32.cn/v0.9/",
   "https://m3t.u32.cn/v0.9/app/noeditor.html",
 ];
+const ZONE_ID = "zone-3h9n8ff8t5to";
 
-function run(cmd, args, opts = {}) {
+function run(cmd, args) {
   console.log(`+ ${cmd} ${args.join(" ")}`);
-  return execFileSync(cmd, args, { stdio: "inherit", cwd: ROOT, ...opts });
+  return execFileSync(cmd, args, { stdio: "inherit", cwd: ROOT });
 }
 
 function check() {
@@ -38,7 +39,13 @@ function check() {
     console.error("结构校验失败，缺少:", missing);
     process.exit(1);
   }
-  console.log("结构校验通过");
+  // 未提交变更必须先 commit，保证 push 的就是校验过的内容
+  const dirty = run("git", ["status", "--porcelain"]).toString();
+  if (dirty.trim()) {
+    console.error("工作区有未提交变更，先 commit 再发布：\n" + dirty);
+    process.exit(1);
+  }
+  console.log("结构校验通过，工作区干净");
   try {
     run("python", ["scripts/privacy-scan.py"]);
     console.log("隐私扫描通过");
@@ -49,22 +56,21 @@ function check() {
   }
 }
 
-function sync() {
-  const ak = process.env.OSS_ACCESS_KEY_ID;
-  const sk = process.env.OSS_ACCESS_KEY_SECRET;
-  if (!ak || !sk) {
-    console.error("缺少 OSS_ACCESS_KEY_ID / OSS_ACCESS_KEY_SECRET 环境变量");
-    process.exit(1);
-  }
-  // ossutil64 已配置在 PATH；-u 增量，-f 强制，--meta 与缓存头由 EdgeOne 统一处理
-  run("ossutil64", ["cp", "-r", "-u", "-f", path.join(ROOT).replace(/\//g, "\\"), OSS_TARGET]);
-  console.log("OSS 同步完成:", OSS_TARGET);
+function push() {
+  check();
+  run("git", ["push", GITHUB_REMOTE, "main"]);
+  console.log("已推送 GitHub，Pages 部署已触发。用 --status 轮询构建状态。");
+}
+
+function status() {
+  run("gh", ["api", `repos/${GITHUB_REPO}/pages`, "--jq", "{status:.status, html_url:.html_url}"]);
+  run("gh", ["api", `repos/${GITHUB_REPO}/pages/builds/latest`, "--jq", "{status:.status, created_at:.created_at}"]);
 }
 
 function purge() {
   run("tccli", [
     "teo", "CreatePurgeTask",
-    "--ZoneId", "zone-3h9n8ff8t5to",
+    "--ZoneId", ZONE_ID,
     "--Type", "purge_url",
     "--Method", "invalidate",
     "--Targets", JSON.stringify(PURGE_URLS),
@@ -72,10 +78,13 @@ function purge() {
   console.log("EdgeOne 缓存刷新任务已提交");
 }
 
-const mode = process.argv.includes("--purge") ? "purge"
-  : process.argv.includes("--sync") ? "sync"
+const argv = process.argv;
+const mode = argv.includes("--status") ? "status"
+  : argv.includes("--purge") ? "purge"
+  : argv.includes("--push") ? "push"
   : "check";
 
-if (mode === "check" || mode === "sync") check();
-if (mode === "sync") sync();
+if (mode === "check") check();
+if (mode === "push") push();
+if (mode === "status") status();
 if (mode === "purge") purge();
