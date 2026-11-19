@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cesium资料大全 · My3dtiles 文档</title>
+<meta name="description" content="使用手册 · Cesium资料大全">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3 22 8.5 12 14 2 8.5Z' fill='%231657FF'/%3E%3Cpath d='M2 12.2 12 17.7 22 12.2' fill='none' stroke='%230A1626' stroke-width='1.4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<div class="top" data-u32-name="top-bar">
+  <div class="wrap top-in" data-u32-name="top-inner">
+    <a class="brand" href="../../index.html" data-u32-name="brand">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 22 8.5 12 14 2 8.5Z" fill="#1657FF"/><path d="M2 12.2 12 17.7 22 12.2" fill="none" stroke="#0A1626" stroke-width="1.4"/><path d="M2 15.9 12 21.4 22 15.9" fill="none" stroke="#0A1626" stroke-width="1.4" opacity=".45"/></svg>
+      <span>My3dtiles</span>
+    </a>
+    <div class="nav" data-u32-name="nav"><a href="../../index.html#cap" class="">产品能力</a><a href="../../index.html#formats" class="">数据与格式</a><a href="../index.html" class="on">文档</a><a href="../../index.html#download" class="">下载</a><a href="../../index.html#coop" class="">合作与交流</a><a href="../search.html" class="">搜索</a></div>
+    <a class="top-cta" href="../../index.html#download" data-u32-name="nav-download">下载</a>
+  </div>
+</div>
+<div class="wrap" data-u32-name="docs-wrap">
+  <div class="docs-layout" data-u32-name="docs-layout">
+    <div class="side" data-u32-name="page-side"><h6>文档分区</h6><ul class="grp" data-u32-name="side-sections">
+<li class="on" data-u32-name="side-sec-manual"><a href="index.html">使用手册</a><span class="c">86</span></li>
+<li class="" data-u32-name="side-sec-log"><a href="../log/index.html">开发日志</a><span class="c">146</span></li>
+<li class="" data-u32-name="side-sec-download"><a href="../download/index.html">软件下载</a><span class="c">27</span></li>
+<li class="" data-u32-name="side-sec-more"><a href="../more/index.html">产品与社区</a><span class="c">8</span></li>
+</ul>
+<h6>认识 My3dtiles</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="My3dtiles%E6%98%AF%E5%95%A5%EF%BC%9F/index.html">My3dtiles是啥？</a></li>
+<li class=""><a href="My3dtiles%E6%98%AF%E5%95%A5%EF%BC%9F/My3dtiles%E5%8A%9F%E8%83%BD%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.html">My3dtiles功能思维导图</a></li>
+<li class=""><a href="My3dtiles%E7%9A%84%E4%BA%A7%E5%93%81%E7%89%B9%E7%82%B9.html">My3dtiles的产品特点</a></li>
+</ul>
+<h6>快速开始</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.html">快速开始</a></li>
+<li class=""><a href="%E5%BF%AB%E9%80%9F%E5%8A%A0%E8%BD%BD3dtiles%E6%95%B0%E6%8D%AE.html">快速加载3dtiles数据</a></li>
+<li class=""><a href="My3dtilesweb%E7%89%88%E7%9A%84%E4%BD%BF%E7%94%A8.html">My3dtiles(web版)的使用</a></li>
+<li class=""><a href="My3dtiles%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE.html">My3dtiles测试数据</a></li>
+</ul>
+<h6>安装与程序</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="My3dtiles%E7%A8%8B%E5%BA%8F%E4%B8%8B%E8%BD%BD.html">My3dtiles程序下载</a></li>
+<li class=""><a href="My3dtiles%E7%A8%8B%E5%BA%8F%E5%8C%85%E7%9A%84%E5%86%85%E5%AE%B9.html">My3dtiles程序包的内容</a></li>
+<li class=""><a href="My3dtiles%E5%AE%89%E8%A3%85%E5%8C%85%E7%9A%84%E5%A5%BD%E5%A4%84.html">My3dtiles安装包的好处</a></li>
+<li class=""><a href="%E7%BB%BF%E8%89%B2%E7%89%88%E5%92%8C%E5%AE%89%E8%A3%85%E7%89%88%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BD%BF%E7%94%A8.html">绿色版和安装版程序的使用</a></li>
+</ul>
+<h6>界面与基础操作</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="%E8%8F%9C%E5%8D%95%E6%A0%8F.html">菜单栏</a></li>
+<li class=""><a href="%E5%B7%A5%E5%85%B7%E6%A0%8F.html">工具栏</a></li>
+<li class=""><a href="My3dtiles%E7%9A%84UI_%E5%9F%BA%E6%9C%AC%E6%8C%89%E9%92%AE.html">My3dtiles的UI_基本按钮</a></li>
+<li class=""><a href="dialog.html">dialog</a></li>
+<li class=""><a href="My3dtiles%E7%9A%84%E5%9C%BA%E6%99%AF%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84.html">My3dtiles的场景组织结构</a></li>
+<li class=""><a href="My3dtiles%E7%9A%84%E5%9C%BA%E6%99%AF%E6%A0%91%E6%8E%A7%E5%88%B6.html">My3dtiles的场景树控制</a></li>
+<li class=""><a href="My3dtiles%E7%9A%84%E4%BA%A4%E4%BA%92%E6%BC%AB%E6%B8%B8.html">My3dtiles的交互漫游</a></li>
+<li class=""><a href="My3dtiles%E7%9A%84%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%E6%BC%AB%E6%B8%B8.html">My3dtiles的第一人称漫游</a></li>
+</ul>
+<h6>数据加载与资源配置</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="3dtiles%E6%95%B0%E6%8D%AE%E6%98%AF%E5%95%A5.html">3dtiles数据是啥</a></li>
+<li class=""><a href="My3dtiles%E5%8A%A0%E8%BD%BD3dtiles%E6%95%B0%E6%8D%AE/index.html">My3dtiles加载3dtiles数据</a></li>
+<li class=""><a href="My3dtiles%E5%8A%A0%E8%BD%BD3dtiles%E6%95%B0%E6%8D%AE/3dtiles%E6%95%B0%E6%8D%AE%E7%9A%84msse%E8%AE%BE%E7%BD%AE.html">3dtiles数据的msse设置</a></li>
+<li class=""><a href="My3dtiles%E5%8A%A0%E8%BD%BD3dtiles%E6%95%B0%E6%8D%AE/My3dtiles%E5%8A%A0%E8%BD%BD3dtiles%E6%95%B0%E6%8D%AE%E7%9B%B8%E5%85%B3%E5%8A%9F%E8%83%BD.html">My3dtiles加载3dtiles数据相关功能</a></li>
+<li class=""><a href="My3dtiles%E5%8A%A0%E8%BD%BD%E5%A4%9A%E6%A0%B7%E6%95%B0%E6%8D%AE/index.html">My3dtiles加载多样数据</a></li>
+<li class=""><a href="My3dtiles%E5%8A%A0%E8%BD%BD%E5%A4%9A%E6%A0%B7%E6%95%B0%E6%8D%AE/%E5%BD%B1%E5%83%8FCzmImagery%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95_wolai.com.html">影像(CzmImagery)资源配置方法 </a></li>
+<li class=""><a href="My3dtiles%E5%AF%B93dtiles%E8%BF%9B%E8%A1%8C%E5%8E%8B%E5%B9%B3%E6%93%8D%E4%BD%9C.html">My3dtiles对3dtiles进行压平操作</a></li>
+<li class=""><a href="My3dtiles%E5%AF%B93dtiles%E8%BF%9B%E8%A1%8C%E8%A3%81%E5%89%AA%E6%93%8D%E4%BD%9C.html">My3dtiles对3dtiles进行裁剪操作</a></li>
+<li class=""><a href="%E5%BD%B1%E5%83%8FCzmImagery%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95.html">影像(CzmImagery)资源配置方法</a></li>
+<li class=""><a href="%E5%9C%B0%E5%BD%A2CzmTerrain%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95.html">地形(CzmTerrain)资源配置方法</a></li>
+</ul>
+<h6>场景对象与测量分析</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="My3dtiles%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2%E5%AF%B9%E8%B1%A1.html">My3dtiles中的基本图形对象</a></li>
+<li class=""><a href="My3dtiles%E5%86%85%E7%BD%AE%E7%9A%84%E4%B8%89%E7%BB%B4%E7%89%B9%E6%95%88%E5%AF%B9%E8%B1%A1.html">My3dtiles内置的三维特效对象</a></li>
+<li class=""><a href="My3dtiles%E7%9A%84%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6%E5%AF%B9%E8%B1%A1.html">My3dtiles的逻辑控制对象</a></li>
+<li class=""><a href="My3dtiles%E5%86%85%E7%BD%AE%E7%9A%84%E6%B5%8B%E9%87%8F%E5%88%86%E6%9E%90%E5%8A%9F%E8%83%BD.html">My3dtiles内置的测量分析功能</a></li>
+</ul>
+<h6>命令面板</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF.html">快速打开命令面板</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/index.html">命令面板</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%B5%8B%E9%87%8F.html">测量</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E8%B6%85%E5%9B%BE%E6%A0%87%E7%BB%98.html">超图标绘</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E9%AB%98%E7%BA%A7.html">高级</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%B7%A5%E5%85%B7.html">工具</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2.html">基本图形</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E7%9B%91%E8%A7%86%E5%99%A8.html">监视器</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E8%B7%AF%E5%BE%84.html">路径</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%86%85%E7%BD%AE%E5%B1%9E%E6%80%A7.html">内置属性</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E7%A4%BA%E4%BE%8B%E6%95%B0%E6%8D%AE.html">示例数据</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E8%A7%86%E8%A7%92.html">视角</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E7%89%B9%E6%95%88%E5%AF%B9%E8%B1%A1.html">特效对象</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%9B%BE%E7%89%87%E6%A8%A1%E5%9E%8B.html">图片模型</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%9D%82%E9%A1%B9.html">杂项</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E8%B5%84%E6%BA%90%E8%BD%BD%E5%85%A5.html">资源载入</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/CanvasPoi2%E6%9C%AA%E5%AE%8C%E6%88%90.html">CanvasPoi2(未完成)</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/GLTF%E6%A8%A1%E5%9E%8B%E6%9C%AA%E5%AE%8C%E6%88%90.html">GLTF模型(未完成)</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/POI.html">POI</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/YLJUI.html">YLJ(UI)</a></li>
+</ul><p class="side-sub">屏幕UI</p><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%B1%8F%E5%B9%95UI/index.html">屏幕UI</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%B1%8F%E5%B9%95UI/CircleButtonsTool_buttons_%E5%B1%9E%E6%80%A7.html">CircleButtonsTool buttons 属性</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%B1%8F%E5%B9%95UI/RectangleButtonsTool_buttons_%E5%B1%9E%E6%80%A7.html">RectangleButtonsTool buttons 属性</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%B1%8F%E5%B9%95UI/TempObjsCreatorTool_buttons_%E5%B1%9E%E6%80%A7.html">TempObjsCreatorTool buttons 属性</a></li>
+</ul><p class="side-sub">文件</p><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/index.html">文件</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E4%BF%9D%E5%AD%98%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6.html">保存场景文件</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6.html">查看当前场景文件</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6%E5%8F%A6%E5%AD%98%E4%B8%BA.html">场景文件另存为</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E5%88%9B%E5%BB%BA%E5%9C%BA%E6%99%AF%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7.html">创建场景对象(高级)</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E6%89%93%E5%BC%80%E6%9C%AC%E5%9C%B0%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6.html">打开本地场景文件</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E6%89%93%E5%BC%80%E7%BD%91%E7%BB%9C%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6.html">打开网络场景文件</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E6%96%B0%E5%BB%BA%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6.html">新建场景文件</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0.html">修改项目名称</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E8%BD%AC%E6%8D%A2Cesium.html">转换Cesium</a></li>
+<li class=""><a href="%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E8%BD%AC%E6%8D%A2web.html">转换web</a></li>
+</ul>
+<h6>Web 发布与进阶开发</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="My3dtiles%E9%85%8D%E7%BD%AE%E6%88%90Web%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA.html">My3dtiles配置成Web页面展示</a></li>
+<li class=""><a href="Web%E7%AB%AF%E5%B1%95%E7%A4%BA.html">Web端展示</a></li>
+<li class=""><a href="My3dtiles%E4%BD%9C%E4%B8%BA%E7%8B%AC%E7%AB%8B%E4%B8%BB%E6%9C%BA%E5%A4%A7%E5%B1%8F%E5%B1%95%E7%A4%BA.html">My3dtiles作为独立(主机)大屏展示</a></li>
+<li class=""><a href="EChartsDiv.html">EChartsDiv</a></li>
+<li class=""><a href="LayoutDiv.html">LayoutDiv</a></li>
+<li class=""><a href="LocationSearch.html">LocationSearch</a></li>
+<li class=""><a href="My3dtiles%E7%9A%843dtiles%E8%87%AA%E5%AE%9A%E4%B9%89shader%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B.html">My3dtiles的3dtiles自定义shader的全过程</a></li>
+</ul>
+<h6>调试与旧版参考</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="My3dtiles%E7%9A%84%E6%95%B0%E6%8D%AE%E8%B0%83%E8%AF%95.html">My3dtiles的数据调试</a></li>
+<li class=""><a href="3dtiles%E6%95%B0%E6%8D%AE%E9%97%AA%E5%8A%A820240524.html">3dtiles数据闪动20240524</a></li>
+<li class=""><a href="My3dtiles%E8%B0%83%E8%AF%95%E6%B7%B1%E5%85%A5%EF%BC%88%E7%89%88%E6%9C%AC%E8%BE%83%E6%97%A7%EF%BC%8C%E8%AF%B7%E4%BE%9B%E5%8F%82%E8%80%83%EF%BC%89.html">My3dtiles调试深入（版本较旧，请供参考）</a></li>
+</ul>
+<h6>资料与支持</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="3dtiles%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99.html">3dtiles相关资料</a></li>
+<li class="on"><a href="Cesium%E8%B5%84%E6%96%99%E5%A4%A7%E5%85%A8.html">Cesium资料大全</a></li>
+<li class=""><a href="%E5%B8%B8%E8%A7%81%E5%B0%8F%E9%97%AE%E9%A2%98.html">常见小问题</a></li>
+<li class=""><a href="%E5%85%B3%E4%BA%8E%E4%BD%9C%E8%80%85.html">关于作者</a></li>
+<li class=""><a href="My3dtiles%E7%9A%84%E5%90%88%E4%BD%9C%E6%A8%A1%E5%BC%8F.html">My3dtiles的合作模式</a></li>
+</ul>
+<h6>附录</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C%E5%8E%9F%E5%A7%8B%E5%A4%A7%E7%BA%B2.html">使用手册·原始大纲</a></li>
+<li class=""><a href="My3dtiles%E5%9C%BA%E6%99%AF%E9%85%8D%E7%BD%AE%E8%BE%83%E6%97%A7%EF%BC%8C%E8%AF%B7%E4%BE%9B%E5%8F%82%E8%80%83/index.html">My3dtiles场景配置较旧，请供参考</a></li>
+<li class=""><a href="My3dtiles%E5%9C%BA%E6%99%AF%E9%85%8D%E7%BD%AE%E8%BE%83%E6%97%A7%EF%BC%8C%E8%AF%B7%E4%BE%9B%E5%8F%82%E8%80%83/UI%E9%9D%A2%E6%9D%BF%E9%85%8D%E7%BD%AE.html">UI面板配置</a></li>
+</ul></div>
+    <div class="article" data-u32-name="page-article">
+      <p class="crumb" data-u32-name="page-crumb"><a href="../index.html">文档</a> / <a href="index.html">使用手册</a> / 资料与支持 / Cesium资料大全</p>
+      
+      
+      <article class="prose" data-u32-name="page-prose"><h1 id="cesium资料大全" class="md-h1" data-u32-name="md-heading">Cesium资料大全</h1>
+<p>最后更新2024年5月</p>
+<h2 id="新增20240622" class="md-h2" data-u32-name="md-heading">新增20240622</h2>
+<ul data-u32-name="md-list"><li>Cesium的gltf库，  <a class="ext" href="https://github.com/CesiumGS/glTF" target="_blank" rel="noopener">https://github.com/CesiumGS/glTF</a> </li></ul>
+<p>Cesium的gltf，一般会有扩展EXT_mesh_features、EXT_structural_metadata，这个是KhronosGroup/glTF库所没有的。  Cesium的gltf库是从KhronosGroup/glTF库fork而来。</p>
+<ul data-u32-name="md-list"><li>b3dm转glb工具<span class="li-note"><span class="media-missing" data-u32-name="media-missing"><span class="mm-ico" aria-hidden="true">▤</span><span class="mm-body"><b>大文件已外迁网盘</b>：安装包 / 压缩包 <code class="mono">uF1ChgLbFaSUNQrbDARV86_b3dm2Glb.exe</code> 体积超过 3MB，未随文档入库，请到百度网盘「My3dtiles资料附件」条目取回。</span></span></span></li></ul>
+<h3 id="前言" class="md-h3" data-u32-name="md-heading">前言</h3>
+<p>Cesium是一个用于显示三维地球和地图的开源js库。它可以用来显示海量三维模型数据、影像数据、地形高程数据、矢量数据等等。三维模型格式支持gltf、三维瓦片模型格式支持3d tiles。矢量数据支持geojson、topojson、kml格式。影像数据支持wms、wmts等。高程支持STK格式。另外支持自有格式czml的加载。</p>
+<h3 id="cesium官方" class="md-h3" data-u32-name="md-heading">Cesium官方</h3>
+<ul data-u32-name="md-list"><li>Cesium官网  <a class="ext" href="https://cesium.com/" target="_blank" rel="noopener">https://cesium.com/</a></li><li>Cesium下载  <a class="ext" href="https://cesium.com/downloads/" target="_blank" rel="noopener">https://cesium.com/downloads/</a></li><li>CesiumJS的API文档  <a class="ext" href="https://cesium.com/learn/cesiumjs/ref-doc/" target="_blank" rel="noopener">https://cesium.com/learn/cesiumjs/ref-doc/</a></li><li>Cesium官方示例  <a class="ext" href="https://sandcastle.cesium.com/" target="_blank" rel="noopener">https://sandcastle.cesium.com/</a></li><li>Cesium官方教程(英文)  <a class="ext" href="https://cesium.com/learn/cesiumjs-learn/" target="_blank" rel="noopener">https://cesium.com/learn/cesiumjs-learn/</a></li><li>Cesium官方博客(英文)  <a class="ext" href="https://cesium.com/blog/" target="_blank" rel="noopener">https://cesium.com/blog/</a></li><li>Cesium官方社区(英文)  <a class="ext" href="https://community.cesium.com/" target="_blank" rel="noopener">https://community.cesium.com/</a></li><li>Cesium Ion(官方数据后台, 收费且服务器在国外)  <a class="ext" href="https://ion.cesium.com/" target="_blank" rel="noopener">https://ion.cesium.com/</a></li><li>Cesium for Unreal  <a class="ext" href="https://cesium.com/platform/cesium-for-unreal/" target="_blank" rel="noopener">https://cesium.com/platform/cesium-for-unreal/</a></li><li>Cesium for Unity   <a class="ext" href="https://cesium.com/platform/cesium-for-unity/" target="_blank" rel="noopener">https://cesium.com/platform/cesium-for-unity/</a></li><li>Cesium for O3DE  <a class="ext" href="https://cesium.com/platform/cesium-for-o3de/" target="_blank" rel="noopener">https://cesium.com/platform/cesium-for-o3de/</a></li><li>Cesium for omniverse:  <a class="ext" href="https://cesium.com/platform/cesium-for-omniverse/" target="_blank" rel="noopener">https://cesium.com/platform/cesium-for-omniverse/</a></li></ul>
+<h3 id="cesium源码在github上" class="md-h3" data-u32-name="md-heading">Cesium源码在github上</h3>
+<ul data-u32-name="md-list"><li>Cesium  <a class="ext" href="https://github.com/CesiumGS/cesium" target="_blank" rel="noopener">https://github.com/CesiumGS/cesium</a></li><li>Cesium for Unreal  <a class="ext" href="https://github.com/CesiumGS/cesium-unreal" target="_blank" rel="noopener">https://github.com/CesiumGS/cesium-unreal</a></li><li>Cesium for Unity  <a class="ext" href="https://github.com/CesiumGS/cesium-unity-samples" target="_blank" rel="noopener">https://github.com/CesiumGS/cesium-unity-samples</a></li><li>Cesium for O3DE  <a class="ext" href="https://github.com/CesiumGS/cesium-o3de" target="_blank" rel="noopener">https://github.com/CesiumGS/cesium-o3de</a></li><li>Cesium for omniverse  <a class="ext" href="https://github.com/CesiumGS/cesium-omniverse" target="_blank" rel="noopener">https://github.com/CesiumGS/cesium-omniverse</a></li></ul>
+<h3 id="cesium在gitee上" class="md-h3" data-u32-name="md-heading">Cesium在gitee上</h3>
+<ul data-u32-name="md-list"><li>Cesium源码  <a class="ext" href="https://gitee.com/mirrors/CesiumJS" target="_blank" rel="noopener">https://gitee.com/mirrors/CesiumJS</a></li></ul>
+<h3 id="cesium开发资料" class="md-h3" data-u32-name="md-heading">Cesium开发资料</h3>
+<ul data-u32-name="md-list"><li>Cesium材质文档  <a class="ext" href="https://gitee.com/mirrors/CesiumJS/blob/main/Documentation/FabricGuide/README.md" target="_blank" rel="noopener">https://gitee.com/mirrors/CesiumJS/blob/main/Documentation/FabricGuide/README.md</a></li><li>Cesium自定义shader文档  <a class="ext" href="https://gitee.com/mirrors/CesiumJS/tree/main/Documentation/CustomShaderGuide" target="_blank" rel="noopener">https://gitee.com/mirrors/CesiumJS/tree/main/Documentation/CustomShaderGuide</a></li><li>Cesium离线使用文档  <a class="ext" href="https://gitee.com/mirrors/CesiumJS/tree/main/Documentation/OfflineGuide" target="_blank" rel="noopener">https://gitee.com/mirrors/CesiumJS/tree/main/Documentation/OfflineGuide</a></li><li>Cesium CZML指南  <a class="ext" href="https://github.com/AnalyticalGraphicsInc/czml-writer/wiki/CZML-Guide" target="_blank" rel="noopener">https://github.com/AnalyticalGraphicsInc/czml-writer/wiki/CZML-Guide</a></li></ul>
+<h3 id="cesium教程" class="md-h3" data-u32-name="md-heading">Cesium教程</h3>
+<ul data-u32-name="md-list"><li>Cesium中文网  <a class="ext" href="http://cesium.xin/" target="_blank" rel="noopener">http://cesium.xin/</a></li><li>Cesium快速上手(视频)  <a class="ext" href="https://www.bilibili.com/video/BV1B7411G7HP" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1B7411G7HP</a></li><li>北京西部世界相关Cesium教学视频  <a class="ext" href="https://space.bilibili.com/346212872/channel/seriesdetail?sid=1634802" target="_blank" rel="noopener">https://space.bilibili.com/346212872/channel/seriesdetail?sid=1634802</a></li><li>Cesium教程系列汇总(法克鸡丝, 超图大牛作品，国内较早的深入研究教程)  <a class="ext" href="https://www.cnblogs.com/fuckgiser/p/5706842.html" target="_blank" rel="noopener">https://www.cnblogs.com/fuckgiser/p/5706842.html</a>   <a class="ext" href="https://pasu.github.io/ExamplesforCesium/examples/examples.html" target="_blank" rel="noopener">https://pasu.github.io/ExamplesforCesium/examples/examples.html</a>   <a class="ext" href="https://github.com/pasu/ExamplesforCesium" target="_blank" rel="noopener">https://github.com/pasu/ExamplesforCesium</a></li><li>三维地球开发书籍(Cesium创始人 Patrick Cozzi 早期作品)  <a class="ext" href="https://virtualglobebook.com/" target="_blank" rel="noopener">https://virtualglobebook.com/</a></li></ul>
+<h3 id="cesium-cdn" class="md-h3" data-u32-name="md-heading">Cesium CDN</h3>
+<p>如果想直接使用Cesium，而有不下载Cesium的话，可以尝试这种方式，其中的版本号可以更换。</p>
+<pre class="code" data-lang="html" data-u32-name="md-code"><code>&lt;script src=&quot;https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Cesium.js&quot;&gt;&lt;/script&gt;
+&lt;link href=&quot;https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css&quot; rel=&quot;stylesheet&quot;&gt; </code></pre>
+<h3 id="cesium-api文档" class="md-h3" data-u32-name="md-heading">Cesium API文档</h3>
+<ul data-u32-name="md-list"><li>最新版(官方)  <a class="ext" href="https://cesium.com/learn/cesiumjs/ref-doc/" target="_blank" rel="noopener">https://cesium.com/learn/cesiumjs/ref-doc/</a></li><li>Cesium 1.117(Cesium中文网)  <a class="ext" href="http://cesium.xin/cesium/Documentation1.117/index.html" target="_blank" rel="noopener">http://cesium.xin/cesium/Documentation1.117/index.html</a></li><li>Cesium 1.95中文 (Cesium中文网)  <a class="ext" href="http://cesium.xin/cesium/cn/Documentation1.95/index.html" target="_blank" rel="noopener">http://cesium.xin/cesium/cn/Documentation1.95/index.html</a></li></ul>
+<h3 id="cesium-插件" class="md-h3" data-u32-name="md-heading">Cesium 插件</h3>
+<ul data-u32-name="md-list"><li>国产地图加载   <a class="ext" href="https://github.com/CesiumChina/cesium-map" target="_blank" rel="noopener">https://github.com/CesiumChina/cesium-map</a></li><li>指北针:  <a class="ext" href="https://github.com/alberto-acevedo/cesium-navigation" target="_blank" rel="noopener">https://github.com/alberto-acevedo/cesium-navigation</a></li><li>cesium-drawhelper(年久失修)   <a class="ext" href="https://github.com/leforthomas/cesium-drawhelper" target="_blank" rel="noopener">https://github.com/leforthomas/cesium-drawhelper</a></li><li>leation/drawhelper-with-cesium-v1.41(李仙伟改版的图形编辑插件，年久失修)  <a class="ext" href="https://github.com/leation/drawhelper-with-cesium-v1.41" target="_blank" rel="noopener">https://github.com/leation/drawhelper-with-cesium-v1.41</a></li><li>GeoserverTerrainProvider  <a class="ext" href="https://github.com/kaktus40/Cesium-GeoserverTerrainProvider" target="_blank" rel="noopener">https://github.com/kaktus40/Cesium-GeoserverTerrainProvider</a> </li></ul>
+<p>cesium-print  <a class="ext" href="https://github.com/richard1015/cesium-print" target="_blank" rel="noopener">https://github.com/richard1015/cesium-print</a></p>
+<ul data-u32-name="md-list"><li>coordtransform 坐标转换 一个提供了百度坐标（BD09）、国测局坐标（火星坐标，GCJ02）、和WGS84坐标系之间的转换的工具模块  <a class="ext" href="https://github.com/wandergis/coordtransform" target="_blank" rel="noopener">https://github.com/wandergis/coordtransform</a></li></ul>
+<h3 id="国产cesium-sdk和工具" class="md-h3" data-u32-name="md-heading">国产Cesium SDK和工具</h3>
+<ul data-u32-name="md-list"><li>wish3d(中科图新)  <a class="ext" href="http://www.wish3d.com/" target="_blank" rel="noopener">http://www.wish3d.com/</a></li><li>thingjs  <a class="ext" href="https://www.thingjs.com/" target="_blank" rel="noopener">https://www.thingjs.com/</a></li><li>EarthSDK(北京西部世界)  <a class="ext" href="https://earthsdk.com/" target="_blank" rel="noopener">https://earthsdk.com/</a></li><li>mars3d(火星):  <a class="ext" href="https://gitee.com/marsgis/mars3d" target="_blank" rel="noopener">https://gitee.com/marsgis/mars3d</a></li><li>DC(Digital Visual for Cesium) 一款构建三维WebGis应用的开源开发平台  <a class="ext" href="https://dc.dvgis.cn/" target="_blank" rel="noopener">https://dc.dvgis.cn/</a></li><li>vue-cesium Vue for Cesium  基于 Vue 3，面向开发者的 CesiumJS 组件库。  <a class="ext" href="https://zouyaoji.top/vue-cesium/#/zh-CN" target="_blank" rel="noopener">https://zouyaoji.top/vue-cesium/#/zh-CN</a>   <a class="ext" href="https://gitee.com/zouyaoji/vue-cesium" target="_blank" rel="noopener">https://gitee.com/zouyaoji/vue-cesium</a></li><li>vue3-ts-cesium-map-show 前端 vue3.0 + typescript 三维可视化数字城市数字孪生  <a class="ext" href="https://gitee.com/hawk86104/vue3-ts-cesium-map-show" target="_blank" rel="noopener">https://gitee.com/hawk86104/vue3-ts-cesium-map-show</a></li><li>QuickEarth-Free 一个二三维一体化的Web端矢量和栅格数据渲染引擎  <a class="ext" href="https://gitee.com/mofangbao/quick-earth-free" target="_blank" rel="noopener">https://gitee.com/mofangbao/quick-earth-free</a></li><li><strong>My3dtiles(本地离线3dtiles数据查看，低代码数字孪生工具，北京西部世界) </strong> <a class="dead" title="原链接指向 wolai 页面，站内无对应文档">https://www.wolai.com/earthsdk/s5ZX52JqRxzbgrA9XDTRHr</a></li></ul>
+<h3 id="cesium相关开源项目" class="md-h3" data-u32-name="md-heading">Cesium相关开源项目</h3>
+<ul data-u32-name="md-list"><li>MikesWei/CesiumMeshVisualizer(国内大牛作品，含物理引擎、BSP、体渲染)  <a class="ext" href="https://github.com/MikesWei/CesiumMeshVisualizer" target="_blank" rel="noopener">https://github.com/MikesWei/CesiumMeshVisualizer</a></li><li>MikesWei/CesiumVectorTile(shp/geojson转矢量切片)  <a class="ext" href="https://github.com/MikesWei/CesiumVectorTile" target="_blank" rel="noopener">https://github.com/MikesWei/CesiumVectorTile</a></li><li>cesium-threejs-experiment(结合Cesium和Three.js的示例)  <a class="ext" href="https://github.com/AnalyticalGraphicsInc/cesium-threejs-experiment" target="_blank" rel="noopener">https://github.com/AnalyticalGraphicsInc/cesium-threejs-experiment</a></li><li>ShareQiu1994/cesium-vue(Cesium实验室QQ群中的 乘风破浪 的作品 Cesium+Webpack+Vue的项目样板)  <a class="ext" href="https://github.com/ShareQiu1994/cesium-vue" target="_blank" rel="noopener">https://github.com/ShareQiu1994/cesium-vue</a></li><li>geo-data/cesium-terrain-server(Cesium地形服务，许久未更新)  <a class="ext" href="https://github.com/geo-data/cesium-terrain-server" target="_blank" rel="noopener">https://github.com/geo-data/cesium-terrain-server</a></li><li>mattshax/cesium_pnt_generator(点云数据转3dtiles)  <a class="ext" href="https://github.com/mattshax/cesium_pnt_generator" target="_blank" rel="noopener">https://github.com/mattshax/cesium_pnt_generator</a></li><li>openlayers/ol-cesium: (OpenLayers + Cesium集成)  <a class="ext" href="https://github.com/openlayers/ol-cesium" target="_blank" rel="noopener">https://github.com/openlayers/ol-cesium</a></li><li>NICTA/cesium-vr(Cesium支持Oculus VR headset)   <a class="ext" href="https://github.com/NICTA/cesium-vr" target="_blank" rel="noopener">https://github.com/NICTA/cesium-vr</a></li></ul>
+<h3 id="gltf相关" class="md-h3" data-u32-name="md-heading">gltf相关</h3>
+<ul data-u32-name="md-list"><li>KhronosGroup/glTF(gltf格式文档)  <a class="ext" href="https://github.com/KhronosGroup/glTF" target="_blank" rel="noopener">https://github.com/KhronosGroup/glTF</a>    <a class="ext" href="https://registry.khronos.org/glTF/" target="_blank" rel="noopener">https://registry.khronos.org/glTF/</a></li><li>AnalyticalGraphicsInc/obj2gltf(Cesium官方出品的obj转gltf工具)  <a class="ext" href="https://github.com/CesiumGS/obj2gltf" target="_blank" rel="noopener">https://github.com/CesiumGS/obj2gltf</a></li><li>AnalyticalGraphicsInc/gltf-vscode(直接在vscode上看gltf的插件)  <a class="ext" href="https://github.com/AnalyticalGraphicsInc/gltf-vscode" target="_blank" rel="noopener">https://github.com/AnalyticalGraphicsInc/gltf-vscode</a></li><li>AnalyticalGraphicsInc/gltf-pipeline(gltf数据处理优化工具)  <a class="ext" href="https://github.com/CesiumGS/gltf-pipeline" target="_blank" rel="noopener">https://github.com/CesiumGS/gltf-pipeline</a></li><li>KhronosGroup/glTF-Sample-Models(glTF样例模型)  <a class="ext" href="https://github.com/KhronosGroup/glTF-Sample-Models" target="_blank" rel="noopener">https://github.com/KhronosGroup/glTF-Sample-Models</a></li><li>sketchfab(gltf模型下载)  <a class="ext" href="https://sketchfab.com/" target="_blank" rel="noopener">https://sketchfab.com/</a></li><li>OpenGL官方的格式转换工具  <a class="ext" href="https://github.com/KhronosGroup/COLLADA2GLTF/" target="_blank" rel="noopener">https://github.com/KhronosGroup/COLLADA2GLTF/</a></li><li>glTF Viewer(Three.js的gltf模型查看器)  <a class="ext" href="https://gltf-viewer.donmccurdy.com/" target="_blank" rel="noopener">https://gltf-viewer.donmccurdy.com/</a></li><li>BabylonJS Sandbox(Babylon出品gltf查看器)  <a class="ext" href="http://sandbox.babylonjs.com/" target="_blank" rel="noopener">http://sandbox.babylonjs.com/</a></li><li>Clay Viewer(国内百度大牛出品的gltf查看器，效果惊艳！)  <a class="ext" href="https://pissang.github.io/clay-viewer/editor/" target="_blank" rel="noopener">https://pissang.github.io/clay-viewer/editor/</a></li></ul>
+<h3 id="3dtiles相关" class="md-h3" data-u32-name="md-heading">3dtiles相关</h3>
+<ul data-u32-name="md-list"><li>AnalyticalGraphicsInc/3d-tiles(3d tiles数据格式说明)  <a class="ext" href="https://github.com/CesiumGS/3d-tiles" target="_blank" rel="noopener">https://github.com/CesiumGS/3d-tiles</a></li><li>AnalyticalGraphicsInc/3d-tiles-tools(Cesium官方出品的3d tiles数据的处理工具)  <a class="ext" href="https://github.com/CesiumGS/3d-tiles-validator" target="_blank" rel="noopener">https://github.com/CesiumGS/3d-tiles-validator</a></li><li>AnalyticalGraphicsInc/3d-tiles-samples(Cesium官方出品的3d tiles样例数据)  <a class="ext" href="https://github.com/CesiumGS/3d-tiles-samples" target="_blank" rel="noopener">https://github.com/CesiumGS/3d-tiles-samples</a></li><li>SuperMap/s3m-spec(和3d tiles同类的超图的s3m格式说明)  <a class="ext" href="https://github.com/SuperMap/s3m-spec" target="_blank" rel="noopener">https://github.com/SuperMap/s3m-spec</a></li><li>Esri/i3s-spec(和3d tiles格式同类的ArcGIS的i3s格式说明)  <a class="ext" href="https://github.com/Esri/i3s-spec" target="_blank" rel="noopener">https://github.com/Esri/i3s-spec</a></li><li>fanvanzh/3dtiles(Cesium实验室QQ群中的米斯特范的osgb转3dtiles工具)  <a class="ext" href="https://github.com/fanvanzh/3dtiles" target="_blank" rel="noopener">https://github.com/fanvanzh/3dtiles</a></li></ul>
+<h3 id="地形相关" class="md-h3" data-u32-name="md-heading">地形相关</h3>
+<ul data-u32-name="md-list"><li>Cesium地形格式说明  <a class="ext" href="https://github.com/CesiumGS/quantized-mesh" target="_blank" rel="noopener">https://github.com/CesiumGS/quantized-mesh</a></li><li>Cesium地形生成工具  <a class="ext" href="https://github.com/geo-data/cesium-terrain-builder" target="_blank" rel="noopener">https://github.com/geo-data/cesium-terrain-builder</a></li></ul>
+<h3 id="webgl引擎" class="md-h3" data-u32-name="md-heading">WebGL引擎</h3>
+<ul data-u32-name="md-list"><li>threejs  <a class="ext" href="https://threejs.org/" target="_blank" rel="noopener">https://threejs.org/</a></li><li>babylonjs  <a class="ext" href="https://www.babylonjs.com/" target="_blank" rel="noopener">https://www.babylonjs.com/</a></li><li>shadertoy  <a class="ext" href="https://www.shadertoy.com/" target="_blank" rel="noopener">https://www.shadertoy.com/</a></li><li>luma.gl  <a class="ext" href="https://luma.gl/" target="_blank" rel="noopener">https://luma.gl/</a></li><li>claygl.xyz(国内百度大牛pissang的webgl引擎)  <a class="ext" href="http://claygl.xyz/" target="_blank" rel="noopener">http://claygl.xyz/</a></li><li>itowns(基于Three.js的三维地球引擎)  <a class="ext" href="https://github.com/iTowns/itowns" target="_blank" rel="noopener">https://github.com/iTowns/itowns</a></li><li>WebGlobe(国内之前在ArcGIS后来去美团的大牛的三维地图引擎)  <a class="ext" href="https://github.com/iSpring/WebGlobe" target="_blank" rel="noopener">https://github.com/iSpring/WebGlobe</a></li><li>OpenGlobe(Cesium创始人 Patrick Cozzi 早期作品)  <a class="ext" href="https://github.com/virtualglobebook/OpenGlobe" target="_blank" rel="noopener">https://github.com/virtualglobebook/OpenGlobe</a></li><li>inmap(一款基于百度地图的大数据可视化库)  <a class="ext" href="https://github.com/TalkingData/inmap" target="_blank" rel="noopener">https://github.com/TalkingData/inmap</a></li><li>deck.gl(WebGL2 powered visualization framework)  <a class="ext" href="https://deck.gl/" target="_blank" rel="noopener">https://deck.gl/</a>   <a class="ext" href="https://github.com/visgl/deck.gl" target="_blank" rel="noopener">https://github.com/visgl/deck.gl</a></li></ul>
+<h3 id="webgl教程" class="md-h3" data-u32-name="md-heading">WebGL教程</h3>
+<ul data-u32-name="md-list"><li>MDN上的webgl教程  <a class="ext" href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebGL_API/Tutorial/Getting_started_with_WebGL" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API/WebGL_API/Tutorial/Getting_started_with_WebGL</a></li><li>webgl2教程  <a class="ext" href="https://webgl2fundamentals.org/webgl/lessons/zh_cn/" target="_blank" rel="noopener">https://webgl2fundamentals.org/webgl/lessons/zh_cn/</a></li><li>webgl1教程  <a class="ext" href="https://webglfundamentals.org/webgl/lessons/zh_cn/" target="_blank" rel="noopener">https://webglfundamentals.org/webgl/lessons/zh_cn/</a></li><li>Three.js 入门指南  <a class="ext" href="http://zhangwenli.com/ThreeExample.js/" target="_blank" rel="noopener">http://zhangwenli.com/ThreeExample.js/</a></li><li>shader-school  <a class="ext" href="https://github.com/stackgl/shader-school" target="_blank" rel="noopener">https://github.com/stackgl/shader-school</a></li></ul>
+<h3 id="web3d相关" class="md-h3" data-u32-name="md-heading">web3d相关</h3>
+<ul data-u32-name="md-list"><li>气象地球(效果很棒)  <a class="ext" href="https://earth.nullschool.net/" target="_blank" rel="noopener">https://earth.nullschool.net/</a>   <a class="ext" href="https://github.com/cambecc/earth" target="_blank" rel="noopener">https://github.com/cambecc/earth</a></li><li>webgl-blendfunctions  <a class="ext" href="https://github.com/mrdoob/webgl-blendfunctions" target="_blank" rel="noopener">https://github.com/mrdoob/webgl-blendfunctions</a></li><li>earcut(多边形三角化)  <a class="ext" href="https://github.com/mapbox/earcut" target="_blank" rel="noopener">https://github.com/mapbox/earcut</a></li></ul>
+<h3 id="数字孪生相关企业" class="md-h3" data-u32-name="md-heading">数字孪生相关企业</h3>
+<ul data-u32-name="md-list"><li>超图(ue&amp;web3d&amp;cesium)  <a class="ext" href="https://www.supermap.com/" target="_blank" rel="noopener">https://www.supermap.com/</a></li><li>北京飞渡(ue)  <a class="ext" href="https://www.freedoonline.com/" target="_blank" rel="noopener">https://www.freedoonline.com/</a></li><li>北京西部世界(cesium&amp;ue)  <a class="ext" href="https://www.cesiumlab.com" target="_blank" rel="noopener">https://www.cesiumlab.com</a></li><li>西安恒歌(osg&amp;cesium)  <a class="ext" href="https://www.henggetec.com/" target="_blank" rel="noopener">https://www.henggetec.com/</a></li><li>北京优诺ThingJS  <a class="ext" href="https://www.uino.com/" target="_blank" rel="noopener">https://www.uino.com/</a></li><li>苏州wish3D(web3d&amp;cesium)  <a class="ext" href="https://www.wish3d.com" target="_blank" rel="noopener">https://www.wish3d.com</a></li><li>厦门图扑(web3d)  <a class="ext" href="https://www.hightopo.com/" target="_blank" rel="noopener">https://www.hightopo.com/</a></li><li>合肥火星(cesium)  <a class="ext" href="http://mars3d.cn/" target="_blank" rel="noopener">http://mars3d.cn/</a></li><li>杭州山海鲸(ue&amp;cesium)  <a class="ext" href="https://www.shanhaibi.com/" target="_blank" rel="noopener">https://www.shanhaibi.com/</a></li></ul></article>
+      <div class="pager" data-u32-name="page-pager">
+    <a href="3dtiles%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99.html"><span class="dir">上一篇</span>3dtiles相关资料</a>
+    <a class="next" href="%E5%B8%B8%E8%A7%81%E5%B0%8F%E9%97%AE%E9%A2%98.html"><span class="dir">下一篇</span>常见小问题</a>
+  </div>
+    </div>
+    <div class="rail" data-u32-name="page-rail"><h6>本页目录</h6><ul><li class=""><a href="#新增20240622">新增20240622</a></li><li class="lv3"><a href="#前言">前言</a></li><li class="lv3"><a href="#cesium官方">Cesium官方</a></li><li class="lv3"><a href="#cesium源码在github上">Cesium源码在github上</a></li><li class="lv3"><a href="#cesium在gitee上">Cesium在gitee上</a></li><li class="lv3"><a href="#cesium开发资料">Cesium开发资料</a></li><li class="lv3"><a href="#cesium教程">Cesium教程</a></li><li class="lv3"><a href="#cesium-cdn">Cesium CDN</a></li><li class="lv3"><a href="#cesium-api文档">Cesium API文档</a></li><li class="lv3"><a href="#cesium-插件">Cesium 插件</a></li><li class="lv3"><a href="#国产cesium-sdk和工具">国产Cesium SDK和工具</a></li><li class="lv3"><a href="#cesium相关开源项目">Cesium相关开源项目</a></li><li class="lv3"><a href="#gltf相关">gltf相关</a></li><li class="lv3"><a href="#3dtiles相关">3dtiles相关</a></li><li class="lv3"><a href="#地形相关">地形相关</a></li><li class="lv3"><a href="#webgl引擎">WebGL引擎</a></li><li class="lv3"><a href="#webgl教程">WebGL教程</a></li><li class="lv3"><a href="#web3d相关">web3d相关</a></li><li class="lv3"><a href="#数字孪生相关企业">数字孪生相关企业</a></li></ul></div>
+  </div>
+</div>
+<footer data-u32-name="footer">
+  <div class="wrap" data-u32-name="footer-wrap">
+    <div class="foot" data-u32-name="footer-cols">
+      <div data-u32-name="foot-brand">
+        <h5>My3dtiles</h5>
+        <p>本地离线 3dtiles 浏览器 · 数字孪生快速搭建工具 · 数字沙盘配置工具</p>
+        <p>无需登录，永久免费使用（第三方插件可能收费）</p>
+      </div>
+      <div data-u32-name="foot-doc"><h5>文档</h5><a href="index.html">使用手册</a><a href="../log/index.html">开发日志</a><a href="../download/index.html">软件下载</a><a href="../search.html">站内搜索</a></div>
+      <div data-u32-name="foot-comm"><h5>交流</h5><a href="https://qm.qq.com/q/ni2QWsAhKS" target="_blank" rel="noopener">QQ 群 725764124</a><a href="../more/交流合作.html">微信与联系方式</a><a href="https://space.bilibili.com/540048347" target="_blank" rel="noopener">哔哩哔哩</a><a href="https://www.zhihu.com/people/vtxf" target="_blank" rel="noopener">知乎</a></div>
+      <div data-u32-name="foot-more"><h5>更多</h5><a href="../more/定制开发.html">定制开发</a><a href="../download/index.html">版本与下载</a><a href="../more/示例集合.html">示例集合</a><a href="https://gitee.com/vtxf3d/my3dtiles/issues" target="_blank" rel="noopener">问题反馈</a></div>
+    </div>
+    <div class="foot-legal" data-u32-name="footer-legal">
+      <span>本页文档整理自 My3dtiles 官方资料，仅收录对外公开部分</span>
+      <span>构建于 2026-11-17</span>
+    </div>
+  </div>
+</footer>
+<div class="lightbox" data-u32-name="lightbox"><img alt=""></div>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

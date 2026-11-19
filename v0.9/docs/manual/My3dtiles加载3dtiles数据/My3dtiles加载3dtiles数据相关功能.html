@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My3dtiles加载3dtiles数据相关功能 · My3dtiles 文档</title>
+<meta name="description" content="使用手册 · My3dtiles加载3dtiles数据相关功能">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3 22 8.5 12 14 2 8.5Z' fill='%231657FF'/%3E%3Cpath d='M2 12.2 12 17.7 22 12.2' fill='none' stroke='%230A1626' stroke-width='1.4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body>
+<div class="top" data-u32-name="top-bar">
+  <div class="wrap top-in" data-u32-name="top-inner">
+    <a class="brand" href="../../../index.html" data-u32-name="brand">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 22 8.5 12 14 2 8.5Z" fill="#1657FF"/><path d="M2 12.2 12 17.7 22 12.2" fill="none" stroke="#0A1626" stroke-width="1.4"/><path d="M2 15.9 12 21.4 22 15.9" fill="none" stroke="#0A1626" stroke-width="1.4" opacity=".45"/></svg>
+      <span>My3dtiles</span>
+    </a>
+    <div class="nav" data-u32-name="nav"><a href="../../../index.html#cap" class="">产品能力</a><a href="../../../index.html#formats" class="">数据与格式</a><a href="../../index.html" class="on">文档</a><a href="../../../index.html#download" class="">下载</a><a href="../../../index.html#coop" class="">合作与交流</a><a href="../../search.html" class="">搜索</a></div>
+    <a class="top-cta" href="../../../index.html#download" data-u32-name="nav-download">下载</a>
+  </div>
+</div>
+<div class="wrap" data-u32-name="docs-wrap">
+  <div class="docs-layout" data-u32-name="docs-layout">
+    <div class="side" data-u32-name="page-side"><h6>文档分区</h6><ul class="grp" data-u32-name="side-sections">
+<li class="on" data-u32-name="side-sec-manual"><a href="../index.html">使用手册</a><span class="c">86</span></li>
+<li class="" data-u32-name="side-sec-log"><a href="../../log/index.html">开发日志</a><span class="c">146</span></li>
+<li class="" data-u32-name="side-sec-download"><a href="../../download/index.html">软件下载</a><span class="c">27</span></li>
+<li class="" data-u32-name="side-sec-more"><a href="../../more/index.html">产品与社区</a><span class="c">8</span></li>
+</ul>
+<h6>认识 My3dtiles</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../My3dtiles%E6%98%AF%E5%95%A5%EF%BC%9F/index.html">My3dtiles是啥？</a></li>
+<li class=""><a href="../My3dtiles%E6%98%AF%E5%95%A5%EF%BC%9F/My3dtiles%E5%8A%9F%E8%83%BD%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.html">My3dtiles功能思维导图</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84%E4%BA%A7%E5%93%81%E7%89%B9%E7%82%B9.html">My3dtiles的产品特点</a></li>
+</ul>
+<h6>快速开始</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.html">快速开始</a></li>
+<li class=""><a href="../%E5%BF%AB%E9%80%9F%E5%8A%A0%E8%BD%BD3dtiles%E6%95%B0%E6%8D%AE.html">快速加载3dtiles数据</a></li>
+<li class=""><a href="../My3dtilesweb%E7%89%88%E7%9A%84%E4%BD%BF%E7%94%A8.html">My3dtiles(web版)的使用</a></li>
+<li class=""><a href="../My3dtiles%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE.html">My3dtiles测试数据</a></li>
+</ul>
+<h6>安装与程序</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../My3dtiles%E7%A8%8B%E5%BA%8F%E4%B8%8B%E8%BD%BD.html">My3dtiles程序下载</a></li>
+<li class=""><a href="../My3dtiles%E7%A8%8B%E5%BA%8F%E5%8C%85%E7%9A%84%E5%86%85%E5%AE%B9.html">My3dtiles程序包的内容</a></li>
+<li class=""><a href="../My3dtiles%E5%AE%89%E8%A3%85%E5%8C%85%E7%9A%84%E5%A5%BD%E5%A4%84.html">My3dtiles安装包的好处</a></li>
+<li class=""><a href="../%E7%BB%BF%E8%89%B2%E7%89%88%E5%92%8C%E5%AE%89%E8%A3%85%E7%89%88%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BD%BF%E7%94%A8.html">绿色版和安装版程序的使用</a></li>
+</ul>
+<h6>界面与基础操作</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../%E8%8F%9C%E5%8D%95%E6%A0%8F.html">菜单栏</a></li>
+<li class=""><a href="../%E5%B7%A5%E5%85%B7%E6%A0%8F.html">工具栏</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84UI_%E5%9F%BA%E6%9C%AC%E6%8C%89%E9%92%AE.html">My3dtiles的UI_基本按钮</a></li>
+<li class=""><a href="../dialog.html">dialog</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84%E5%9C%BA%E6%99%AF%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84.html">My3dtiles的场景组织结构</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84%E5%9C%BA%E6%99%AF%E6%A0%91%E6%8E%A7%E5%88%B6.html">My3dtiles的场景树控制</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84%E4%BA%A4%E4%BA%92%E6%BC%AB%E6%B8%B8.html">My3dtiles的交互漫游</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%E6%BC%AB%E6%B8%B8.html">My3dtiles的第一人称漫游</a></li>
+</ul>
+<h6>数据加载与资源配置</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../3dtiles%E6%95%B0%E6%8D%AE%E6%98%AF%E5%95%A5.html">3dtiles数据是啥</a></li>
+<li class=""><a href="index.html">My3dtiles加载3dtiles数据</a></li>
+<li class=""><a href="3dtiles%E6%95%B0%E6%8D%AE%E7%9A%84msse%E8%AE%BE%E7%BD%AE.html">3dtiles数据的msse设置</a></li>
+<li class="on"><a href="My3dtiles%E5%8A%A0%E8%BD%BD3dtiles%E6%95%B0%E6%8D%AE%E7%9B%B8%E5%85%B3%E5%8A%9F%E8%83%BD.html">My3dtiles加载3dtiles数据相关功能</a></li>
+<li class=""><a href="../My3dtiles%E5%8A%A0%E8%BD%BD%E5%A4%9A%E6%A0%B7%E6%95%B0%E6%8D%AE/index.html">My3dtiles加载多样数据</a></li>
+<li class=""><a href="../My3dtiles%E5%8A%A0%E8%BD%BD%E5%A4%9A%E6%A0%B7%E6%95%B0%E6%8D%AE/%E5%BD%B1%E5%83%8FCzmImagery%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95_wolai.com.html">影像(CzmImagery)资源配置方法 </a></li>
+<li class=""><a href="../My3dtiles%E5%AF%B93dtiles%E8%BF%9B%E8%A1%8C%E5%8E%8B%E5%B9%B3%E6%93%8D%E4%BD%9C.html">My3dtiles对3dtiles进行压平操作</a></li>
+<li class=""><a href="../My3dtiles%E5%AF%B93dtiles%E8%BF%9B%E8%A1%8C%E8%A3%81%E5%89%AA%E6%93%8D%E4%BD%9C.html">My3dtiles对3dtiles进行裁剪操作</a></li>
+<li class=""><a href="../%E5%BD%B1%E5%83%8FCzmImagery%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95.html">影像(CzmImagery)资源配置方法</a></li>
+<li class=""><a href="../%E5%9C%B0%E5%BD%A2CzmTerrain%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95.html">地形(CzmTerrain)资源配置方法</a></li>
+</ul>
+<h6>场景对象与测量分析</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../My3dtiles%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2%E5%AF%B9%E8%B1%A1.html">My3dtiles中的基本图形对象</a></li>
+<li class=""><a href="../My3dtiles%E5%86%85%E7%BD%AE%E7%9A%84%E4%B8%89%E7%BB%B4%E7%89%B9%E6%95%88%E5%AF%B9%E8%B1%A1.html">My3dtiles内置的三维特效对象</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6%E5%AF%B9%E8%B1%A1.html">My3dtiles的逻辑控制对象</a></li>
+<li class=""><a href="../My3dtiles%E5%86%85%E7%BD%AE%E7%9A%84%E6%B5%8B%E9%87%8F%E5%88%86%E6%9E%90%E5%8A%9F%E8%83%BD.html">My3dtiles内置的测量分析功能</a></li>
+</ul>
+<h6>命令面板</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF.html">快速打开命令面板</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/index.html">命令面板</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%B5%8B%E9%87%8F.html">测量</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E8%B6%85%E5%9B%BE%E6%A0%87%E7%BB%98.html">超图标绘</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E9%AB%98%E7%BA%A7.html">高级</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%B7%A5%E5%85%B7.html">工具</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2.html">基本图形</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E7%9B%91%E8%A7%86%E5%99%A8.html">监视器</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E8%B7%AF%E5%BE%84.html">路径</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%86%85%E7%BD%AE%E5%B1%9E%E6%80%A7.html">内置属性</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E7%A4%BA%E4%BE%8B%E6%95%B0%E6%8D%AE.html">示例数据</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E8%A7%86%E8%A7%92.html">视角</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E7%89%B9%E6%95%88%E5%AF%B9%E8%B1%A1.html">特效对象</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%9B%BE%E7%89%87%E6%A8%A1%E5%9E%8B.html">图片模型</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%9D%82%E9%A1%B9.html">杂项</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E8%B5%84%E6%BA%90%E8%BD%BD%E5%85%A5.html">资源载入</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/CanvasPoi2%E6%9C%AA%E5%AE%8C%E6%88%90.html">CanvasPoi2(未完成)</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/GLTF%E6%A8%A1%E5%9E%8B%E6%9C%AA%E5%AE%8C%E6%88%90.html">GLTF模型(未完成)</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/POI.html">POI</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/YLJUI.html">YLJ(UI)</a></li>
+</ul><p class="side-sub">屏幕UI</p><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%B1%8F%E5%B9%95UI/index.html">屏幕UI</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%B1%8F%E5%B9%95UI/CircleButtonsTool_buttons_%E5%B1%9E%E6%80%A7.html">CircleButtonsTool buttons 属性</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%B1%8F%E5%B9%95UI/RectangleButtonsTool_buttons_%E5%B1%9E%E6%80%A7.html">RectangleButtonsTool buttons 属性</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%B1%8F%E5%B9%95UI/TempObjsCreatorTool_buttons_%E5%B1%9E%E6%80%A7.html">TempObjsCreatorTool buttons 属性</a></li>
+</ul><p class="side-sub">文件</p><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/index.html">文件</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E4%BF%9D%E5%AD%98%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6.html">保存场景文件</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6.html">查看当前场景文件</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6%E5%8F%A6%E5%AD%98%E4%B8%BA.html">场景文件另存为</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E5%88%9B%E5%BB%BA%E5%9C%BA%E6%99%AF%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7.html">创建场景对象(高级)</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E6%89%93%E5%BC%80%E6%9C%AC%E5%9C%B0%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6.html">打开本地场景文件</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E6%89%93%E5%BC%80%E7%BD%91%E7%BB%9C%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6.html">打开网络场景文件</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E6%96%B0%E5%BB%BA%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6.html">新建场景文件</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0.html">修改项目名称</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E8%BD%AC%E6%8D%A2Cesium.html">转换Cesium</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E8%BD%AC%E6%8D%A2web.html">转换web</a></li>
+</ul>
+<h6>Web 发布与进阶开发</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../My3dtiles%E9%85%8D%E7%BD%AE%E6%88%90Web%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA.html">My3dtiles配置成Web页面展示</a></li>
+<li class=""><a href="../Web%E7%AB%AF%E5%B1%95%E7%A4%BA.html">Web端展示</a></li>
+<li class=""><a href="../My3dtiles%E4%BD%9C%E4%B8%BA%E7%8B%AC%E7%AB%8B%E4%B8%BB%E6%9C%BA%E5%A4%A7%E5%B1%8F%E5%B1%95%E7%A4%BA.html">My3dtiles作为独立(主机)大屏展示</a></li>
+<li class=""><a href="../EChartsDiv.html">EChartsDiv</a></li>
+<li class=""><a href="../LayoutDiv.html">LayoutDiv</a></li>
+<li class=""><a href="../LocationSearch.html">LocationSearch</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%843dtiles%E8%87%AA%E5%AE%9A%E4%B9%89shader%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B.html">My3dtiles的3dtiles自定义shader的全过程</a></li>
+</ul>
+<h6>调试与旧版参考</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../My3dtiles%E7%9A%84%E6%95%B0%E6%8D%AE%E8%B0%83%E8%AF%95.html">My3dtiles的数据调试</a></li>
+<li class=""><a href="../3dtiles%E6%95%B0%E6%8D%AE%E9%97%AA%E5%8A%A820240524.html">3dtiles数据闪动20240524</a></li>
+<li class=""><a href="../My3dtiles%E8%B0%83%E8%AF%95%E6%B7%B1%E5%85%A5%EF%BC%88%E7%89%88%E6%9C%AC%E8%BE%83%E6%97%A7%EF%BC%8C%E8%AF%B7%E4%BE%9B%E5%8F%82%E8%80%83%EF%BC%89.html">My3dtiles调试深入（版本较旧，请供参考）</a></li>
+</ul>
+<h6>资料与支持</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../3dtiles%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99.html">3dtiles相关资料</a></li>
+<li class=""><a href="../Cesium%E8%B5%84%E6%96%99%E5%A4%A7%E5%85%A8.html">Cesium资料大全</a></li>
+<li class=""><a href="../%E5%B8%B8%E8%A7%81%E5%B0%8F%E9%97%AE%E9%A2%98.html">常见小问题</a></li>
+<li class=""><a href="../%E5%85%B3%E4%BA%8E%E4%BD%9C%E8%80%85.html">关于作者</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84%E5%90%88%E4%BD%9C%E6%A8%A1%E5%BC%8F.html">My3dtiles的合作模式</a></li>
+</ul>
+<h6>附录</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C%E5%8E%9F%E5%A7%8B%E5%A4%A7%E7%BA%B2.html">使用手册·原始大纲</a></li>
+<li class=""><a href="../My3dtiles%E5%9C%BA%E6%99%AF%E9%85%8D%E7%BD%AE%E8%BE%83%E6%97%A7%EF%BC%8C%E8%AF%B7%E4%BE%9B%E5%8F%82%E8%80%83/index.html">My3dtiles场景配置较旧，请供参考</a></li>
+<li class=""><a href="../My3dtiles%E5%9C%BA%E6%99%AF%E9%85%8D%E7%BD%AE%E8%BE%83%E6%97%A7%EF%BC%8C%E8%AF%B7%E4%BE%9B%E5%8F%82%E8%80%83/UI%E9%9D%A2%E6%9D%BF%E9%85%8D%E7%BD%AE.html">UI面板配置</a></li>
+</ul></div>
+    <div class="article" data-u32-name="page-article">
+      <p class="crumb" data-u32-name="page-crumb"><a href="../../index.html">文档</a> / <a href="../index.html">使用手册</a> / 数据加载与资源配置 / My3dtiles加载3dtiles数据相关功能</p>
+      
+      
+      <article class="prose" data-u32-name="page-prose"><h1 id="my3dtiles加载3dtiles数据相关功能" class="md-h1" data-u32-name="md-heading">My3dtiles加载3dtiles数据相关功能</h1>
+<h3 id="目录" class="md-h3" data-u32-name="md-heading">目录</h3>
+<ul data-u32-name="md-list"><li><a href="#3dtiles数据加载">3dtiles数据加载</a></li><li><a href="#3dtiles拾取属性查看">3dtiles拾取属性查看</a></li><li><a href="#3dtiles数据检查器">3dtiles数据检查器</a></li><li><a href="#3dtiles数据编辑">3dtiles数据编辑</a></li><li><a href="#位置编辑">位置编辑</a></li><li><a href="#姿态编辑">姿态编辑</a></li><li><a href="#3dtiles样式设置">3dtiles样式设置</a></li><li><a href="#3dtiles自定义着色器">3dtiles自定义着色器</a></li></ul>
+<p>主要功能点：加载本地或者网络3dtiles数据、3dtiles拾取属性查看、3dtiles数据检查器(Cesium)、3dtiles数据的位置编辑和姿态编辑、3dtiles的样式设置和自定义着色器</p>
+<h4 id="3dtiles数据加载" class="md-h4" data-u32-name="md-heading">3dtiles数据加载</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/tFmW5KEdAKYsffFEURjnzV_image_ei3uDzPf4v.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure data-u32-name="md-figure"><img src="../../attachments/nnD2sweM6JTy6dX5gVdbLX_image_vY1D14shXE.png" alt="" loading="lazy" decoding="async"></figure>
+<figure data-u32-name="md-figure"><img src="../../attachments/dqwRZQQKcYoUQciCSucMsG_image_fSnZg0BdLF.jpg" alt="" loading="lazy" decoding="async"></figure>
+<p>可以通过输入网址，加载网络上3dtiles数据， 亦可加载不允许跨域的数据 。</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/syaFMgAQRqHnHWLaDkABef_image_fpLKrNtZ4F.jpg" alt="" loading="lazy" decoding="async"></figure>
+<h4 id="3dtiles拾取属性查看" class="md-h4" data-u32-name="md-heading">3dtiles拾取属性查看</h4>
+<p>可以显示3dtiles数据是否是压缩纹理，纹理尺寸是否合适。</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/7hvMZV5voauEuiJD2k7Nc2_image_Z2uDLKkMgO.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure data-u32-name="md-figure"><img src="../../attachments/ue3nm6o3p6eQbEgLgNToxo_image_cgfEYKKYoq.jpg" alt="" loading="lazy" decoding="async"></figure>
+<figure data-u32-name="md-figure"><img src="../../attachments/45LwkCrgsa2Rv7SbgSSkCy_image_8G_2-JQa2z.jpg" alt="" loading="lazy" decoding="async"></figure>
+<h4 id="3dtiles数据检查器" class="md-h4" data-u32-name="md-heading">3dtiles数据检查器</h4>
+<p>通过工具栏的按钮可以打开3dtiles数据检查器</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/seTSwtMNM9Y4ZKCszfKe9k_image_r0BhUt2squ.jpg" alt="" loading="lazy" decoding="async"></figure>
+<p>瓦片随机着色</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/t8U9Vxq2nZFjQTmADw3TC6_image_B2sKaXvzrf.jpg" alt="" loading="lazy" decoding="async"></figure>
+<p>查看包围盒尺寸是否合理</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/eQ1NKTvHpdFTcoCzdea3T5_image_dIShKDma4A.jpg" alt="" loading="lazy" decoding="async"></figure>
+<p>查看瓦片调度是否在视锥范围之内。</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/sht2D7dkrU3tRxecqLrPgA_image_iRQNZ1uZTH.jpg" alt="" loading="lazy" decoding="async"></figure>
+<p>检查每一个瓦片的渲染状态信息</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/vb1nP4ATbK2q1ojbzxNq3s_image_E1eARxS9J8.jpg" alt="" loading="lazy" decoding="async"></figure>
+<h4 id="3dtiles数据编辑" class="md-h4" data-u32-name="md-heading">3dtiles数据编辑</h4>
+<p>可以对3dtiles数据进行位置编辑和姿态编辑。</p>
+<h5 id="位置编辑" class="md-h5" data-u32-name="md-heading">位置编辑</h5>
+<p>位置编辑时，左侧属性面板会显示位置信息(分别是经度纬度高度)，右侧三维窗口中会显示坐标架。左侧编辑框，和右侧的坐标架上都可以进行操作，数据实时同步。</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/rfoKgAwJdfhhwvk18PxG4f_image_PLgSX7kHHe.jpg" alt="" loading="lazy" decoding="async"></figure>
+<h5 id="姿态编辑" class="md-h5" data-u32-name="md-heading">姿态编辑</h5>
+<p>姿态编辑时，需要首先打开左侧面板的姿态编辑选项，此时右侧的三维窗口中就会出现三个圈。用户可以同时在左侧编辑框和右侧三维窗口中进行操作。需要注意的是，姿态编辑的前提是需要三维瓦片的位置已设定，如果位置未设定，那么旋转圈出不来。</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/duAXiCv5ugprUt2CjZ3Ryx_image_RK-UE1BTJR.jpg" alt="" loading="lazy" decoding="async"></figure>
+<h4 id="3dtiles样式设置" class="md-h4" data-u32-name="md-heading">3dtiles样式设置</h4>
+<p><a class="ext" href="https://gitee.com/vtxf3d/n3d-tiles/tree/main/specification/Styling" target="_blank" rel="noopener">书签</a> 可对3dtiles数据进行样式设置和自定义着色器。 先加载一个revit_school的样例数据。然后如下图所示，先点击工具栏中的拾取查看属性按钮，然后点击建筑物的顶面，此时就会弹出一个信息面板。在信息面板中可以找到id这个属性。我们把id的值复制下来。</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/jaSjbdMC8kJd36DGBD5aLV_image_94E7dzBlKr.jpg" alt="" loading="lazy" decoding="async"></figure>
+<p>然后编写style样式，这个样式的规范可以参见这里。可以发现，这里面就有刚才复制的id。</p>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;color&quot;: {
+        &quot;conditions&quot;: [
+            [
+                &quot;${id} === \&quot;6949fe393e9a4d4db7fe71339c61513800022318\&quot;&quot;,
+                &quot;rgba(255, 0, 0, 1.0)&quot;
+            ],
+            [
+                &quot;true&quot;,
+                &quot;color(\&quot;white\&quot;)&quot;
+            ]
+        ]
+    }
+}</code></pre>
+<p>将上述style样式的JSON通过下面的操作设置好。</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/eRQqa4qQDkG9y1TFXnYNHC_image_OxtSu0am79.jpg" alt="" loading="lazy" decoding="async"></figure>
+<p>此时我们就能看到一个红色屋顶。这恰恰是style的作用。</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/i22dvtk4aDFNPEsmXTxEXd_image_pisSnAAW_4.jpg" alt="" loading="lazy" decoding="async"></figure>
+<h4 id="3dtiles自定义着色器" class="md-h4" data-u32-name="md-heading">3dtiles自定义着色器</h4>
+<p>我们可以使用Ctrl + ~ 唤醒命令面板，然后点击如下按钮。就会加载一个叫做数字城市的场景文件。</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/gYR8KKY8qGDFCk6eQ1AAW8_image_GK56Rq2ODQ.jpg" alt="" loading="lazy" decoding="async"></figure>
+<p>加载完以后的效果如下，这个里面的建筑物，其实是3dtiles数据。它的效果很渲染，实际上使用自定义着色器来实现的。</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/fdEgyzN4ao282wGdJDnoay_image_jFvmDGoiRC.jpg" alt="" loading="lazy" decoding="async"></figure>
+<p>可以如下图选中3dtiles所在的节点，然后打开自定义着色器的设置面板。</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/t6A3ZWYr8eQCLnURKuVDGC_image_rJXMU1eduj.jpg" alt="" loading="lazy" decoding="async"></figure>
+<p>可以看到自定义着色器如下图所示。</p>
+<pre class="code" data-lang="javascript" data-u32-name="md-code"><code>
+// shader定义请参见文档：https://github.com/CesiumGS/cesium/tree/main/Documentation/CustomShaderGuide#customshader-documentation
+class CheckerboardMaskShaderInstance extends xbsj['xr-base-utils'].Destroyable {
+    constructor(sceneObject, viewer) {
+        super();
+
+        // Use the checkerboard red channel as a mask
+        const shader = this.disposeVar(new Cesium.CustomShader({
+            //lightingModel: Cesium.LightingModel.UNLIT,
+            fragmentShaderText: `
+              // Color tiles by distance to the camera
+              void fragmentMain(FragmentInput fsInput, inout czm_modelMaterial material)
+              {
+            // 可以修改的参数
+            // 注意shader中写浮点数是，一定要带小数点，否则会报错，比如0需要写成0.0，1要写成1.0
+            float _baseHeight = 0.0; // 物体的基础高度，需要修改成一个合适的建筑基础高度
+            float _heightRange = 100.0; // 高亮的范围(_baseHeight ~ _baseHeight + _heightRange) 默认是 0-60米
+            float _glowRange = 300.0; // 光环的移动范围(高度)
+
+            // 建筑基础色
+            float vtxf_height = fsInput.attributes.positionMC.z - _baseHeight;
+            float vtxf_a11 = fract(czm_frameNumber / 120.0) * 3.14159265 * 2.0;
+            float vtxf_a12 = vtxf_height / _heightRange + sin(vtxf_a11) * 0.1;
+            material.diffuse *= vec3(vtxf_a12, vtxf_a12, vtxf_a12);
+            material.diffuse *= vec3(0, .5, 1.);
+
+            // 动态光环
+            float vtxf_a13 = fract(czm_frameNumber / 360.0);
+            float vtxf_h = clamp(vtxf_height / _glowRange, 0.0, 1.0);
+            vtxf_a13 = abs(vtxf_a13 - 0.5) * 2.0;
+            float vtxf_diff = step(0.005, abs(vtxf_h - vtxf_a13));
+            material.diffuse += material.diffuse * (1.0 - vtxf_diff);
+
+                  //material.diffuse = vec3(0.0, 0.0, 1.0);
+                  //material.diffuse.g = -fsInput.attributes.positionEC.z / 1.0e4;
+              }
+              `,
+          }));
+
+        this._customShader = shader;
+    }
+
+    update() {
+        alert('暂未实现!');
+    }
+
+    get customShader() {
+        return this._customShader;
+    }
+}
+</code></pre>
+<p>如果我们把这个配置清空，再点击确定。</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/sCKwxeNWGdiRda4DLcUBfG_image_FIkipm4O7l.jpg" alt="" loading="lazy" decoding="async"></figure>
+<p>那么就会看到没有始终自定义着色器之前的3dtiles数据的效果</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/jfStMB8J9nGN6n9rRgaT8S_image_Z7d_Q6T-xs.jpg" alt="" loading="lazy" decoding="async"></figure></article>
+      <div class="pager" data-u32-name="page-pager">
+    <a href="3dtiles%E6%95%B0%E6%8D%AE%E7%9A%84msse%E8%AE%BE%E7%BD%AE.html"><span class="dir">上一篇</span>3dtiles数据的msse设置</a>
+    <a class="next" href="../My3dtiles%E5%8A%A0%E8%BD%BD%E5%A4%9A%E6%A0%B7%E6%95%B0%E6%8D%AE/index.html"><span class="dir">下一篇</span>My3dtiles加载多样数据</a>
+  </div>
+    </div>
+    <div class="rail" data-u32-name="page-rail"><h6>本页目录</h6><ul><li class="lv3"><a href="#目录">目录</a></li></ul></div>
+  </div>
+</div>
+<footer data-u32-name="footer">
+  <div class="wrap" data-u32-name="footer-wrap">
+    <div class="foot" data-u32-name="footer-cols">
+      <div data-u32-name="foot-brand">
+        <h5>My3dtiles</h5>
+        <p>本地离线 3dtiles 浏览器 · 数字孪生快速搭建工具 · 数字沙盘配置工具</p>
+        <p>无需登录，永久免费使用（第三方插件可能收费）</p>
+      </div>
+      <div data-u32-name="foot-doc"><h5>文档</h5><a href="../index.html">使用手册</a><a href="../../log/index.html">开发日志</a><a href="../../download/index.html">软件下载</a><a href="../../search.html">站内搜索</a></div>
+      <div data-u32-name="foot-comm"><h5>交流</h5><a href="https://qm.qq.com/q/ni2QWsAhKS" target="_blank" rel="noopener">QQ 群 725764124</a><a href="../../more/交流合作.html">微信与联系方式</a><a href="https://space.bilibili.com/540048347" target="_blank" rel="noopener">哔哩哔哩</a><a href="https://www.zhihu.com/people/vtxf" target="_blank" rel="noopener">知乎</a></div>
+      <div data-u32-name="foot-more"><h5>更多</h5><a href="../../more/定制开发.html">定制开发</a><a href="../../download/index.html">版本与下载</a><a href="../../more/示例集合.html">示例集合</a><a href="https://gitee.com/vtxf3d/my3dtiles/issues" target="_blank" rel="noopener">问题反馈</a></div>
+    </div>
+    <div class="foot-legal" data-u32-name="footer-legal">
+      <span>本页文档整理自 My3dtiles 官方资料，仅收录对外公开部分</span>
+      <span>构建于 2026-11-17</span>
+    </div>
+  </div>
+</footer>
+<div class="lightbox" data-u32-name="lightbox"><img alt=""></div>
+<script src="../../../assets/site.js"></script>
+</body>
+</html>

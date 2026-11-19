@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>搜索 · My3dtiles 文档</title>
+<meta name="description" content="在 My3dtiles 全部文档中检索关键词。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3 22 8.5 12 14 2 8.5Z' fill='%231657FF'/%3E%3Cpath d='M2 12.2 12 17.7 22 12.2' fill='none' stroke='%230A1626' stroke-width='1.4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<div class="top" data-u32-name="top-bar">
+  <div class="wrap top-in" data-u32-name="top-inner">
+    <a class="brand" href="../index.html" data-u32-name="brand">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 22 8.5 12 14 2 8.5Z" fill="#1657FF"/><path d="M2 12.2 12 17.7 22 12.2" fill="none" stroke="#0A1626" stroke-width="1.4"/><path d="M2 15.9 12 21.4 22 15.9" fill="none" stroke="#0A1626" stroke-width="1.4" opacity=".45"/></svg>
+      <span>My3dtiles</span>
+    </a>
+    <div class="nav" data-u32-name="nav"><a href="../index.html#cap" class="">产品能力</a><a href="../index.html#formats" class="">数据与格式</a><a href="index.html" class="">文档</a><a href="../index.html#download" class="">下载</a><a href="../index.html#coop" class="">合作与交流</a><a href="search.html" class="on">搜索</a></div>
+    <a class="top-cta" href="../index.html#download" data-u32-name="nav-download">下载</a>
+  </div>
+</div>
+<div class="docband" data-u32-name="search-hero">
+  <div class="wrap" data-u32-name="search-hero-wrap" style="padding:56px 32px 40px">
+    <p class="kicker">站内检索</p>
+    <h1 style="font-size:clamp(26px,3.2vw,36px)">搜索 247 篇文档</h1>
+    <div class="searchwrap" data-u32-name="search-wrap" style="margin:26px 0 0;max-width:none">
+      <div class="searchbox" data-u32-name="search-box">
+        <input id="q" type="search" placeholder="输入关键词，例如：闪烁 / msse / 淹没分析 / 影像配置" autocomplete="off" autofocus>
+        <kbd>/</kbd>
+      </div>
+      <p class="searchstat" data-u32-name="search-stat" id="stat">支持标题与正文全文匹配，输入即筛。</p>
+      <ul class="results" data-u32-name="search-results" id="results"></ul>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var base = './';
+  var q = document.getElementById('q');
+  var stat = document.getElementById('stat');
+  var list = document.getElementById('results');
+  var data = [];
+  fetch(base + 'search-index.json').then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function(d){ data = d; stat.textContent = '索引已就绪，共 ' + d.length + ' 篇。输入关键词开始检索。'; })
+    .catch(function(e){ stat.textContent = '搜索索引加载失败（' + e.message + '）。请确认站点通过 HTTP 访问、且 search-index.json 与 search.html 同目录。'; });
+  function esc(s){return s.replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]})}
+  function mark(s,k){ if(!k) return esc(s); var i=s.toLowerCase().indexOf(k); if(i<0) return esc(s);
+    return esc(s.slice(0,i))+'<mark>'+esc(s.substr(i,k.length))+'</mark>'+esc(s.slice(i+k.length)); }
+  function run(){
+    var k = q.value.trim().toLowerCase();
+    if(!k){ list.innerHTML=''; stat.textContent='支持标题与正文全文匹配，输入即筛。'; return; }
+    var hit = data.filter(function(d){
+      return d.t.toLowerCase().indexOf(k)>=0 || (d.x||'').toLowerCase().indexOf(k)>=0;
+    }).slice(0,40);
+    stat.textContent = '命中 ' + hit.length + ' 篇' + (hit.length===40 ? '（仅显示前 40 条，请细化关键词）' : '');
+    list.innerHTML = hit.map(function(d){
+      var snip = '';
+      var i = (d.x||'').toLowerCase().indexOf(k);
+      if(i>=0){ snip = d.x.slice(Math.max(0,i-40), i+80); }
+      return '<li><span class="sec">'+esc(d.s)+'</span><h3><a href="'+base+encodeURI(d.p)+'">'+mark(d.t,k)+'</a></h3>'+ (snip?'<p>'+mark(snip,k)+'</p>':'') +'</li>';
+    }).join('');
+  }
+  q.addEventListener('input', run);
+  document.addEventListener('keydown', function(e){ if(e.key==='/' && document.activeElement!==q){ e.preventDefault(); q.focus(); } });
+})();
+</script>
+<footer data-u32-name="footer">
+  <div class="wrap" data-u32-name="footer-wrap">
+    <div class="foot" data-u32-name="footer-cols">
+      <div data-u32-name="foot-brand">
+        <h5>My3dtiles</h5>
+        <p>本地离线 3dtiles 浏览器 · 数字孪生快速搭建工具 · 数字沙盘配置工具</p>
+        <p>无需登录，永久免费使用（第三方插件可能收费）</p>
+      </div>
+      <div data-u32-name="foot-doc"><h5>文档</h5><a href="manual/index.html">使用手册</a><a href="log/index.html">开发日志</a><a href="download/index.html">软件下载</a><a href="search.html">站内搜索</a></div>
+      <div data-u32-name="foot-comm"><h5>交流</h5><a href="https://qm.qq.com/q/ni2QWsAhKS" target="_blank" rel="noopener">QQ 群 725764124</a><a href="more/交流合作.html">微信与联系方式</a><a href="https://space.bilibili.com/540048347" target="_blank" rel="noopener">哔哩哔哩</a><a href="https://www.zhihu.com/people/vtxf" target="_blank" rel="noopener">知乎</a></div>
+      <div data-u32-name="foot-more"><h5>更多</h5><a href="more/定制开发.html">定制开发</a><a href="download/index.html">版本与下载</a><a href="more/示例集合.html">示例集合</a><a href="https://gitee.com/vtxf3d/my3dtiles/issues" target="_blank" rel="noopener">问题反馈</a></div>
+    </div>
+    <div class="foot-legal" data-u32-name="footer-legal">
+      <span>本页文档整理自 My3dtiles 官方资料，仅收录对外公开部分</span>
+      <span>构建于 2026-11-17</span>
+    </div>
+  </div>
+</footer>
+<div class="lightbox" data-u32-name="lightbox"><img alt=""></div>
+<script src="../assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>影像(CzmImagery)资源配置方法  · My3dtiles 文档</title>
+<meta name="description" content="使用手册 · 影像(CzmImagery)资源配置方法 ">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3 22 8.5 12 14 2 8.5Z' fill='%231657FF'/%3E%3Cpath d='M2 12.2 12 17.7 22 12.2' fill='none' stroke='%230A1626' stroke-width='1.4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body>
+<div class="top" data-u32-name="top-bar">
+  <div class="wrap top-in" data-u32-name="top-inner">
+    <a class="brand" href="../../../index.html" data-u32-name="brand">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 22 8.5 12 14 2 8.5Z" fill="#1657FF"/><path d="M2 12.2 12 17.7 22 12.2" fill="none" stroke="#0A1626" stroke-width="1.4"/><path d="M2 15.9 12 21.4 22 15.9" fill="none" stroke="#0A1626" stroke-width="1.4" opacity=".45"/></svg>
+      <span>My3dtiles</span>
+    </a>
+    <div class="nav" data-u32-name="nav"><a href="../../../index.html#cap" class="">产品能力</a><a href="../../../index.html#formats" class="">数据与格式</a><a href="../../index.html" class="on">文档</a><a href="../../../index.html#download" class="">下载</a><a href="../../../index.html#coop" class="">合作与交流</a><a href="../../search.html" class="">搜索</a></div>
+    <a class="top-cta" href="../../../index.html#download" data-u32-name="nav-download">下载</a>
+  </div>
+</div>
+<div class="wrap" data-u32-name="docs-wrap">
+  <div class="docs-layout" data-u32-name="docs-layout">
+    <div class="side" data-u32-name="page-side"><h6>文档分区</h6><ul class="grp" data-u32-name="side-sections">
+<li class="on" data-u32-name="side-sec-manual"><a href="../index.html">使用手册</a><span class="c">86</span></li>
+<li class="" data-u32-name="side-sec-log"><a href="../../log/index.html">开发日志</a><span class="c">146</span></li>
+<li class="" data-u32-name="side-sec-download"><a href="../../download/index.html">软件下载</a><span class="c">27</span></li>
+<li class="" data-u32-name="side-sec-more"><a href="../../more/index.html">产品与社区</a><span class="c">8</span></li>
+</ul>
+<h6>认识 My3dtiles</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../My3dtiles%E6%98%AF%E5%95%A5%EF%BC%9F/index.html">My3dtiles是啥？</a></li>
+<li class=""><a href="../My3dtiles%E6%98%AF%E5%95%A5%EF%BC%9F/My3dtiles%E5%8A%9F%E8%83%BD%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE.html">My3dtiles功能思维导图</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84%E4%BA%A7%E5%93%81%E7%89%B9%E7%82%B9.html">My3dtiles的产品特点</a></li>
+</ul>
+<h6>快速开始</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B.html">快速开始</a></li>
+<li class=""><a href="../%E5%BF%AB%E9%80%9F%E5%8A%A0%E8%BD%BD3dtiles%E6%95%B0%E6%8D%AE.html">快速加载3dtiles数据</a></li>
+<li class=""><a href="../My3dtilesweb%E7%89%88%E7%9A%84%E4%BD%BF%E7%94%A8.html">My3dtiles(web版)的使用</a></li>
+<li class=""><a href="../My3dtiles%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE.html">My3dtiles测试数据</a></li>
+</ul>
+<h6>安装与程序</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../My3dtiles%E7%A8%8B%E5%BA%8F%E4%B8%8B%E8%BD%BD.html">My3dtiles程序下载</a></li>
+<li class=""><a href="../My3dtiles%E7%A8%8B%E5%BA%8F%E5%8C%85%E7%9A%84%E5%86%85%E5%AE%B9.html">My3dtiles程序包的内容</a></li>
+<li class=""><a href="../My3dtiles%E5%AE%89%E8%A3%85%E5%8C%85%E7%9A%84%E5%A5%BD%E5%A4%84.html">My3dtiles安装包的好处</a></li>
+<li class=""><a href="../%E7%BB%BF%E8%89%B2%E7%89%88%E5%92%8C%E5%AE%89%E8%A3%85%E7%89%88%E7%A8%8B%E5%BA%8F%E7%9A%84%E4%BD%BF%E7%94%A8.html">绿色版和安装版程序的使用</a></li>
+</ul>
+<h6>界面与基础操作</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../%E8%8F%9C%E5%8D%95%E6%A0%8F.html">菜单栏</a></li>
+<li class=""><a href="../%E5%B7%A5%E5%85%B7%E6%A0%8F.html">工具栏</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84UI_%E5%9F%BA%E6%9C%AC%E6%8C%89%E9%92%AE.html">My3dtiles的UI_基本按钮</a></li>
+<li class=""><a href="../dialog.html">dialog</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84%E5%9C%BA%E6%99%AF%E7%BB%84%E7%BB%87%E7%BB%93%E6%9E%84.html">My3dtiles的场景组织结构</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84%E5%9C%BA%E6%99%AF%E6%A0%91%E6%8E%A7%E5%88%B6.html">My3dtiles的场景树控制</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84%E4%BA%A4%E4%BA%92%E6%BC%AB%E6%B8%B8.html">My3dtiles的交互漫游</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84%E7%AC%AC%E4%B8%80%E4%BA%BA%E7%A7%B0%E6%BC%AB%E6%B8%B8.html">My3dtiles的第一人称漫游</a></li>
+</ul>
+<h6>数据加载与资源配置</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../3dtiles%E6%95%B0%E6%8D%AE%E6%98%AF%E5%95%A5.html">3dtiles数据是啥</a></li>
+<li class=""><a href="../My3dtiles%E5%8A%A0%E8%BD%BD3dtiles%E6%95%B0%E6%8D%AE/index.html">My3dtiles加载3dtiles数据</a></li>
+<li class=""><a href="../My3dtiles%E5%8A%A0%E8%BD%BD3dtiles%E6%95%B0%E6%8D%AE/3dtiles%E6%95%B0%E6%8D%AE%E7%9A%84msse%E8%AE%BE%E7%BD%AE.html">3dtiles数据的msse设置</a></li>
+<li class=""><a href="../My3dtiles%E5%8A%A0%E8%BD%BD3dtiles%E6%95%B0%E6%8D%AE/My3dtiles%E5%8A%A0%E8%BD%BD3dtiles%E6%95%B0%E6%8D%AE%E7%9B%B8%E5%85%B3%E5%8A%9F%E8%83%BD.html">My3dtiles加载3dtiles数据相关功能</a></li>
+<li class=""><a href="index.html">My3dtiles加载多样数据</a></li>
+<li class="on"><a href="%E5%BD%B1%E5%83%8FCzmImagery%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95_wolai.com.html">影像(CzmImagery)资源配置方法 </a></li>
+<li class=""><a href="../My3dtiles%E5%AF%B93dtiles%E8%BF%9B%E8%A1%8C%E5%8E%8B%E5%B9%B3%E6%93%8D%E4%BD%9C.html">My3dtiles对3dtiles进行压平操作</a></li>
+<li class=""><a href="../My3dtiles%E5%AF%B93dtiles%E8%BF%9B%E8%A1%8C%E8%A3%81%E5%89%AA%E6%93%8D%E4%BD%9C.html">My3dtiles对3dtiles进行裁剪操作</a></li>
+<li class=""><a href="../%E5%BD%B1%E5%83%8FCzmImagery%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95.html">影像(CzmImagery)资源配置方法</a></li>
+<li class=""><a href="../%E5%9C%B0%E5%BD%A2CzmTerrain%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95.html">地形(CzmTerrain)资源配置方法</a></li>
+</ul>
+<h6>场景对象与测量分析</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../My3dtiles%E4%B8%AD%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2%E5%AF%B9%E8%B1%A1.html">My3dtiles中的基本图形对象</a></li>
+<li class=""><a href="../My3dtiles%E5%86%85%E7%BD%AE%E7%9A%84%E4%B8%89%E7%BB%B4%E7%89%B9%E6%95%88%E5%AF%B9%E8%B1%A1.html">My3dtiles内置的三维特效对象</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6%E5%AF%B9%E8%B1%A1.html">My3dtiles的逻辑控制对象</a></li>
+<li class=""><a href="../My3dtiles%E5%86%85%E7%BD%AE%E7%9A%84%E6%B5%8B%E9%87%8F%E5%88%86%E6%9E%90%E5%8A%9F%E8%83%BD.html">My3dtiles内置的测量分析功能</a></li>
+</ul>
+<h6>命令面板</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../%E5%BF%AB%E9%80%9F%E6%89%93%E5%BC%80%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF.html">快速打开命令面板</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/index.html">命令面板</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%B5%8B%E9%87%8F.html">测量</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E8%B6%85%E5%9B%BE%E6%A0%87%E7%BB%98.html">超图标绘</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E9%AB%98%E7%BA%A7.html">高级</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%B7%A5%E5%85%B7.html">工具</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2.html">基本图形</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E7%9B%91%E8%A7%86%E5%99%A8.html">监视器</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E8%B7%AF%E5%BE%84.html">路径</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%86%85%E7%BD%AE%E5%B1%9E%E6%80%A7.html">内置属性</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E7%A4%BA%E4%BE%8B%E6%95%B0%E6%8D%AE.html">示例数据</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E8%A7%86%E8%A7%92.html">视角</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E7%89%B9%E6%95%88%E5%AF%B9%E8%B1%A1.html">特效对象</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%9B%BE%E7%89%87%E6%A8%A1%E5%9E%8B.html">图片模型</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%9D%82%E9%A1%B9.html">杂项</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E8%B5%84%E6%BA%90%E8%BD%BD%E5%85%A5.html">资源载入</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/CanvasPoi2%E6%9C%AA%E5%AE%8C%E6%88%90.html">CanvasPoi2(未完成)</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/GLTF%E6%A8%A1%E5%9E%8B%E6%9C%AA%E5%AE%8C%E6%88%90.html">GLTF模型(未完成)</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/POI.html">POI</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/YLJUI.html">YLJ(UI)</a></li>
+</ul><p class="side-sub">屏幕UI</p><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%B1%8F%E5%B9%95UI/index.html">屏幕UI</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%B1%8F%E5%B9%95UI/CircleButtonsTool_buttons_%E5%B1%9E%E6%80%A7.html">CircleButtonsTool buttons 属性</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%B1%8F%E5%B9%95UI/RectangleButtonsTool_buttons_%E5%B1%9E%E6%80%A7.html">RectangleButtonsTool buttons 属性</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E5%B1%8F%E5%B9%95UI/TempObjsCreatorTool_buttons_%E5%B1%9E%E6%80%A7.html">TempObjsCreatorTool buttons 属性</a></li>
+</ul><p class="side-sub">文件</p><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/index.html">文件</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E4%BF%9D%E5%AD%98%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6.html">保存场景文件</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6.html">查看当前场景文件</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6%E5%8F%A6%E5%AD%98%E4%B8%BA.html">场景文件另存为</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E5%88%9B%E5%BB%BA%E5%9C%BA%E6%99%AF%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7.html">创建场景对象(高级)</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E6%89%93%E5%BC%80%E6%9C%AC%E5%9C%B0%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6.html">打开本地场景文件</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E6%89%93%E5%BC%80%E7%BD%91%E7%BB%9C%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6.html">打开网络场景文件</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E6%96%B0%E5%BB%BA%E5%9C%BA%E6%99%AF%E6%96%87%E4%BB%B6.html">新建场景文件</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E4%BF%AE%E6%94%B9%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0.html">修改项目名称</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E8%BD%AC%E6%8D%A2Cesium.html">转换Cesium</a></li>
+<li class=""><a href="../%E5%91%BD%E4%BB%A4%E9%9D%A2%E6%9D%BF/%E6%96%87%E4%BB%B6/%E8%BD%AC%E6%8D%A2web.html">转换web</a></li>
+</ul>
+<h6>Web 发布与进阶开发</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../My3dtiles%E9%85%8D%E7%BD%AE%E6%88%90Web%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA.html">My3dtiles配置成Web页面展示</a></li>
+<li class=""><a href="../Web%E7%AB%AF%E5%B1%95%E7%A4%BA.html">Web端展示</a></li>
+<li class=""><a href="../My3dtiles%E4%BD%9C%E4%B8%BA%E7%8B%AC%E7%AB%8B%E4%B8%BB%E6%9C%BA%E5%A4%A7%E5%B1%8F%E5%B1%95%E7%A4%BA.html">My3dtiles作为独立(主机)大屏展示</a></li>
+<li class=""><a href="../EChartsDiv.html">EChartsDiv</a></li>
+<li class=""><a href="../LayoutDiv.html">LayoutDiv</a></li>
+<li class=""><a href="../LocationSearch.html">LocationSearch</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%843dtiles%E8%87%AA%E5%AE%9A%E4%B9%89shader%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B.html">My3dtiles的3dtiles自定义shader的全过程</a></li>
+</ul>
+<h6>调试与旧版参考</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../My3dtiles%E7%9A%84%E6%95%B0%E6%8D%AE%E8%B0%83%E8%AF%95.html">My3dtiles的数据调试</a></li>
+<li class=""><a href="../3dtiles%E6%95%B0%E6%8D%AE%E9%97%AA%E5%8A%A820240524.html">3dtiles数据闪动20240524</a></li>
+<li class=""><a href="../My3dtiles%E8%B0%83%E8%AF%95%E6%B7%B1%E5%85%A5%EF%BC%88%E7%89%88%E6%9C%AC%E8%BE%83%E6%97%A7%EF%BC%8C%E8%AF%B7%E4%BE%9B%E5%8F%82%E8%80%83%EF%BC%89.html">My3dtiles调试深入（版本较旧，请供参考）</a></li>
+</ul>
+<h6>资料与支持</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../3dtiles%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99.html">3dtiles相关资料</a></li>
+<li class=""><a href="../Cesium%E8%B5%84%E6%96%99%E5%A4%A7%E5%85%A8.html">Cesium资料大全</a></li>
+<li class=""><a href="../%E5%B8%B8%E8%A7%81%E5%B0%8F%E9%97%AE%E9%A2%98.html">常见小问题</a></li>
+<li class=""><a href="../%E5%85%B3%E4%BA%8E%E4%BD%9C%E8%80%85.html">关于作者</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84%E5%90%88%E4%BD%9C%E6%A8%A1%E5%BC%8F.html">My3dtiles的合作模式</a></li>
+</ul>
+<h6>附录</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C%E5%8E%9F%E5%A7%8B%E5%A4%A7%E7%BA%B2.html">使用手册·原始大纲</a></li>
+<li class=""><a href="../My3dtiles%E5%9C%BA%E6%99%AF%E9%85%8D%E7%BD%AE%E8%BE%83%E6%97%A7%EF%BC%8C%E8%AF%B7%E4%BE%9B%E5%8F%82%E8%80%83/index.html">My3dtiles场景配置较旧，请供参考</a></li>
+<li class=""><a href="../My3dtiles%E5%9C%BA%E6%99%AF%E9%85%8D%E7%BD%AE%E8%BE%83%E6%97%A7%EF%BC%8C%E8%AF%B7%E4%BE%9B%E5%8F%82%E8%80%83/UI%E9%9D%A2%E6%9D%BF%E9%85%8D%E7%BD%AE.html">UI面板配置</a></li>
+</ul></div>
+    <div class="article" data-u32-name="page-article">
+      <p class="crumb" data-u32-name="page-crumb"><a href="../../index.html">文档</a> / <a href="../index.html">使用手册</a> / 数据加载与资源配置 / 影像(CzmImagery)资源配置方法 </p>
+      
+      
+      <article class="prose" data-u32-name="page-prose"><h1 id="影像czmimagery资源配置方法" class="md-h1" data-u32-name="md-heading">影像(CzmImagery)资源配置方法</h1>
+<h2 id="概述" class="md-h2" data-u32-name="md-heading">概述</h2>
+<p>CzmImagery场景对象在属性窗口有一个Provider的设置，它对应CzmImagery类型的imageryProvider属性。这个属性配置起来非常复杂，此文详细说明。</p>
+<figure data-u32-name="md-figure"><img src="../../attachments/5uqKd7GBvx8bPdmHri8vG9_image_C_aFEvZrvn.jpg" alt="" loading="lazy" decoding="async"></figure>
+<h2 id="视频使用方法" class="md-h2" data-u32-name="md-heading">视频(使用方法)</h2>
+<p><span class="media-missing" data-u32-name="media-missing"><span class="mm-ico" aria-hidden="true">▤</span><span class="mm-body"><b>大文件已外迁网盘</b>：演示视频 <code class="mono">00000000-000000-CzmImagery使用方法.mp4</code> 体积超过 3MB，未随文档入库，请到百度网盘「My3dtiles资料附件」条目取回。</span></span></p>
+<h2 id="详述" class="md-h2" data-u32-name="md-heading">详述</h2>
+<h3 id="json配置文件样例" class="md-h3" data-u32-name="md-heading">JSON配置文件样例</h3>
+<p>CzmImagery的配置文件例子：</p>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;id&quot;: &quot;9e983d71-5f65-4207-86e8-fa53994b6a38&quot;,
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;TileMapServiceImageryProvider&quot;,
+        &quot;url&quot;: &quot;${czm-path}/Assets/Textures/NaturalEarthII&quot;
+    },
+    &quot;name&quot;: &quot;默认离线影像&quot;
+}</code></pre>
+<p>这里着重讲一个imageryProvider这个属性内部的设置。 type这个属性可以是以下值：</p>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>ArcGisMapServerImageryProvider // 加载ArcGis影像服务
+BingMapsImageryProvider // 加载Bing地图
+GoogleEarthEnterpriseImageryProvider // 加载Google企业版影像
+GridImageryProvider // 配置网格影像，注意不加载数据
+IonImageryProvider // 加载Cesium官方Ion服务影像
+MapboxImageryProvider // 加载Mapbox影像
+MapboxStyleImageryProvider // 加载Mapbox样式影像
+OpenStreetMapImageryProvider // 加载OpenStreetMap影像
+SingleTileImageryProvider // 把单个图片当做影像加载进来
+TileCoordinatesImageryProvider // 调试用，配置以后可以看到每一个瓦片的序号
+TileMapServiceImageryProvider // 加载TileMapService影像
+UrlTemplateImageryProvider // 通过配置url模板来加载影像，最常使用
+WebMapServiceImageryProvider // 加载WMS影像
+WebMapTileServiceImageryProvider // 加载WMTS影像
+BDImageryProvider // 加载百度影像或者地图
+GeHistoryImagery // 加载谷歌历史影像，数据服务提供商为 https://web.giiiis.com/
+ArcgisHistoryImagery // 加载ArcGis历史影像，数据服务提供商为 https://web.giiiis.com/</code></pre>
+<p>因type不同，每一种类型都有各自的参数配置。 例如UrlTemplateImageryProvider会有以下参数。</p>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    type: 'UrlTemplateImageryProvider';//已完成
+    url: string;//Resource | String
+    subdomains?: string | string[];//String | Array.&lt;String&gt;
+    credit?: string;//Credit | String
+    minimumLevel?: number; //  Number  &lt;optional&gt; 0  The minimum level-of-detail supported by the imagery provider. Take care when specifying this that the number of tiles at the minimum level is small, such as four or less. A larger number is likely to result in rendering problems.
+    maximumLevel?: number; //  Number  &lt;optional&gt; The maximum level-of-detail supported by the imagery provider, or undefined if there is no limit.
+    rectangle?: [west: number, south: number, east: number, north: number]; //  Rectangle  &lt;optional&gt; Rectangle.MAX_VALUE  The rectangle, in radians, covered by the image.
+    tilingScheme?: CzmTilingSchemaJsonType; //  TilingScheme  &lt;optional&gt; The tiling scheme specifying how the ellipsoidal surface is broken into tiles. If this parameter is not provided, a WebMercatorTilingScheme is used.
+    ellipsoid?: [x: number, y: number, z: number]; //  Ellipsoid  &lt;optional&gt; The ellipsoid. If the tilingScheme is specified, this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither parameter is specified, the WGS84 ellipsoid is used.
+    tileWidth?: number; //  Number  &lt;optional&gt; 256  Pixel width of image tiles.
+    tileHeight?: number; //  Number  &lt;optional&gt; 256  Pixel height of image tiles.
+    hasAlphaChannel?: boolean;
+    pickFeaturesUrl?: string;//Resource | String
+    enablePickFeatures?: boolean;
+    urlSchemeZeroPadding?: JsonValue,
+    // getFeatureInfoFormats?: Array&lt;Cesium.GetFeatureInfoFormat&gt;;   // TODO2
+    customTags?: { [k: string]: string };
+}</code></pre>
+<p>而WMTS影像的配置的参数是这些：</p>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    type: 'WebMapTileServiceImageryProvider';//已完成
+    url: string; //  Resource | String      The base URL for the WMTS GetTile operation (for KVP-encoded requests) or the tile-URL template (for RESTful requests). The tile-URL template should contain the following variables: {style}, {TileMatrixSet}, {TileMatrix}, {TileRow}, {TileCol}. The first two are optional if actual values are hardcoded or not required by the server. The {s} keyword may be used to specify subdomains.
+    format?: string; //  String  &lt;optional&gt; 'image/jpeg'  The MIME type for images to retrieve from the server.
+    layer: string; //  String      The layer name for WMTS requests.
+    style: string; //  String      The style name for WMTS requests.
+    tileMatrixSetID: string; //  String      The identifier of the TileMatrixSet to use for WMTS requests.
+    tileMatrixLabels?: string[]; //  Array  &lt;optional&gt; A list of identifiers in the TileMatrix to use for WMTS requests, one per TileMatrix level.
+    // clock: Cesium.Clock, // //  Clock  &lt;optional&gt; A Clock instance that is used when determining the value for the time dimension. Required when `times` is specified.
+    times?: CzmTimeIntervalCollectionJsonType; //  TimeIntervalCollection  &lt;optional&gt; TimeIntervalCollection: string; // with its data property being an object containing time dynamic dimension and their values.
+    dimensions?: JsonValue; //  Object  &lt;optional&gt; A object containing static dimensions and their values.
+    tileWidth?: number; //  Number  &lt;optional&gt; 256  The tile width in pixels.
+    tileHeight?: number; //  Number  &lt;optional&gt; 256  The tile height in pixels.
+    tilingScheme?: CzmTilingSchemaJsonType; //  TilingScheme  &lt;optional&gt; The tiling scheme corresponding to the organization of the tiles in the TileMatrixSet.
+    rectangle?: [west: number, south: number, east: number, north: number]; //  Rectangle  &lt;optional&gt; Rectangle.MAX_VALUE  The rectangle covered by the layer.
+    minimumLevel?: number; //  Number  &lt;optional&gt; 0  The minimum level-of-detail supported by the imagery provider.
+    maximumLevel?: number; //  Number  &lt;optional&gt; The maximum level-of-detail supported by the imagery provider, or undefined if there is no limit.
+    ellipsoid?: [x: number, y: number, z: number]; //  Ellipsoid  &lt;optional&gt; The ellipsoid. If not specified, the WGS84 ellipsoid is used.
+    credit?: string; //  Credit | String  &lt;optional&gt; A credit for the data source, which is displayed on the canvas.
+    subdomains?: string | string[]; //  String | Array.&lt;String&gt;  &lt;optional&gt; 'abc'  The subdomains to use for the {s} placeholder in the URL template. If this parameter is a single string, each character in the string is a subdomain. If it is an array, each element in the array is a subdomain.
+}</code></pre>
+<p>具体规格说明请看这里： <a href="../../log/My3dtiles%E7%AE%80%E4%BB%8B20240815/%E5%BD%B1%E5%83%8FCzmImagery%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95_wolai.com.html">影像(CzmImagery)资源配置方法</a></p>
+<h2 id="示例配置" class="md-h2" data-u32-name="md-heading">示例配置</h2>
+<h4 id="天地图影像墨卡托投影" class="md-h4" data-u32-name="md-heading">天地图影像(墨卡托投影)</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/vnD2tRc9QzTFB9EDwAhVME_image_JV7b0PGQA8.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;name&quot;: &quot;天地图影像&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;UrlTemplateImageryProvider&quot;,
+        &quot;url&quot;: &quot;https://{s}.tianditu.gov.cn/img_w/wmts?SERVICE=WMTS&amp;REQUEST=GetTile&amp;VERSION=1.0.0&amp;LAYER=img&amp;STYLE=default&amp;TILEMATRIXSET=w&amp;FORMAT=tiles&amp;TILEMATRIX={z}&amp;TILEROW={y}&amp;TILECOL={x}&amp;tk={您的token}&quot;,
+        &quot;subdomains&quot;: [&quot;t0&quot;, &quot;t1&quot;, &quot;t2&quot;, &quot;t3&quot;, &quot;t4&quot;, &quot;t5&quot;, &quot;t6&quot;, &quot;t7&quot;]
+    }
+}</code></pre>
+<h4 id="天地图地名墨卡托投影" class="md-h4" data-u32-name="md-heading">天地图地名(墨卡托投影)</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/n4bg3qYfoNet6QEGMZUMEb_image_YHcWKQuIUW.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;name&quot;: &quot;天地图地名&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;UrlTemplateImageryProvider&quot;,
+        &quot;url&quot;: &quot;https://{s}.tianditu.gov.cn/cia_w/wmts?SERVICE=WMTS&amp;REQUEST=GetTile&amp;VERSION=1.0.0&amp;LAYER=cia&amp;STYLE=default&amp;TILEMATRIXSET=w&amp;FORMAT=tiles&amp;TILEMATRIX={z}&amp;TILEROW={y}&amp;TILECOL={x}&amp;tk={您的token}&quot;,
+        &quot;subdomains&quot;: [&quot;t0&quot;, &quot;t1&quot;, &quot;t2&quot;, &quot;t3&quot;, &quot;t4&quot;, &quot;t5&quot;, &quot;t6&quot;, &quot;t7&quot;]
+    }
+}</code></pre>
+<h4 id="天地图影像经纬度切片" class="md-h4" data-u32-name="md-heading">天地图影像(经纬度切片)</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/pHGqBqgPNrKPG6nttuMPwg_image_5lzptZCbtd.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="JSON" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;UrlTemplateImageryProvider&quot;,
+        &quot;url&quot;: &quot;https://{s}.tianditu.gov.cn/img_c/wmts?SERVICE=WMTS&amp;REQUEST=GetTile&amp;VERSION=1.0.0&amp;LAYER=img&amp;STYLE=default&amp;TILEMATRIXSET=c&amp;FORMAT=tiles&amp;TILEMATRIX={zz}&amp;TILEROW={y}&amp;TILECOL={x}&amp;tk={您的token}&quot;,
+        &quot;subdomains&quot;: [
+            &quot;t0&quot;,
+            &quot;t1&quot;,
+            &quot;t2&quot;,
+            &quot;t3&quot;,
+            &quot;t4&quot;,
+            &quot;t5&quot;,
+            &quot;t6&quot;,
+            &quot;t7&quot;
+        ],
+        &quot;tilingScheme&quot;: {
+            &quot;type&quot;: &quot;GeographicTilingScheme&quot;
+        },
+        &quot;customTags&quot;: {
+            &quot;zz&quot;: &quot;(imageryProvider, x, y, level) =&gt; level + 1&quot;
+        }
+    },
+    &quot;name&quot;: &quot;天地图影像(经纬度切片)&quot;
+}</code></pre>
+<h4 id="天地图地名经纬度切片" class="md-h4" data-u32-name="md-heading">天地图地名(经纬度切片)</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/nnmqXXMvJp8bgqGyaJVQ6H_image_8B4FGBkYbJ.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;UrlTemplateImageryProvider&quot;,
+        &quot;url&quot;: &quot;https://{s}.tianditu.gov.cn/cia_c/wmts?SERVICE=WMTS&amp;REQUEST=GetTile&amp;VERSION=1.0.0&amp;LAYER=cia&amp;STYLE=default&amp;TILEMATRIXSET=c&amp;FORMAT=tiles&amp;TILEMATRIX={zz}&amp;TILEROW={y}&amp;TILECOL={x}&amp;tk={您的token}&quot;,
+        &quot;subdomains&quot;: [
+            &quot;t0&quot;,
+            &quot;t1&quot;,
+            &quot;t2&quot;,
+            &quot;t3&quot;,
+            &quot;t4&quot;,
+            &quot;t5&quot;,
+            &quot;t6&quot;,
+            &quot;t7&quot;
+        ],
+        &quot;tilingScheme&quot;: {
+            &quot;type&quot;: &quot;GeographicTilingScheme&quot;
+        },
+        &quot;customTags&quot;: {
+            &quot;zz&quot;: &quot;(imageryProvider, x, y, level) =&gt; level + 1&quot;
+        }
+    },
+    &quot;name&quot;: &quot;天地图地名(经纬度切片)&quot;
+}</code></pre>
+<h4 id="高德影像" class="md-h4" data-u32-name="md-heading">高德影像</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/c77fHDYovzqVrn7tNKmGxn_image_OurMhK3BCB.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;UrlTemplateImageryProvider&quot;,
+        &quot;url&quot;: &quot;//webst02.is.autonavi.com/appmaptile?style=6&amp;x={x}&amp;y={y}&amp;z={z}&quot;
+    },
+    &quot;name&quot;: &quot;高德影像&quot;
+}</code></pre>
+<h4 id="高德影像纠偏至wgs84" class="md-h4" data-u32-name="md-heading">高德影像(纠偏至wgs84)</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/gnTrTEYTDQ7cSRrBdUd4mf_image_0aXxN7lhSg.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;UrlTemplateImageryProvider&quot;,
+        &quot;tilingScheme&quot;: {
+            &quot;type&quot;: &quot;ToWGS84WebMercatorTilingScheme&quot;
+        },
+        &quot;url&quot;: &quot;//webst02.is.autonavi.com/appmaptile?style=6&amp;x={x}&amp;y={y}&amp;z={z}&quot;
+    },
+    &quot;name&quot;: &quot;高德影像(纠偏至wgs84)&quot;
+}</code></pre>
+<h4 id="百度地图" class="md-h4" data-u32-name="md-heading">百度地图</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/iRE6fGpTuYGBoJtk3rsHw5_image_cC-KO6rx5F.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;BDImageryProvider&quot;,
+        &quot;wgs84&quot;: false,
+        &quot;url&quot;: &quot;//online1.map.bdimg.com/onlinelabel/?qt=tile&amp;x={x}&amp;y={y}&amp;z={z}&amp;styles=pl&amp;scaler=1&amp;p=1&quot;
+    },
+    &quot;name&quot;: &quot;百度地图&quot;
+}</code></pre>
+<h4 id="百度地图纠偏至wgs84" class="md-h4" data-u32-name="md-heading">百度地图(纠偏至wgs84)</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/iRE6fGpTuYGBoJtk3rsHw5_image_cC-KO6rx5F.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;BDImageryProvider&quot;,
+        &quot;wgs84&quot;: true,
+        &quot;url&quot;: &quot;//online1.map.bdimg.com/onlinelabel/?qt=tile&amp;x={x}&amp;y={y}&amp;z={z}&amp;styles=pl&amp;scaler=1&amp;p=1&quot;
+    },
+    &quot;name&quot;: &quot;百度地图(纠偏至wgs84)&quot;
+}</code></pre>
+<h4 id="百度影像" class="md-h4" data-u32-name="md-heading">百度影像</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/wQBFUWuny2gU2ybxqRAQpz_image_bQcieHhHOd.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;BDImageryProvider&quot;,
+        &quot;wgs84&quot;: false,
+        &quot;url&quot;: &quot;//shangetu1.map.bdimg.com/it/u=x={x};y={y};z={z};v=009;type=sate&amp;fm=46&quot;
+    },
+    &quot;name&quot;: &quot;百度影像&quot;
+}</code></pre>
+<h4 id="百度影像纠偏至wgs84" class="md-h4" data-u32-name="md-heading">百度影像(纠偏至wgs84)</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/tx35yHSEa5U1onr7nLT8io_image_34KisB9SSH.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;BDImageryProvider&quot;,
+        &quot;wgs84&quot;: true,
+        &quot;url&quot;: &quot;//shangetu1.map.bdimg.com/it/u=x={x};y={y};z={z};v=009;type=sate&amp;fm=46&quot;
+    },
+    &quot;name&quot;: &quot;百度影像(纠偏至wgs84)&quot;
+}</code></pre>
+<h4 id="百度影像带标签" class="md-h4" data-u32-name="md-heading">百度影像带标签</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/47VsoS2QhVGWBQUEqpWJvQ_image_yeGkyXCLrU.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;BDImageryProvider&quot;,
+        &quot;wgs84&quot;: false,
+        &quot;url&quot;: &quot;//online6.map.bdimg.com/tile/?qt=tile&amp;x={x}&amp;y={y}&amp;z={z}&amp;styles=sl&amp;v=020&quot;
+    },
+    &quot;name&quot;: &quot;百度影像带标签&quot;
+}</code></pre>
+<h4 id="百度影像带标签纠偏至wgs84" class="md-h4" data-u32-name="md-heading">百度影像带标签(纠偏至wgs84)</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/47VsoS2QhVGWBQUEqpWJvQ_image_yeGkyXCLrU.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;BDImageryProvider&quot;,
+        &quot;wgs84&quot;: true,
+        &quot;url&quot;: &quot;//online6.map.bdimg.com/tile/?qt=tile&amp;x={x}&amp;y={y}&amp;z={z}&amp;styles=sl&amp;v=020&quot;
+    },
+    &quot;name&quot;: &quot;百度影像带标签(纠偏至wgs84)&quot;
+}</code></pre>
+<h4 id="arcgis在线影像" class="md-h4" data-u32-name="md-heading">arcgis在线影像</h4>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;UrlTemplateImageryProvider&quot;,
+        &quot;url&quot;: &quot;//server.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}&quot;
+    },
+    &quot;name&quot;: &quot;arcgis在线影像&quot;
+}</code></pre>
+<h4 id="geoq水系" class="md-h4" data-u32-name="md-heading">GeoQ水系</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/s7R3bczPXSSmoDHv9AHnUS_image_i8LU3NObCV.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;UrlTemplateImageryProvider&quot;,
+        &quot;url&quot;: &quot;//thematic.geoq.cn/arcgis/rest/services/ThematicMaps/WorldHydroMap/MapServer/tile/{z}/{y}/{x}&quot;
+    },
+    &quot;name&quot;: &quot;GeoQ水系&quot;
+}
+</code></pre>
+<h4 id="geoq中国行政区域" class="md-h4" data-u32-name="md-heading">GeoQ中国行政区域</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/kNsGPMDSkwNuMiz2f5RehR_image_bAS5V5YYwf.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;UrlTemplateImageryProvider&quot;,
+        &quot;url&quot;: &quot;//thematic.geoq.cn/arcgis/rest/services/ThematicMaps/administrative_division_boundaryandlabel/MapServer/tile/{z}/{y}/{x}&quot;
+    },
+    &quot;name&quot;: &quot;GeoQ中国行政区域&quot;
+}</code></pre>
+<h4 id="geoq彩色" class="md-h4" data-u32-name="md-heading">GeoQ彩色</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/fdyztaZ6FsFi2AdJbziYAn_image_9ImfAiBm7D.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;UrlTemplateImageryProvider&quot;,
+        &quot;url&quot;: &quot;//map.geoq.cn/ArcGIS/rest/services/ChinaOnlineCommunity/MapServer/tile/{z}/{y}/{x}&quot;
+    },
+    &quot;name&quot;: &quot;GeoQ彩色&quot;
+}</code></pre>
+<h4 id="geoq暖色" class="md-h4" data-u32-name="md-heading">GeoQ暖色</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/utKvrbLH7XALoyh2afXroL_image_-ZMN5j8FKc.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;UrlTemplateImageryProvider&quot;,
+        &quot;url&quot;: &quot;//map.geoq.cn/ArcGIS/rest/services/ChinaOnlineStreetWarm/MapServer/tile/{z}/{y}/{x}&quot;
+    },
+    &quot;name&quot;: &quot;GeoQ暖色&quot;
+}</code></pre>
+<h4 id="星图地球影像" class="md-h4" data-u32-name="md-heading">星图地球影像</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/w5D1ZjfBncN35M1pCQi1vC_image_KVTjsjVR-1.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;UrlTemplateImageryProvider&quot;,
+        &quot;url&quot;: &quot;//tiles1.geovisearth.com/base/v1/img/{z}/{x}/{y}?format=webp&amp;tmsIds=w&amp;token={请输入token}&quot;
+    },
+    &quot;name&quot;: &quot;星图地球影像&quot;
+}</code></pre>
+<h4 id="星图地球影像地图注记" class="md-h4" data-u32-name="md-heading">星图地球影像地图注记</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/6udBJT6aDdN4PhcJxcp9ci_image_91cReSrk6g.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;UrlTemplateImageryProvider&quot;,
+        &quot;url&quot;: &quot;//tiles1.geovisearth.com/base/v1/cia/{z}/{x}/{y}?format=png&amp;tmsIds=w&amp;token={请输入token}&quot;
+    },
+    &quot;name&quot;: &quot;星图地球影像地图注记&quot;
+}</code></pre>
+<h4 id="星图地球地形晕渲" class="md-h4" data-u32-name="md-heading">星图地球地形晕渲</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/njNxLag1zYgRU7xHAR9hy9_image_Lq8KJyMKCb.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;UrlTemplateImageryProvider&quot;,
+        &quot;url&quot;: &quot;//tiles1.geovisearth.com/base/v1/ter/{z}/{x}/{y}?format=png&amp;tmsIds=w&amp;token={请输入token}&quot;
+    },
+    &quot;name&quot;: &quot;星图地球地形晕渲&quot;
+}</code></pre>
+<h4 id="星图地球地形注记" class="md-h4" data-u32-name="md-heading">星图地球地形注记</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/kYZjWs6624xAWB1YEoJXqR_image_9K0lA9chRJ.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;UrlTemplateImageryProvider&quot;,
+        &quot;url&quot;: &quot;//tiles1.geovisearth.com/base/v1/cat/{z}/{x}/{y}?format=png&amp;tmsIds=w&amp;token={请输入token}&quot;
+    },
+    &quot;name&quot;: &quot;星图地球地形注记&quot;
+}</code></pre>
+<h4 id="geoserver的wms影像" class="md-h4" data-u32-name="md-heading">GeoServer的WMS影像</h4>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;WebMapServiceImageryProvider&quot;,
+        &quot;url&quot;: &quot;http://[ip]:[port]/wms&quot;,
+        &quot;layers&quot;: &quot;[layerName]&quot;,
+        &quot;parameters&quot;: {
+            &quot;service&quot;: &quot;WMS&quot;,
+            &quot;format&quot;: &quot;image/png&quot;,
+            &quot;transparent&quot;: true
+        }
+    },
+    &quot;name&quot;: &quot;GeoServer的WMS影像&quot;
+}</code></pre>
+<h4 id="墨卡托网格" class="md-h4" data-u32-name="md-heading">墨卡托网格</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/3r1uzcbQinTghnjcHdquGR_image_jAn9JF2aWA.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;GridImageryProvider&quot;,
+        &quot;tilingScheme&quot;: {
+            &quot;type&quot;: &quot;WebMercatorTilingScheme&quot;
+        },
+        &quot;backgroundColor&quot;: [
+            0,
+            0,
+            0,
+            0
+        ],
+        &quot;glowColor&quot;: [
+            1,
+            1,
+            1,
+            0.05
+        ],
+        &quot;glowWidth&quot;: 2,
+        &quot;canvasSize&quot;: 512,
+        &quot;cells&quot;: 4
+    },
+    &quot;name&quot;: &quot;墨卡托网格&quot;
+}</code></pre>
+<h4 id="经纬度网格" class="md-h4" data-u32-name="md-heading">经纬度网格</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/3j51bgcq8xVqGrMmtwCYsb_image_OggLjusKTm.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;GridImageryProvider&quot;,
+        &quot;tilingScheme&quot;: {
+            &quot;type&quot;: &quot;GeographicTilingScheme&quot;
+        },
+        &quot;backgroundColor&quot;: [
+            0,
+            0,
+            0,
+            0
+        ],
+        &quot;glowColor&quot;: [
+            1,
+            1,
+            1,
+            0.05
+        ],
+        &quot;glowWidth&quot;: 2,
+        &quot;canvasSize&quot;: 512,
+        &quot;cells&quot;: 4
+    },
+    &quot;name&quot;: &quot;经纬度网格&quot;
+}</code></pre>
+<h4 id="瓦片坐标墨卡托" class="md-h4" data-u32-name="md-heading">瓦片坐标(墨卡托)</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/pJj7W9kQgFieJLYv2mXygu_image_eKMEyNTY7s.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;TileCoordinatesImageryProvider&quot;,
+        &quot;tilingScheme&quot;: {
+            &quot;type&quot;: &quot;WebMercatorTilingScheme&quot;
+        }
+    },
+    &quot;name&quot;: &quot;瓦片坐标(墨卡托)&quot;
+}</code></pre>
+<h4 id="瓦片坐标经纬度" class="md-h4" data-u32-name="md-heading">瓦片坐标(经纬度)</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/rhooCY3cudb36fzuvSFjdY_image_gHQYTRDwig.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;TileCoordinatesImageryProvider&quot;,
+        &quot;tilingScheme&quot;: {
+            &quot;type&quot;: &quot;GeographicTilingScheme&quot;
+        }
+    },
+    &quot;name&quot;: &quot;瓦片坐标(经纬度)&quot;
+}</code></pre>
+<h4 id="单图片影像" class="md-h4" data-u32-name="md-heading">单图片影像</h4>
+<figure data-u32-name="md-figure"><img src="../../attachments/eaFMii6D9dx2PwW9FKZrgN_image_Jt6YOKpe1j.jpg" alt="" loading="lazy" decoding="async"></figure>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>{
+    &quot;type&quot;: &quot;CzmImagery&quot;,
+    &quot;imageryProvider&quot;: {
+        &quot;type&quot;: &quot;SingleTileImageryProvider&quot;,
+        &quot;url&quot;: &quot;${czm-path}/Assets/Images/cesium_credit.png&quot;,
+        &quot;rectangle&quot;: [
+            116.39,
+            39.9,
+            120.39,
+            40.9
+        ]
+    },
+    &quot;name&quot;: &quot;单图片影像&quot;
+}</code></pre>
+<h2 id="类型规格说明" class="md-h2" data-u32-name="md-heading">类型规格说明</h2>
+<h3 id="czmimageryproviderjsontype" class="md-h3" data-u32-name="md-heading">CzmImageryProviderJsonType</h3>
+<pre class="code" data-lang="javascript" data-u32-name="md-code"><code>export type CzmImageryProviderJsonType =
+    {
+        type: 'ArcGisMapServerImageryProvider';
+        url: string,
+        token?: string,
+        // tileDiscardPolicy?: Cesium.TileDiscardPolicy,//TODO2
+        usePreCachedTilesIfAvailable?: boolean,
+        layers?: string,
+        enablePickFeatures?: boolean,
+        rectangle?: [west: number, south: number, east: number, north: number]; //  Rectangle  &lt;optional&gt; Rectangle.MAX_VALUE  The rectangle, in radians, covered by the image.
+        tilingScheme?: CzmTilingSchemaJsonType; //  TilingScheme  &lt;optional&gt; The tiling scheme specifying how the ellipsoidal surface is broken into tiles. If this parameter is not provided, a WebMercatorTilingScheme is used.
+        ellipsoid?: [x: number, y: number, z: number];
+        credit?: string; //  Credit | String  &lt;optional&gt; ''  A credit for the data source, which is displayed on the canvas.
+        tileWidth?: number;
+        tileHeight?: number;
+        maximumLevel?: number;
+    } |
+    {
+
+        type: 'BingMapsImageryProvider';
+        url: string,
+        key: string,
+        tileProtocol?: string,
+        mapStyle?: CzmBingMapsStyle,
+        culture?: string,
+        // tileDiscardPolicy?: Cesium.TileDiscardPolicy,//TODO2
+        ellipsoid?: [x: number, y: number, z: number];
+    } |
+    {
+        type: 'GoogleEarthEnterpriseImageryProvider';
+        url: string,
+        metadata: string,
+        // tileDiscardPolicy?: Cesium.TileDiscardPolicy,//TODO2
+        ellipsoid?: [x: number, y: number, z: number];
+        credit?: string;
+    } |
+    {
+        type: 'GridImageryProvider';//已完成
+        tilingScheme?: CzmTilingSchemaJsonType;
+        ellipsoid?: [x: number, y: number, z: number];
+        cells?: number;
+        color?: [number, number, number, number];
+        glowColor?: [number, number, number, number];
+        glowWidth?: number;
+        backgroundColor?: [number, number, number, number];
+        tileWidth?: number;
+        tileHeight?: number;
+        canvasSize?: number;
+    } |
+    {
+        type: 'IonImageryProvider';
+        assetId: number,
+        accessToken?: string,
+        server?: string
+    } |
+    {
+        type: 'MapboxImageryProvider';
+        url?: string,
+        mapId: string,
+        accessToken: string,
+        format?: string,
+        ellipsoid?: [x: number, y: number, z: number];
+        minimumLevel?: number; //  Number  &lt;optional&gt; 0  The minimum level-of-detail supported by the imagery provider. Take care when specifying this that the number of tiles at the minimum level is small, such as four or less. A larger number is likely to result in rendering problems.
+        maximumLevel?: number;
+        rectangle?: [west: number, south: number, east: number, north: number]; //  Rectangle  &lt;optional&gt; Rectangle.MAX_VALUE  The rectangle, in radians, covered by the image.
+        credit?: string;
+
+    } |
+    {
+        type: 'MapboxStyleImageryProvider';
+        url?: string,
+        username?: string,
+        styleId: string,
+        accessToken: string,
+        tilesize?: number,
+        scaleFactor?: boolean,
+        rectangle?: [west: number, south: number, east: number, north: number]; //  Rectangle  &lt;optional&gt; Rectangle.MAX_VALUE  The rectangle, in radians, covered by the image.
+        credit?: string; //  Credit | String  &lt;optional&gt; ''  A credit for the data source, which is displayed on the canvas.
+        ellipsoid?: [x: number, y: number, z: number];
+        minimumLevel?: number; //  Number  &lt;optional&gt; 0  The minimum level-of-detail supported by the imagery provider. Take care when specifying this that the number of tiles at the minimum level is small, such as four or less. A larger number is likely to result in rendering problems.
+        maximumLevel?: number;
+    } |
+    {
+        type: 'OpenStreetMapImageryProvider';
+        url: string,
+        rectangle?: [west: number, south: number, east: number, north: number]; //  Rectangle  &lt;optional&gt; Rectangle.MAX_VALUE  The rectangle, in radians, covered by the image.
+        credit?: string; //  Credit | String  &lt;optional&gt; ''  A credit for the data source, which is displayed on the canvas.
+        ellipsoid?: [x: number, y: number, z: number]; //  Ellipsoid  &lt;optional&gt; The ellipsoid. If the tilingScheme is specified, this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither parameter is specified, the WGS84 ellipsoid is used.
+        minimumLevel?: number; //  Number  &lt;optional&gt; 0  The minimum level-of-detail supported by the imagery provider. Take care when specifying this that the number of tiles at the minimum level is small, such as four or less. A larger number is likely to result in rendering problems.
+        maximumLevel?: number; //  Number  &lt;optional&gt; The maximum level-of-detail supported by the imagery provider, or undefined if there is no limit.
+        fileExtension?: string;
+    } |
+    {
+        type: 'SingleTileImageryProvider';
+        url: string,
+        rectangle?: [west: number, south: number, east: number, north: number]; //  Rectangle  &lt;optional&gt; Rectangle.MAX_VALUE  The rectangle, in radians, covered by the image.
+        credit?: string; //  Credit | String  &lt;optional&gt; ''  A credit for the data source, which is displayed on the canvas.
+        ellipsoid?: [x: number, y: number, z: number]; //  Ellipsoid  &lt;optional&gt; The ellipsoid. If the tilingScheme is specified, this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither parameter is specified, the WGS84 ellipsoid is used.
+    } |
+    {
+        type: 'TileCoordinatesImageryProvider';
+        tilingScheme?: CzmTilingSchemaJsonType; //  TilingScheme  &lt;optional&gt; The tiling scheme specifying how the ellipsoidal surface is broken into tiles. If this parameter is not provided, a WebMercatorTilingScheme is used.
+        ellipsoid?: [x: number, y: number, z: number];//  Ellipsoid  &lt;optional&gt; The ellipsoid. If the tilingScheme is specified, this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither parameter is specified, the WGS84 ellipsoid is used.
+        color: [number, number, number, number];
+        tileWidth?: number; //  Number  &lt;optional&gt; 256  Pixel width of image tiles.
+        tileHeight?: number; //  Number  &lt;optional&gt; 256  Pixel height of image tiles.
+
+    } |
+    {
+        type: 'TileMapServiceImageryProvider';//已完成
+        url?: string; //  Resource | String | Promise.&lt;Resource&gt; | Promise.&lt;String&gt;  &lt;optional&gt; '.'  Path to image tiles on server.
+        fileExtension?: string; //  String  &lt;optional&gt; 'png'  The file extension for images on the server.
+        credit?: string; //  Credit | String  &lt;optional&gt; ''  A credit for the data source, which is displayed on the canvas.
+        minimumLevel?: number; //  Number  &lt;optional&gt; 0  The minimum level-of-detail supported by the imagery provider. Take care when specifying this that the number of tiles at the minimum level is small, such as four or less. A larger number is likely to result in rendering problems.
+        maximumLevel?: number; //  Number  &lt;optional&gt; The maximum level-of-detail supported by the imagery provider, or undefined if there is no limit.
+        rectangle?: [west: number, south: number, east: number, north: number]; //  Rectangle  &lt;optional&gt; Rectangle.MAX_VALUE  The rectangle, in radians, covered by the image.
+        tilingScheme?: CzmTilingSchemaJsonType; //  TilingScheme  &lt;optional&gt; The tiling scheme specifying how the ellipsoidal surface is broken into tiles. If this parameter is not provided, a WebMercatorTilingScheme is used.
+        ellipsoid?: [x: number, y: number, z: number]; //  Ellipsoid  &lt;optional&gt; The ellipsoid. If the tilingScheme is specified, this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither parameter is specified, the WGS84 ellipsoid is used.
+        tileWidth?: number; //  Number  &lt;optional&gt; 256  Pixel width of image tiles.
+        tileHeight?: number; //  Number  &lt;optional&gt; 256  Pixel height of image tiles.
+        flipXY?: boolean; //  Boolean  &lt;optional&gt; Older versions of gdal2tiles.py flipped X and Y values in tilemapresource.xml. Specifying this option will do the same, allowing for loading of these incorrect tilesets.
+    } |
+    {
+        type: 'UrlTemplateImageryProvider';//已完成
+        url: string;//Resource | String
+        subdomains?: string | string[];//String | Array.&lt;String&gt;
+        credit?: string;//Credit | String
+        minimumLevel?: number; //  Number  &lt;optional&gt; 0  The minimum level-of-detail supported by the imagery provider. Take care when specifying this that the number of tiles at the minimum level is small, such as four or less. A larger number is likely to result in rendering problems.
+        maximumLevel?: number; //  Number  &lt;optional&gt; The maximum level-of-detail supported by the imagery provider, or undefined if there is no limit.
+        rectangle?: [west: number, south: number, east: number, north: number]; //  Rectangle  &lt;optional&gt; Rectangle.MAX_VALUE  The rectangle, in radians, covered by the image.
+        tilingScheme?: CzmTilingSchemaJsonType; //  TilingScheme  &lt;optional&gt; The tiling scheme specifying how the ellipsoidal surface is broken into tiles. If this parameter is not provided, a WebMercatorTilingScheme is used.
+        ellipsoid?: [x: number, y: number, z: number]; //  Ellipsoid  &lt;optional&gt; The ellipsoid. If the tilingScheme is specified, this parameter is ignored and the tiling scheme's ellipsoid is used instead. If neither parameter is specified, the WGS84 ellipsoid is used.
+        tileWidth?: number; //  Number  &lt;optional&gt; 256  Pixel width of image tiles.
+        tileHeight?: number; //  Number  &lt;optional&gt; 256  Pixel height of image tiles.
+        hasAlphaChannel?: boolean;
+        pickFeaturesUrl?: string;//Resource | String
+        enablePickFeatures?: boolean;
+        urlSchemeZeroPadding?: JsonValue,
+        // getFeatureInfoFormats?: Array&lt;Cesium.GetFeatureInfoFormat&gt;;   //TODO2
+        customTags?: { [k: string]: string };
+    } |
+    {
+        type: 'WebMapServiceImageryProvider';
+        url: string;
+        layers: string;
+        parameters?: JsonValue,
+        getFeatureInfoParameters?: JsonValue,
+        // getFeatureInfoFormats?: Array&lt;Cesium.GetFeatureInfoFormat&gt;, //TODO2
+        enablePickFeatures?: boolean,
+        rectangle?: [west: number, south: number, east: number, north: number]; //  Rectangle  &lt;optional&gt; Rectangle.MAX_VALUE  The rectangle, in radians, covered by the image.
+        tilingScheme?: CzmTilingSchemaJsonType; //  TilingScheme  &lt;optional&gt; The tiling scheme specifying how the ellipsoidal surface is broken into tiles. If this parameter is not provided, a WebMercatorTilingScheme is used.
+        ellipsoid?: [x: number, y: number, z: number];//  Ellipsoid  &lt;optional&gt; The ellipsoid. If not specified, the WGS84 ellipsoid is used.
+        minimumLevel?: number; //  Number  &lt;optional&gt; 0  The minimum level-of-detail supported by the imagery provider.
+        maximumLevel?: number; //  Number  &lt;optional&gt; The maximum level-of-detail supported by the imagery provider, or undefined if there is no limit.
+        tileWidth?: number; //  Number  &lt;optional&gt; 256  The tile width in pixels.
+        tileHeight?: number; //  Number  &lt;optional&gt; 256  The tile height in pixels.
+        crs?: string,
+        srs?: string,
+        credit?: string;//Credit | String
+        subdomains?: string | string[]; //  String | Array.&lt;String&gt;  &lt;optional&gt; 'abc'  The subdomains to use for the {s} placeholder in the URL template. If this parameter is a single string, each character in the string is a subdomain. If it is an array, each element in the array is a subdomain.
+        // clock: Cesium.Clock; // //  Clock  &lt;optional&gt; A Clock instance that is used when determining the value for the time dimension. Required when `times` is specified.
+        times?: CzmTimeIntervalCollectionJsonType;  //  TimeIntervalCollection  &lt;optional&gt; TimeIntervalCollection: string; // with its data property being an object containing time dynamic dimension and their values.
+        getFeatureInfoUrl?: string
+    } |
+    {
+        type: 'WebMapTileServiceImageryProvider';//已完成
+        url: string; //  Resource | String      The base URL for the WMTS GetTile operation (for KVP-encoded requests) or the tile-URL template (for RESTful requests). The tile-URL template should contain the following variables: {style}, {TileMatrixSet}, {TileMatrix}, {TileRow}, {TileCol}. The first two are optional if actual values are hardcoded or not required by the server. The {s} keyword may be used to specify subdomains.
+        format?: string; //  String  &lt;optional&gt; 'image/jpeg'  The MIME type for images to retrieve from the server.
+        layer: string; //  String      The layer name for WMTS requests.
+        style: string; //  String      The style name for WMTS requests.
+        tileMatrixSetID: string; //  String      The identifier of the TileMatrixSet to use for WMTS requests.
+        tileMatrixLabels?: string[]; //  Array  &lt;optional&gt; A list of identifiers in the TileMatrix to use for WMTS requests, one per TileMatrix level.
+        // clock: Cesium.Clock, // //  Clock  &lt;optional&gt; A Clock instance that is used when determining the value for the time dimension. Required when `times` is specified.
+        times?: CzmTimeIntervalCollectionJsonType; //  TimeIntervalCollection  &lt;optional&gt; TimeIntervalCollection: string; // with its data property being an object containing time dynamic dimension and their values.
+        dimensions?: JsonValue; //  Object  &lt;optional&gt; A object containing static dimensions and their values.
+        tileWidth?: number; //  Number  &lt;optional&gt; 256  The tile width in pixels.
+        tileHeight?: number; //  Number  &lt;optional&gt; 256  The tile height in pixels.
+        tilingScheme?: CzmTilingSchemaJsonType; //  TilingScheme  &lt;optional&gt; The tiling scheme corresponding to the organization of the tiles in the TileMatrixSet.
+        rectangle?: [west: number, south: number, east: number, north: number]; //  Rectangle  &lt;optional&gt; Rectangle.MAX_VALUE  The rectangle covered by the layer.
+        minimumLevel?: number; //  Number  &lt;optional&gt; 0  The minimum level-of-detail supported by the imagery provider.
+        maximumLevel?: number; //  Number  &lt;optional&gt; The maximum level-of-detail supported by the imagery provider, or undefined if there is no limit.
+        ellipsoid?: [x: number, y: number, z: number]; //  Ellipsoid  &lt;optional&gt; The ellipsoid. If not specified, the WGS84 ellipsoid is used.
+        credit?: string; //  Credit | String  &lt;optional&gt; A credit for the data source, which is displayed on the canvas.
+        subdomains?: string | string[]; //  String | Array.&lt;String&gt;  &lt;optional&gt; 'abc'  The subdomains to use for the {s} placeholder in the URL template. If this parameter is a single string, each character in the string is a subdomain. If it is an array, each element in the array is a subdomain.
+    } | {
+        type: 'BDImageryProvider';
+        url?: string;
+        wgs84?: boolean;
+        ellipsoid?: [x: number, y: number, z: number]; //  Ellipsoid  &lt;optional&gt; The ellipsoid. If not specified, the WGS84 ellipsoid is used.
+    }
+    | {
+        type: 'GeHistoryImagery';
+        indexTime:string | number
+    }| {
+        type: 'ArcgisHistoryImagery';
+        indexTimeID:string | number
+    }</code></pre>
+<h3 id="czmtilingschemajsontype规格说明" class="md-h3" data-u32-name="md-heading">CzmTilingSchemaJsonType规格说明</h3>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>export type CzmTilingSchemaJsonType = {
+    type: 'WebMercatorTilingScheme';
+    ellipsoid?: [x: number, y: number, z: number]; //  Ellipsoid  Ellipsoid.WGS84  optional The ellipsoid whose surface is being tiled. Defaults to the WGS84 ellipsoid.
+    numberOfLevelZeroTilesX?: number; //  Number  1  optional The number of tiles in the X direction at level zero of the tile tree.
+    numberOfLevelZeroTilesY?: number; //  Number  1  optional The number of tiles in the Y direction at level zero of the tile tree.
+    rectangleSouthwestInMeters?: [number, number]; //  Cartesian2    optional The southwest corner of the rectangle covered by the tiling scheme, in meters. If this parameter or rectangleNortheastInMeters is not specified, the entire globe is covered in the longitude direction and an equal distance is covered in the latitude direction, resulting in a square projection.
+    rectangleNortheastInMeters?: [number, number]; //  Cartesian2    optional The northeast corner of the rectangle covered by the tiling scheme, in meters. If this parameter or rectangleSouthwestInMeters is not specified, the entire globe is covered in the longitude direction and an equal distance is covered in the latitude direction, resulting in a square projection.
+} | {
+    type: 'GeographicTilingScheme';
+    ellipsoid?: [x: number, y: number, z: number]; //  Ellipsoid  Ellipsoid.WGS84  optionalThe ellipsoid whose surface is being tiled. Defaults to the WGS84 ellipsoid.
+    rectangle?: [west: number, south: number, east: number, north: number]; //  Rectangle  Rectangle.MAX_VALUE  optional The rectangle, in radians, covered by the tiling scheme.
+    numberOfLevelZeroTilesX?: number; //  Number  2  optional The number of tiles in the X direction at level zero of the tile tree.
+    numberOfLevelZeroTilesY?: number; //  Number  1  optional The number of tiles in the Y direction at level zero of the tile tree.
+} | {
+    type: 'ToGCJ02WebMercatorTilingScheme';
+    ellipsoid?: [x: number, y: number, z: number]; //  Ellipsoid  Ellipsoid.WGS84  optional The ellipsoid whose surface is being tiled. Defaults to the WGS84 ellipsoid.
+    numberOfLevelZeroTilesX?: number; //  Number  1  optional The number of tiles in the X direction at level zero of the tile tree.
+    numberOfLevelZeroTilesY?: number; //  Number  1  optional The number of tiles in the Y direction at level zero of the tile tree.
+    rectangleSouthwestInMeters?: [number, number]; //  Cartesian2    optional The southwest corner of the rectangle covered by the tiling scheme, in meters. If this parameter or rectangleNortheastInMeters is not specified, the entire globe is covered in the longitude direction and an equal distance is covered in the latitude direction, resulting in a square projection.
+    rectangleNortheastInMeters?: [number, number]; //  Cartesian2    optional The northeast corner of the rectangle covered by the tiling scheme, in meters. If this parameter or rectangleSouthwestInMeters is not specified, the entire globe is covered in the longitude direction and an equal distance is covered in the latitude direction, resulting in a square projection.
+} | {
+    type: 'ToWGS84WebMercatorTilingScheme';
+    ellipsoid?: [x: number, y: number, z: number]; //  Ellipsoid  Ellipsoid.WGS84  optional The ellipsoid whose surface is being tiled. Defaults to the WGS84 ellipsoid.
+    numberOfLevelZeroTilesX?: number; //  Number  1  optional The number of tiles in the X direction at level zero of the tile tree.
+    numberOfLevelZeroTilesY?: number; //  Number  1  optional The number of tiles in the Y direction at level zero of the tile tree.
+    rectangleSouthwestInMeters?: [number, number]; //  Cartesian2    optional The southwest corner of the rectangle covered by the tiling scheme, in meters. If this parameter or rectangleNortheastInMeters is not specified, the entire globe is covered in the longitude direction and an equal distance is covered in the latitude direction, resulting in a square projection.
+    rectangleNortheastInMeters?: [number, number]; //  Cartesian2    optional The northeast corner of the rectangle covered by the tiling scheme, in meters. If this parameter or rectangleSouthwestInMeters is not specified, the entire globe is covered in the longitude direction and an equal distance is covered in the latitude direction, resulting in a square projection.
+}
+
+</code></pre>
+<h3 id="czmtimeintervalcollectionjsontype-规格说明" class="md-h3" data-u32-name="md-heading">CzmTimeIntervalCollectionJsonType 规格说明</h3>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>export type CzmTimeIntervalCollectionJsonType = {
+    type: 'fromIso8601',
+    iso8601: string; //  String    An ISO 8601 interval.
+    isStartIncluded?: boolean; //  Boolean  true  optionaltrue if start time is included in the interval, false otherwise.
+    isStopIncluded?: boolean; //  Boolean  true  optionaltrue if stop time is included in the interval, false otherwise.
+    leadingInterval?: boolean; //  Boolean  false  optionaltrue if you want to add a interval from Iso8601.MINIMUM_VALUE to start time, false otherwise.
+    trailingInterval?: boolean; //  Boolean  false  optionaltrue if you want to add a interval from stop time to Iso8601.MAXIMUM_VALUE, false otherwise.
+} | {
+    type: 'fromIso8601DateArray',
+    iso8601Dates?: string[]; //  Array.&lt;String&gt;    An array of ISO 8601 dates.
+    isStartIncluded?: boolean; //  Boolean  true  optionaltrue if start time is included in the interval, false otherwise.
+    isStopIncluded?: boolean; //  Boolean  true  optionaltrue if stop time is included in the interval, false otherwise.
+    leadingInterval?: boolean; //  Boolean  false  optionaltrue if you want to add a interval from Iso8601.MINIMUM_VALUE to start time, false otherwise.
+    trailingInterval?: boolean; //  Boolean  false  optionaltrue if you want to add a interval from stop time to Iso8601.MAXIMUM_VALUE, false otherwise.
+};
+</code></pre>
+<h3 id="czmbingmapsstyle-规格说明" class="md-h3" data-u32-name="md-heading">CzmBingMapsStyle 规格说明</h3>
+<pre class="code" data-lang="json" data-u32-name="md-code"><code>export type CzmBingMapsStyle = 'AERIAL' | 'AERIAL_WITH_LABELS' | 'AERIAL_WITH_LABELS_ON_DEMAND' | 'ROAD' | 'ROAD_ON_DEMAND' | 'CANVAS_DARK' | 'CANVAS_LIGHT' | 'CANVAS_GRAY' | 'ORDNANCE_SURVEY' | 'COLLINS_BART';</code></pre></article>
+      <div class="pager" data-u32-name="page-pager">
+    <a href="index.html"><span class="dir">上一篇</span>My3dtiles加载多样数据</a>
+    <a class="next" href="../My3dtiles%E5%AF%B93dtiles%E8%BF%9B%E8%A1%8C%E5%8E%8B%E5%B9%B3%E6%93%8D%E4%BD%9C.html"><span class="dir">下一篇</span>My3dtiles对3dtiles进行压平操作</a>
+  </div>
+    </div>
+    <div class="rail" data-u32-name="page-rail"><h6>本页目录</h6><ul><li class=""><a href="#概述">概述</a></li><li class=""><a href="#视频使用方法">视频(使用方法)</a></li><li class=""><a href="#详述">详述</a></li><li class="lv3"><a href="#json配置文件样例">JSON配置文件样例</a></li><li class=""><a href="#示例配置">示例配置</a></li><li class=""><a href="#类型规格说明">类型规格说明</a></li><li class="lv3"><a href="#czmimageryproviderjsontype">CzmImageryProviderJsonType</a></li><li class="lv3"><a href="#czmtilingschemajsontype规格说明">CzmTilingSchemaJsonType规格说明</a></li><li class="lv3"><a href="#czmtimeintervalcollectionjsontype-规格说明">CzmTimeIntervalCollectionJsonType 规格说明</a></li><li class="lv3"><a href="#czmbingmapsstyle-规格说明">CzmBingMapsStyle 规格说明</a></li></ul></div>
+  </div>
+</div>
+<footer data-u32-name="footer">
+  <div class="wrap" data-u32-name="footer-wrap">
+    <div class="foot" data-u32-name="footer-cols">
+      <div data-u32-name="foot-brand">
+        <h5>My3dtiles</h5>
+        <p>本地离线 3dtiles 浏览器 · 数字孪生快速搭建工具 · 数字沙盘配置工具</p>
+        <p>无需登录，永久免费使用（第三方插件可能收费）</p>
+      </div>
+      <div data-u32-name="foot-doc"><h5>文档</h5><a href="../index.html">使用手册</a><a href="../../log/index.html">开发日志</a><a href="../../download/index.html">软件下载</a><a href="../../search.html">站内搜索</a></div>
+      <div data-u32-name="foot-comm"><h5>交流</h5><a href="https://qm.qq.com/q/ni2QWsAhKS" target="_blank" rel="noopener">QQ 群 725764124</a><a href="../../more/交流合作.html">微信与联系方式</a><a href="https://space.bilibili.com/540048347" target="_blank" rel="noopener">哔哩哔哩</a><a href="https://www.zhihu.com/people/vtxf" target="_blank" rel="noopener">知乎</a></div>
+      <div data-u32-name="foot-more"><h5>更多</h5><a href="../../more/定制开发.html">定制开发</a><a href="../../download/index.html">版本与下载</a><a href="../../more/示例集合.html">示例集合</a><a href="https://gitee.com/vtxf3d/my3dtiles/issues" target="_blank" rel="noopener">问题反馈</a></div>
+    </div>
+    <div class="foot-legal" data-u32-name="footer-legal">
+      <span>本页文档整理自 My3dtiles 官方资料，仅收录对外公开部分</span>
+      <span>构建于 2026-11-17</span>
+    </div>
+  </div>
+</footer>
+<div class="lightbox" data-u32-name="lightbox"><img alt=""></div>
+<script src="../../../assets/site.js"></script>
+</body>
+</html>

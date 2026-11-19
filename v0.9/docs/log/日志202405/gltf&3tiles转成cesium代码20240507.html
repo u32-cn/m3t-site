@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>gltf&3tiles转成cesium代码20240507 · My3dtiles 文档</title>
+<meta name="description" content="开发日志 · gltf&3tiles转成cesium代码20240507">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3 22 8.5 12 14 2 8.5Z' fill='%231657FF'/%3E%3Cpath d='M2 12.2 12 17.7 22 12.2' fill='none' stroke='%230A1626' stroke-width='1.4'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body>
+<div class="top" data-u32-name="top-bar">
+  <div class="wrap top-in" data-u32-name="top-inner">
+    <a class="brand" href="../../../index.html" data-u32-name="brand">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 22 8.5 12 14 2 8.5Z" fill="#1657FF"/><path d="M2 12.2 12 17.7 22 12.2" fill="none" stroke="#0A1626" stroke-width="1.4"/><path d="M2 15.9 12 21.4 22 15.9" fill="none" stroke="#0A1626" stroke-width="1.4" opacity=".45"/></svg>
+      <span>My3dtiles</span>
+    </a>
+    <div class="nav" data-u32-name="nav"><a href="../../../index.html#cap" class="">产品能力</a><a href="../../../index.html#formats" class="">数据与格式</a><a href="../../index.html" class="on">文档</a><a href="../../../index.html#download" class="">下载</a><a href="../../../index.html#coop" class="">合作与交流</a><a href="../../search.html" class="">搜索</a></div>
+    <a class="top-cta" href="../../../index.html#download" data-u32-name="nav-download">下载</a>
+  </div>
+</div>
+<div class="wrap" data-u32-name="docs-wrap">
+  <div class="docs-layout" data-u32-name="docs-layout">
+    <div class="side" data-u32-name="page-side"><h6>文档分区</h6><ul class="grp" data-u32-name="side-sections">
+<li class="" data-u32-name="side-sec-manual"><a href="../../manual/index.html">使用手册</a><span class="c">86</span></li>
+<li class="on" data-u32-name="side-sec-log"><a href="../index.html">开发日志</a><span class="c">146</span></li>
+<li class="" data-u32-name="side-sec-download"><a href="../../download/index.html">软件下载</a><span class="c">27</span></li>
+<li class="" data-u32-name="side-sec-more"><a href="../../more/index.html">产品与社区</a><span class="c">8</span></li>
+</ul>
+<h6>开发日志</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../20250724_%E8%87%AA%E5%AE%9A%E4%B9%89DIV%E5%B8%A6%E5%BC%95%E5%AF%BC%E7%BA%BF.html">20250724_自定义DIV带引导线</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E7%9A%84%E7%82%B9%E9%9B%86%E7%BE%A4%E5%A4%A7%E5%B0%8F%E8%AE%BE%E7%BD%AE20250629.html">m3t中的点集群大小设置20250629</a></li>
+<li class=""><a href="../m3t%E4%B8%ADCzmPolygonGroundPrimitive%E7%9A%84%E4%BD%BF%E7%94%A820250612.html">m3t中CzmPolygonGroundPrimitive的使用20250612</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E5%8A%A0%E8%BD%BDgif%E5%B9%B6%E6%8E%A7%E5%88%B6%E5%85%B6%E6%92%AD%E6%94%BE%E8%BF%9B%E5%BA%A620250610.html">m3t中加载gif并控制其播放进度20250610</a></li>
+<li class=""><a href="../m3t%E7%9A%84%E6%8A%98%E7%BA%BF%E9%80%9A%E8%A7%86%E5%88%86%E6%9E%9020250522.html">m3t的折线通视分析20250522</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E7%9A%84%E6%96%87%E5%AD%97%E5%88%86%E7%95%8C%E7%BA%BF20250517.html">m3t中的文字分界线20250517</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E7%9A%84%E6%96%87%E5%AD%97%E6%A8%A1%E5%9E%8B%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E20250517.html">m3t中的文字模型使用说明20250517</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E5%8A%A0%E8%BD%BDgeojson%E6%95%B0%E6%8D%AE%E4%B8%8D%E8%83%BD%E8%B4%B4%E5%9C%B0%EF%BC%9F20250513.html">m3t中加载geojson数据不能贴地？20250513</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84%E5%9D%A1%E5%90%91%E8%AE%A1%E7%AE%9720250430.html">m3t中的路径坡向计算20250430</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E6%8B%BE%E5%8F%96%E6%BC%8F%E9%80%89%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%8620250429.html">m3t中拾取漏选如何处理20250429</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E6%A0%87%E7%AD%BE%E5%B8%A6%E6%8C%87%E7%A4%BA%E7%BA%BF20250427.html">m3t中标签带指示线20250427</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E4%BD%8D%E7%BD%AE%E6%95%B0%E7%BB%84%E6%97%8B%E8%BD%AC%E5%AF%B9%E8%B1%A120250427.html">m3t中位置数组旋转对象20250427</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E7%9B%91%E6%B5%8B%E8%A7%86%E8%A7%92%E9%9B%86%E5%90%88%E4%B8%AD%E5%BD%93%E5%89%8D%E8%A7%86%E8%A7%92%E5%8F%98%E5%8C%9620250424.html">m3t中监测视角集合中当前视角变化20250424</a></li>
+<li class=""><a href="../%E6%A3%80%E6%9F%A53dtiles%E6%95%B0%E6%8D%AE%E7%9A%84%E6%80%A7%E8%83%BD%E7%9A%84%E6%96%B9%E6%B3%9520250422.html">检查3dtiles数据的性能的方法20250422</a></li>
+<li class=""><a href="../m3t%E7%9A%84%E5%9C%B0%E5%BD%A2%E8%A3%81%E5%89%AA%E6%8C%96%E5%9D%9120250421.html">m3t的地形裁剪(挖坑)20250421</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E6%B0%B4%E9%9D%A2%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA20250421.html">m3t中水面如何创建20250421</a></li>
+<li class=""><a href="../m3t%E7%9A%84%E5%9C%86%E5%BD%A2%E9%80%9A%E8%A7%86%E5%88%86%E6%9E%9020250414.html">m3t的圆形通视分析20250414</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E8%8E%B7%E5%8F%96Cesium%E5%8E%9F%E7%94%9F%E5%AF%B9%E8%B1%A120250414.html">m3t中获取Cesium原生对象20250414</a></li>
+<li class=""><a href="../%E5%AF%B93dtiles%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E8%A3%81%E5%89%AA%E6%93%8D%E4%BD%9C20250409.html">对3dtiles数据进行裁剪操作20250409</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AEgeojson%E7%9A%84%E7%82%B9%E6%A0%B7%E5%BC%8F20250327.html">m3t中自定义配置geojson的点样式20250327</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E7%AA%81%E7%84%B6%E7%9C%8B%E4%B8%8D%E5%88%B0%E8%8F%9C%E5%8D%9520250325.html">m3t中突然看不到菜单20250325</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E5%87%8F%E5%B0%91%E6%A0%87%E7%BB%98%E9%94%AF%E9%BD%BF%E7%9A%84%E6%96%B9%E6%B3%9520250318.html">m3t中减少标绘锯齿的方法20250318</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E6%8F%90%E5%8D%87%E5%9C%B0%E5%9B%BE%E6%96%87%E5%AD%97%E7%9A%84%E6%B8%85%E6%99%B0%E5%BA%A620250318.html">m3t中提升地图文字的清晰度20250318</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E5%AE%9E%E7%8E%B0%E6%B7%B9%E6%B2%A1%E5%88%86%E6%9E%90%E7%9A%84%E5%8A%9F%E8%83%BD20250313.html">m3t中实现淹没分析的功能20250313</a></li>
+<li class=""><a href="../m3t%E8%AE%BE%E7%BD%AE%E5%9C%BA%E6%99%AF%E6%89%93%E5%BC%80%E7%9A%84%E5%88%9D%E5%A7%8B%E8%A7%86%E8%A7%9220250304.html">m3t设置场景打开的初始视角20250304</a></li>
+<li class=""><a href="../My3dtiles%E7%9A%84%E5%9C%B0%E5%BD%A2%E4%B8%8A%E7%9A%84%E8%A7%86%E5%9F%9F%E5%88%86%E6%9E%90%E5%BC%80%E5%90%AF%E6%96%B9%E6%B3%9520250226.html">My3dtiles的地形上的视域分析开启方法20250226</a></li>
+<li class=""><a href="../My3dtiles%E9%80%9A%E8%BF%87%E8%84%9A%E6%9C%AC%E5%8A%A0%E8%BD%BD%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%E7%9A%84%E6%96%B9%E6%B3%9520250213.html">My3dtiles通过脚本加载本地数据的方法20250213</a></li>
+<li class=""><a href="../3dtiles%E6%95%B0%E6%8D%AE%E5%A4%AA%E6%9A%97%EF%BC%81%E5%A6%82%E4%BD%95%E6%8F%90%E5%8D%87%E4%BA%AE%E5%BA%A6%EF%BC%9F20250110.html">3dtiles数据太暗！如何提升亮度？20250110</a></li>
+<li class=""><a href="../My3dtiles%E5%9C%BA%E6%99%AF%E6%A0%91%E4%B8%8A%E5%8F%AF%E4%BB%A5%E6%8B%B7%E8%B4%9D%E7%B2%98%E8%B4%B4%E5%AF%B9%E8%B1%A120250110.html">My3dtiles场景树上可以拷贝粘贴对象20250110</a></li>
+<li class=""><a href="../My3dtiles%E4%B8%AD%E6%97%B6%E9%92%9F%E7%9A%84%E8%AE%BE%E7%BD%AE20250110.html">My3dtiles中时钟的设置20250110</a></li>
+<li class=""><a href="../%E5%8A%A0%E8%BD%BD%E7%9A%843dtiles%E6%95%B0%E6%8D%AE%E9%97%AA%E7%83%81%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F20250108.html">加载的3dtiles数据闪烁怎么办？20250108</a></li>
+<li class=""><a href="../3D_%E9%AB%98%E6%96%AF%E6%B3%BC%E6%BA%85%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B%E7%9A%84%E7%9B%B4%E8%A7%82%E6%84%9F%E5%8F%9720250107.html">3D 高斯泼溅渲染过程的直观感受20250107</a></li>
+<li class=""><a href="../My3dtiles%E5%8A%A0%E8%BD%BD3D%E9%AB%98%E6%96%AF%E6%B3%BC%E6%BA%85%E6%95%B0%E6%8D%AE20250107.html">My3dtiles加载3D高斯泼溅数据20250107</a></li>
+<li class=""><a href="../Threejs%E8%9E%8D%E5%90%88%E6%B8%B2%E6%9F%9320250102.html">Threejs融合渲染20250102</a></li>
+<li class=""><a href="../%E5%9B%BE%E7%89%87%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%8B%BE%E5%8F%96%E4%BA%A4%E4%BA%92%E6%93%8D%E4%BD%9C20241217.html">图片模型的拾取交互操作20241217</a></li>
+<li class=""><a href="../%E5%9C%B0%E4%B8%8B%E6%A8%A1%E5%BC%8F%E8%AE%BE%E7%BD%AE20241209.html">地下模式设置20241209</a></li>
+<li class=""><a href="../Cesium%E5%92%8CWebGPU%E8%9E%8D%E5%90%88%E6%B8%B2%E6%9F%9320241202.html">Cesium和WebGPU融合渲染20241202</a></li>
+<li class=""><a href="../%E4%BF%AE%E6%94%B9My3dtiles%E7%A8%8B%E5%BA%8F%E6%A0%87%E9%A2%9820241128.html">修改My3dtiles程序标题20241128</a></li>
+<li class=""><a href="../m3t%E7%9A%84%E5%9C%BA%E6%99%AF%E5%AF%B9%E8%B1%A1%E9%A3%9E%E5%85%A5%E6%93%8D%E4%BD%9C20241115.html">m3t的场景对象飞入操作20241115</a></li>
+<li class=""><a href="../m3t%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E5%BC%B9%E4%B8%8D%E5%87%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%9520241106.html">m3t右键菜单弹不出的解决办法20241106</a></li>
+<li class=""><a href="../%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9C%BA%E6%99%AF%E5%AF%B9%E8%B1%A1%E6%8B%BE%E5%8F%9620241025.html">自定义场景对象拾取20241025</a></li>
+<li class=""><a href="../MyWebSocketClient%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E_20241017.html">MyWebSocketClient使用说明 20241017</a></li>
+<li class=""><a href="../ECharts%E5%9B%BE%E6%A0%87%E8%B4%B4%E5%9C%B0%E5%92%8C%E7%AB%99%E7%AB%8B20241011.html">ECharts图标贴地和站立20241011</a></li>
+<li class=""><a href="../%E5%A6%82%E4%BD%95%E5%8A%A0%E8%BD%BDcesiumlab3%E5%A4%84%E7%90%86%E5%90%8E%E7%9A%84%E6%95%B0%E6%8D%AE20241010.html">如何加载cesiumlab3处理后的数据20241010</a></li>
+<li class=""><a href="../%E6%B7%B9%E6%B2%A1%E5%88%86%E6%9E%90CzmFloodingAnalysis20241010.html">淹没分析(CzmFloodingAnalysis)20241010</a></li>
+<li class=""><a href="../3dtiles%E7%9A%84%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE20241008.html">3dtiles的样式设置20241008</a></li>
+<li class=""><a href="../%E5%B1%9E%E6%80%A7%E7%AA%97%E5%8F%A3UI%E5%AE%9A%E5%88%B620240926.html">属性窗口UI定制20240926</a></li>
+<li class=""><a href="../%E5%8F%8C%E8%A7%86%E5%8F%A3%E8%81%94%E5%8A%A820240926.html">双视口联动20240926</a></li>
+<li class=""><a href="../%E5%9C%BA%E6%99%AF%E5%AF%B9%E8%B1%A1%E6%8B%BE%E5%8F%9620240925.html">场景对象拾取20240925</a></li>
+<li class=""><a href="../%E4%B8%89%E7%BB%B4%E7%93%A6%E7%89%87%E6%95%B0%E6%8D%AE%E4%B8%8B%E8%BD%BD20240923.html">三维瓦片数据下载20240923</a></li>
+<li class=""><a href="../%E6%8A%98%E7%BA%BF%E8%B7%AF%E5%BE%84%E7%9A%84rotationRadius%E7%9A%84%E4%BD%9C%E7%94%A820240921.html">折线路径的rotationRadius的作用20240921</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E6%9F%A5%E7%9C%8B%E9%98%B4%E5%BD%B1%E6%95%88%E6%9E%9C20240907.html">m3t中查看阴影效果20240907</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E4%BD%BF%E7%94%A8cesium%E7%9A%84%E4%BB%A3%E7%A0%8120240907.html">m3t中使用cesium的代码20240907</a></li>
+<li class=""><a href="../Panel%E5%92%8CLayoutDiv%E9%85%8D%E7%BD%AE20240815%E8%8D%89%E7%A8%BF.html">Panel和LayoutDiv配置20240815(草稿)</a></li>
+<li class=""><a href="../m3tCesium%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%9720240814.html">m3t(Cesium)粒子系统使用指南20240814</a></li>
+<li class=""><a href="../%E5%AF%BC%E5%BC%B9%E5%92%8C%E5%AF%BC%E5%BC%B9%E5%B0%BE%E7%84%B0%E7%9A%84%E4%BD%BF%E7%94%A820240807.html">导弹和导弹尾焰的使用20240807</a></li>
+<li class=""><a href="../mergeTiles%E7%93%A6%E7%89%87%E5%90%88%E5%B9%B6%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A820240807.html">mergeTiles瓦片合并工具的使用20240807</a></li>
+<li class=""><a href="../%E5%9C%BA%E6%99%AF%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%9C%BA%E6%99%AF%E6%A0%91%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9Capi%E8%AF%B4%E6%98%8E20240806.html">场景对象和场景树节点操作api说明20240806</a></li>
+<li class=""><a href="../b3dm%E8%BD%ACglb%E5%B7%A5%E5%85%B7%E7%9A%84%E4%BD%BF%E7%94%A820240806.html">b3dm转glb工具的使用20240806</a></li>
+<li class=""><a href="../%E8%B0%B7%E6%AD%8C%E7%93%A6%E7%89%87%E6%B5%B7%E9%87%8F%E6%95%B0%E6%8D%AE%E4%B8%BA%E4%BD%95%E8%83%BD%E6%B5%81%E7%95%85%E5%8A%A0%E8%BD%BD20240804.html">谷歌瓦片海量数据为何能流畅加载20240804</a></li>
+<li class=""><a href="../m3t%E7%9A%84%E5%87%A0%E4%B8%AA%E5%9F%BA%E7%A1%80%E5%B1%9E%E6%80%A7%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A820240804.html">m3t的几个基础属性如何使用20240804</a></li>
+<li class=""><a href="../3dtiles%E7%9A%84cacheBytes%E5%B1%9E%E6%80%A7%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A320240803.html">3dtiles的cacheBytes属性如何理解20240803</a></li>
+<li class=""><a href="../%E7%A4%BA%E4%BE%8Bglb%E7%9A%84%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%9820240802.html">示例glb的跨域问题20240802</a></li>
+<li class=""><a href="../%E5%9C%BA%E6%99%AF%E6%A0%91%E8%8A%82%E7%82%B9%E7%9A%84%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4%E5%89%AA%E5%88%87%E6%93%8D%E4%BD%9C20240801.html">场景树节点的复制粘贴剪切操作20240801</a></li>
+<li class=""><a href="../%E5%9C%BA%E6%99%AF%E6%A0%91%E8%8A%82%E7%82%B9%E7%9A%84%E6%8B%96%E6%8B%BD%E6%93%8D%E4%BD%9C20240801.html">场景树节点的拖拽操作20240801</a></li>
+<li class=""><a href="../%E5%9C%BA%E6%99%AF%E6%A0%91%E8%8A%82%E7%82%B9%E7%9A%84%E9%80%89%E6%8B%A9%E6%93%8D%E4%BD%9C20240801.html">场景树节点的选择操作20240801</a></li>
+<li class=""><a href="../%E5%9C%B0%E7%90%83%E8%87%AA%E8%BD%AC%E5%92%8C%E7%8E%AF%E7%90%83%E4%BA%91%E5%9B%BE%E7%89%B9%E6%95%8820240801.html">地球自转和环球云图特效20240801</a></li>
+<li class=""><a href="../%E4%BD%BF%E7%94%A8%E5%AE%89%E8%A3%85%E5%8C%85%E7%9A%84%E5%A5%BD%E5%A4%8420240801.html">使用安装包的好处20240801</a></li>
+<li class=""><a href="../%E6%96%87%E4%BB%B6%E5%A4%B9%E6%8B%96%E6%8B%BD%E6%89%B9%E9%87%8F%E5%8A%A0%E8%BD%BD3dtiles%E6%95%B0%E6%8D%AE20240801.html">文件夹拖拽批量加载3dtiles数据20240801</a></li>
+<li class=""><a href="../%E9%9B%A8%E9%9B%AA%E5%90%8E%E5%A4%84%E7%90%86%E7%89%B9%E6%95%8820240801.html">雨雪后处理特效20240801</a></li>
+<li class=""><a href="../%E6%8A%98%E7%BA%BF%E4%BF%A1%E5%8F%B7%E7%BA%BF%E8%A7%86%E8%A7%92%E7%9A%84%E5%90%88%E5%B9%B6%E5%92%8C%E6%89%93%E6%95%A320240801.html">折线信号线视角的合并和打散20240801</a></li>
+<li class=""><a href="../m3tjson%E3%80%81m3tojson%E6%96%87%E4%BB%B6%E7%9A%84%E5%8C%BA%E5%88%AB20240801.html">m3tjson、m3tojson文件的区别20240801</a></li>
+<li class=""><a href="../%E5%89%AA%E5%88%87%E6%9D%BF%E7%B2%98%E8%B4%B4%E8%87%AA%E5%8A%A8%E5%8A%A0%E8%BD%BD3dtiles%E6%95%B0%E6%8D%AE202040801.html">剪切板粘贴自动加载3dtiles数据202040801</a></li>
+<li class=""><a href="../index.html">开发日志</a></li>
+<li class=""><a href="../m3t%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81ECharts%E5%9B%BE%E8%A1%A8.html">m3t中如何使用动态ECharts图表</a></li>
+<li class=""><a href="../My3dtiles%E5%8A%A0%E8%BD%BD%E5%9B%BE%E5%BD%A2%E5%9C%B0%E7%90%83%E7%9A%84lrc%E6%A0%BC%E5%BC%8F.html">My3dtiles加载图形地球的lrc格式</a></li>
+</ul>
+<h6>日志202403</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../%E6%97%A5%E5%BF%97202403/%E5%A4%A7%E9%9B%81%E5%A1%94%E6%99%AF%E5%8C%BA%E8%A7%86%E8%A7%92%E5%88%87%E6%8D%A2%E7%9A%84%E5%B0%8F%E5%9C%BA%E6%99%AF20240324.html">大雁塔景区视角切换的小场景20240324</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202403/%E4%BD%BF%E7%94%A8My3dtiles%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AA%E6%95%B0%E5%AD%97%E5%9F%8E%E5%B8%82_20240315.html">使用My3dtiles配置一个数字城市 20240315</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202403/%E6%95%B0%E5%AD%97%E5%9F%8E%E5%B8%82%E5%B0%8F%E5%9C%BA%E6%99%AF20240324.html">数字城市小场景20240324</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202403/index.html">日志202403</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202403/My3dtiles%E5%8A%A0%E8%BD%BD%E6%9C%AC%E5%9C%B0%E7%A6%BB%E7%BA%BF3dtiles%E6%95%B0%E6%8D%AE20240318.html">My3dtiles加载本地离线3dtiles数据20240318</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202403/My3dtiles%E5%8A%A0%E8%BD%BD%E5%A4%9A%E7%A7%8D%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE20240324.html">My3dtiles加载多种类型的数据20240324</a></li>
+</ul>
+<h6>日志202404</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../%E6%97%A5%E5%BF%97202404/3dtile%E7%9A%84%E5%87%A0%E4%BD%95%E8%AF%AF%E5%B7%AE%E5%92%8C%E5%B1%8F%E5%B9%95%E8%AF%AF%E5%B7%AE20240408.html">3dtile的几何误差和屏幕误差20240408</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202404/3dtiles%E6%95%B0%E6%8D%AE%E6%82%AC%E7%A9%BA%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B320240406.html">3dtiles数据悬空如何解决20240406</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202404/%E6%9F%A5%E7%9C%8B3dtiles%E6%98%AF%E5%90%A6%E4%BD%BF%E7%94%A8%E5%8E%8B%E7%BC%A9%E7%BA%B9%E7%90%8620240406.html">查看3dtiles是否使用压缩纹理20240406</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202404/%E5%A4%A9%E5%9C%B0%E5%9B%BE%E5%BD%B1%E5%83%8F%E7%BA%A7%E5%88%AB%E7%9A%84%E8%AE%BE%E7%BD%AE20240408.html">天地图影像级别的设置20240408</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202404/%E5%BD%B1%E5%83%8F%E7%9A%84%E7%BA%A7%E5%88%AB%E5%92%8C%E7%B2%BE%E5%BA%A620240408.html">影像的级别和精度20240408</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202404/index.html">日志202404</a></li>
+</ul>
+<h6>日志202405</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="3dtiles%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8E%8B%E5%B9%B3%E6%93%8D%E4%BD%9C20240525.html">3dtiles数据的压平操作20240525</a></li>
+<li class=""><a href="3dtiles%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E7%BB%99%E5%88%AB%E4%BA%BA%E5%B1%95%E7%A4%BA20240525.html">3dtiles数据如何快速给别人展示20240525</a></li>
+<li class=""><a href="%E6%8A%8A%E8%A7%86%E9%A2%91%E8%B4%B4%E5%88%B0%E5%9C%B0%E7%90%83%E4%B8%8A20240507.html">把视频贴到地球上20240507</a></li>
+<li class=""><a href="%E5%AF%BC%E5%BC%B9%E6%B2%BF%E8%B7%AF%E5%BE%84%E8%BF%90%E5%8A%A8%E5%B9%B6%E7%88%86%E7%82%B820240511.html">导弹沿路径运动并爆炸20240511</a></li>
+<li class=""><a href="%E7%8E%AF%E7%BB%95%E9%A3%9E%E8%A1%8C%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8%E6%80%8E%E4%B9%88%E5%9B%9E%E4%BA%8B20240527.html">环绕飞行不起作用怎么回事20240527</a></li>
+<li class=""><a href="%E5%8A%A0%E8%BD%BD%E5%94%AF%E6%9D%B0%E5%9C%B0%E5%9B%BE%E7%94%9F%E6%88%90%E7%9A%84cad%E5%9B%BE%E7%BA%B8%E5%88%B0%E5%9C%B0%E7%90%83%E4%B8%8A20240522.html">加载唯杰地图生成的cad图纸到地球上20240522</a></li>
+<li class=""><a href="%E6%8E%A5%E6%94%B6%E7%AB%99%E5%A7%BF%E6%80%81%E6%8E%A7%E5%88%B620240510.html">接收站姿态控制20240510</a></li>
+<li class=""><a href="%E6%B5%81%E7%BA%BF%E6%95%88%E6%9E%9C%E5%8C%97%E4%BA%AC%E5%85%AC%E4%BA%A4%E7%9A%84%E5%88%B6%E4%BD%9C%E8%BF%87%E7%A8%8B20240524.html">流线效果(北京公交)的制作过程20240524</a></li>
+<li class=""><a href="%E6%B1%BD%E8%BD%A6%E8%BF%90%E5%8A%A8%E5%B8%A6%E5%B0%BE%E6%B0%9420240509.html">汽车运动带尾气20240509</a></li>
+<li class=""><a href="%E7%83%AD%E5%8A%9B%E5%9B%BE20240510.html">热力图20240510</a></li>
+<li class=""><a href="%E8%A7%86%E9%A2%91%E7%9B%B4%E6%92%AD%E6%BA%90%E4%BD%9C%E4%B8%BApoi%E6%9D%A5%E4%BD%BF%E7%94%A820240507.html">视频直播源作为poi来使用20240507</a></li>
+<li class=""><a href="%E8%A7%86%E9%A2%91%E4%BD%9C%E4%B8%BApoi%E5%9B%BE%E6%A0%87%E4%BD%BF%E7%94%A8_20240507.html">视频作为poi图标使用 20240507</a></li>
+<li class=""><a href="%E5%8D%AB%E6%98%9F%E6%B2%BF%E7%9D%80%E8%B7%AF%E5%BE%84%E8%BF%90%E5%8A%A820240508.html">卫星沿着路径运动20240508</a></li>
+<li class=""><a href="%E6%97%A0%E4%BA%BA%E6%9C%BA%E6%B2%BF%E7%9D%80%E8%B7%AF%E5%BE%84%E9%A3%9E%E8%A1%8C%E5%8A%A0%E7%9B%B8%E6%9C%BA%E6%8E%A7%E5%88%B6_20240522.html">无人机沿着路径飞行加相机控制 20240522</a></li>
+<li class=""><a href="%E4%BF%A1%E5%8F%B7%E7%BA%BF%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%9520240525.html">信号线的使用方法20240525</a></li>
+<li class=""><a href="%E4%BF%A1%E5%8F%B7%E7%BA%BF%E9%9B%86%E5%90%88%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%9520240524.html">信号线集合的使用方法20240524</a></li>
+<li class=""><a href="%E4%BF%AE%E6%94%B93dtiles%E6%95%B0%E6%8D%AE%E9%AB%98%E5%BA%A6%E5%86%8D%E5%AF%BC%E5%87%BA%E6%88%90cesium%E4%BB%A3%E7%A0%8120240522.html">修改3dtiles数据高度再导出成cesium代码20240522</a></li>
+<li class=""><a href="%E8%BF%90%E5%8A%A8%E7%9A%84%E5%8F%8C%E7%AE%AD%E5%A4%B420240508.html">运动的双箭头20240508</a></li>
+<li class=""><a href="%E5%9C%A8%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%88%96%E8%80%85%E5%86%99%E4%BB%A3%E7%A0%81%E8%8E%B7%E5%8F%96%E5%9C%BA%E6%99%AF%E5%AF%B9%E8%B1%A120240531.html">在控制台或者写代码获取场景对象20240531</a></li>
+<li class=""><a href="%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BE%E5%85%83%E5%88%9B%E5%BB%BA%E6%B0%B4%E9%9D%A220240508.html">自定义图元创建水面20240508</a></li>
+<li class=""><a href="Cesium%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7My3dtiles_20240508.html">Cesium代码生成工具My3dtiles 20240508</a></li>
+<li class=""><a href="CzmTexture%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%9520240522.html">CzmTexture的使用方法20240522</a></li>
+<li class=""><a href="ECharts%E5%9B%BE%E8%A1%A8%E8%B4%B4%E5%9C%B020240510.html">ECharts图表贴地20240510</a></li>
+<li class=""><a href="geojson%26kml%E8%BD%AC%E6%88%90cesium%E4%BB%A3%E7%A0%8120240507.html">geojson&kml转成cesium代码20240507</a></li>
+<li class=""><a href="geojson%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD%E5%B9%B6%E8%AE%BE%E7%BD%AE%E6%A0%B7%E5%BC%8F20240528.html">geojson数据加载并设置样式20240528</a></li>
+<li class=""><a href="gif%E5%8A%A8%E7%94%BB%E4%BD%9C%E4%B8%BApoi%E5%9B%BE%E6%A0%87%E4%BD%BF%E7%94%A820240507.html">gif动画作为poi图标使用20240507</a></li>
+<li class="on"><a href="gltf%263tiles%E8%BD%AC%E6%88%90cesium%E4%BB%A3%E7%A0%8120240507.html">gltf&3tiles转成cesium代码20240507</a></li>
+<li class=""><a href="index.html">日志202405</a></li>
+<li class=""><a href="kml%E7%AD%89%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD%E5%B9%B6%E8%B4%B4%E5%9C%B020240527.html">kml等数据加载并贴地20240527</a></li>
+<li class=""><a href="My3dtiles%E7%9A%84%E5%9C%B0%E5%BD%A2%E9%85%8D%E7%BD%AE20240527.html">My3dtiles的地形配置20240527</a></li>
+<li class=""><a href="My3dtiles%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%BF%E7%94%A820240525.html">My3dtiles的环境变量的使用20240525</a></li>
+<li class=""><a href="My3dtiles%E7%9A%84%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A820240527.html">My3dtiles的控制台如何使用20240527</a></li>
+<li class=""><a href="My3dtiles%E7%9A%84%E5%BD%B1%E5%83%8F%E9%85%8D%E7%BD%AE20240527.html">My3dtiles的影像配置20240527</a></li>
+<li class=""><a href="My3dtiles%E9%A2%9D%E5%A4%96%E5%8A%9F%E8%83%BD%EF%BC%9A%E9%9D%99%E6%80%81http%E6%9C%8D%E5%8A%A1%E5%99%A820240525.html">My3dtiles额外功能：静态http服务器20240525</a></li>
+<li class=""><a href="My3dtiles%E5%8A%A0%E8%BD%BD%E6%9C%AC%E5%9C%B0%E7%A6%BB%E7%BA%BF%E5%BD%B1%E5%83%8F%E7%9A%84%E6%96%B9%E6%B3%9520240522.html">My3dtiles加载本地离线影像的方法20240522</a></li>
+<li class=""><a href="My3dtiles%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E5%90%8E%E6%97%A0%E6%B3%95%E5%88%86%E4%BA%AB%E6%80%8E%E4%B9%88%E5%8A%9E20240527.html">My3dtiles使用本地文件后无法分享怎么办20240527</a></li>
+<li class=""><a href="My3dtiles%E4%B8%AD%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B620240527.html">My3dtiles中如何使用本地文件20240527</a></li>
+</ul>
+<h6>日志202406</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../%E6%97%A5%E5%BF%97202406/%E5%9C%BA%E6%99%AF%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%E5%8F%98%E5%8C%96%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC20240627.html">场景对象的属性变化事件监听20240627</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202406/%E5%9C%BA%E6%99%AF%E6%A0%91%E4%B8%AD%E7%9A%84lssn%E5%92%8Clsso%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E7%90%86%E8%A7%A320240622.html">场景树中的lssn和lsso的区别和理解20240622</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202406/%E7%AE%A1%E7%BA%BF%E7%AD%893dtiles%E4%B8%8D%E5%AE%B9%E6%98%93%E7%9C%8B%E5%88%B0%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F20240628.html">管线等3dtiles不容易看到怎么办？20240628</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202406/%E7%9B%AE%E5%89%8D%E6%9F%A5%E7%9C%8B3dtiles%E6%95%B0%E6%8D%AE%E6%9C%80%E5%A5%BD%E7%9A%84%E5%B7%A5%E5%85%B7%E6%98%AFcesium%EF%BC%8C%E6%B2%A1%E6%9C%89%E4%B9%8B%E4%B8%80%EF%BC%8120240620.html">目前查看3dtiles数据最好的工具是cesium，没有之一！20240620</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202406/%E5%86%85%E7%BD%AE%E5%9C%B0%E5%BD%A2%E5%BD%B1%E5%83%8F%E7%AD%89%E7%9A%84%E8%84%9A%E6%9C%AC%E6%8E%A7%E5%88%B6%E6%96%B9%E6%B3%9520240622.html">内置地形影像等的脚本控制方法20240622</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202406/CzmViewer.flyTo%E7%9A%84%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E20240618.html">CzmViewer.flyTo的使用说明20240618</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202406/index.html">日志202406</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202406/My3dtiles%E5%8A%A0%E8%BD%BD%E6%9C%AC%E5%9C%B0%E6%95%B0%E6%8D%AE%EF%BC%8C%E7%BD%91%E9%A1%B5%E4%B8%AD%E7%9C%8B%E4%B8%8D%E5%88%B0%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F20240620.html">My3dtiles加载本地数据，网页中看不到怎么办？20240620</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202406/My3dtiles%E8%B7%AF%E6%A1%A5BIM%E6%BC%AB%E6%B8%B8%E5%B1%95%E7%A4%BA20240618.html">My3dtiles路桥BIM漫游展示20240618</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202406/My3dtiles%E8%BD%AF%E4%BB%B6%E4%B8%AD%E9%85%8D%E7%BD%AE%E4%BA%86%E5%9C%B0%E5%BD%A2%EF%BC%8C%E7%BD%91%E9%A1%B5%E4%B8%AD%E5%8D%B4%E7%9C%8B%E4%B8%8D%E5%88%B020240620.html">My3dtiles软件中配置了地形，网页中却看不到20240620</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202406/My3dtiles%E8%AE%BE%E7%BD%AE%E5%9C%B0%E5%BD%A2%E9%80%8F%E6%98%8E20240622.html">My3dtiles设置地形透明20240622</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202406/My3dtiles%E9%9C%80%E8%A6%81%E5%8F%91%E6%8C%A5%E7%8B%AC%E6%98%BE%E4%BC%98%E5%8A%BF20240619.html">My3dtiles需要发挥独显优势20240619</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202406/Web%E7%AB%AF%E9%A1%B5%E9%9D%A2%E6%94%B9%E8%BF%9B%E8%AF%B4%E6%98%8E20240617.html">Web端页面改进说明20240617</a></li>
+</ul>
+<h6>日志202407</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../%E6%97%A5%E5%BF%97202407/3dtiles%E4%BD%8D%E7%BD%AE%E4%BF%AE%E6%94%B9%E5%B9%B6%E4%BF%9D%E5%AD%98%E5%88%B0%E6%9C%AC%E5%9C%B020240711.html">3dtiles位置修改并保存到本地20240711</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202407/%E6%9C%AC%E5%9C%B0%E5%9C%B0%E5%BD%A2%E6%95%B0%E6%8D%AE%E7%9A%84%E5%8A%A0%E8%BD%BD20240731.html">本地地形数据的加载20240731</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202407/%E6%9C%AC%E5%9C%B0TMS%E5%BD%B1%E5%83%8F%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD20240731.html">本地TMS影像数据加载20240731</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202407/%E5%A6%82%E4%BD%95%E5%86%99%E4%BB%A3%E7%A0%81%E6%9D%A5%E6%8B%BE%E5%8F%96%E5%9C%BA%E6%99%AF%E5%AF%B9%E8%B1%A120240708.html">如何写代码来拾取场景对象20240708</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202407/%E6%8A%98%E7%BA%BF%E6%9B%B2%E7%BA%BF%E8%AE%BE%E7%BD%AE%E7%BB%9F%E4%B8%80%E9%AB%98%E5%BA%A620240731.html">折线曲线设置统一高度20240731</a></li>
+<li class=""><a href="../%E6%97%A5%E5%BF%97202407/index.html">日志202407</a></li>
+</ul>
+<h6>My3dtiles简介20240815</h6><ul class="grp" data-u32-name="side-group">
+<li class=""><a href="../My3dtiles%E7%AE%80%E4%BB%8B20240815/%E5%BD%B1%E5%83%8FCzmImagery%E8%B5%84%E6%BA%90%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95_wolai.com.html">影像(CzmImagery)资源配置方法 </a></li>
+<li class=""><a href="../My3dtiles%E7%AE%80%E4%BB%8B20240815/index.html">My3dtiles简介20240815</a></li>
+</ul></div>
+    <div class="article" data-u32-name="page-article">
+      <p class="crumb" data-u32-name="page-crumb"><a href="../../index.html">文档</a> / <a href="../index.html">开发日志</a> / 日志202405 / gltf&3tiles转成cesium代码20240507</p>
+      
+      
+      <article class="prose" data-u32-name="page-prose"><h1 id="gltf3tiles转成cesium代码20240507" class="md-h1" data-u32-name="md-heading">gltf&amp;3tiles转成cesium代码20240507</h1>
+<p><div class="bili-embed" data-u32-name="bili-embed"><iframe src="https://player.bilibili.com/player.html?bvid=BV1ydiLeTEie&autoplay=0&danmaku=0" loading="lazy" allowfullscreen scrolling="no" frameborder="0" title="B站视频 BV1ydiLeTEie"></iframe></div></p></article>
+      <div class="pager" data-u32-name="page-pager">
+    <a href="gif%E5%8A%A8%E7%94%BB%E4%BD%9C%E4%B8%BApoi%E5%9B%BE%E6%A0%87%E4%BD%BF%E7%94%A820240507.html"><span class="dir">上一篇</span>gif动画作为poi图标使用20240507</a>
+    <a class="next" href="index.html"><span class="dir">下一篇</span>日志202405</a>
+  </div>
+    </div>
+    <div class="rail" data-u32-name="page-rail"></div>
+  </div>
+</div>
+<footer data-u32-name="footer">
+  <div class="wrap" data-u32-name="footer-wrap">
+    <div class="foot" data-u32-name="footer-cols">
+      <div data-u32-name="foot-brand">
+        <h5>My3dtiles</h5>
+        <p>本地离线 3dtiles 浏览器 · 数字孪生快速搭建工具 · 数字沙盘配置工具</p>
+        <p>无需登录，永久免费使用（第三方插件可能收费）</p>
+      </div>
+      <div data-u32-name="foot-doc"><h5>文档</h5><a href="../../manual/index.html">使用手册</a><a href="../index.html">开发日志</a><a href="../../download/index.html">软件下载</a><a href="../../search.html">站内搜索</a></div>
+      <div data-u32-name="foot-comm"><h5>交流</h5><a href="https://qm.qq.com/q/ni2QWsAhKS" target="_blank" rel="noopener">QQ 群 725764124</a><a href="../../more/交流合作.html">微信与联系方式</a><a href="https://space.bilibili.com/540048347" target="_blank" rel="noopener">哔哩哔哩</a><a href="https://www.zhihu.com/people/vtxf" target="_blank" rel="noopener">知乎</a></div>
+      <div data-u32-name="foot-more"><h5>更多</h5><a href="../../more/定制开发.html">定制开发</a><a href="../../download/index.html">版本与下载</a><a href="../../more/示例集合.html">示例集合</a><a href="https://gitee.com/vtxf3d/my3dtiles/issues" target="_blank" rel="noopener">问题反馈</a></div>
+    </div>
+    <div class="foot-legal" data-u32-name="footer-legal">
+      <span>本页文档整理自 My3dtiles 官方资料，仅收录对外公开部分</span>
+      <span>构建于 2026-11-17</span>
+    </div>
+  </div>
+</footer>
+<div class="lightbox" data-u32-name="lightbox"><img alt=""></div>
+<script src="../../../assets/site.js"></script>
+</body>
+</html>
