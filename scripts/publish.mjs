@@ -40,7 +40,7 @@ function check() {
     process.exit(1);
   }
   // 未提交变更必须先 commit，保证 push 的就是校验过的内容
-  const dirty = String(run("git", ["status", "--porcelain"]));
+  const dirty = execFileSync("git", ["status", "--porcelain"], { cwd: ROOT, encoding: "utf8" });
   if (dirty.trim()) {
     console.error("工作区有未提交变更，先 commit 再发布：\n" + dirty);
     process.exit(1);
