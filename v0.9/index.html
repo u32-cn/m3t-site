@@ -104,7 +104,7 @@
   <div class="wrap" data-u32-name="preview-wrap">
     <div class="sec-head" data-u32-name="preview-head">
       <h2>Web 版在线预览</h2>
-      <p class="sec-note">My3dtiles(Web) 内核直接跑在浏览器里。三维地球内核较大，为避免拖慢首页，点击按钮后在新窗口打开预览。</p>
+      <p class="sec-note">My3dtiles(Web) 内核直接跑在浏览器里，点击按钮在新窗口打开。桌面端为带编辑器的完整版，移动端为精简预览版。</p>
     </div>
     <div class="actions" data-u32-name="preview-actions">
       <a class="btn btn-solid" data-u32-preview-open target="_blank" rel="noopener">进入 Web 版三维地球预览 ↗</a>
@@ -112,10 +112,13 @@
     </div>
     <script>
     // 预览地址按页面所在层级解析：本地首页在 /，线上首页在 /v0.9/（应用都在其下的 app/）
+    // 设备分流：桌面端打开带编辑器完整版（index.html），移动端编辑器不适配，打开无编辑器版（noeditor.html）
     (function () {
       var base = /\/v0\.9\/[^/]*\.html$|\/v0\.9\/$/.test(location.pathname) ? 'app/' : 'v0.9/app/';
+      var mobile = /Android|iPhone|iPad|iPod|Mobile|HarmonyOS/i.test(navigator.userAgent)
+        || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent)); // iPadOS 桌面 UA 特判
       var a = document.querySelector('[data-u32-preview-open]');
-      if (a) a.href = base + 'noeditor.html';
+      if (a) a.href = base + (mobile ? 'noeditor.html' : 'index.html');
     })();
     </script>
   </div>
