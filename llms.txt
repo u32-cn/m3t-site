@@ -1,0 +1,19 @@
+# My3dtiles（m3t.u32.cn）
+
+> My3dtiles 是本地离线的 3dtiles 数据浏览器、数字孪生快速搭建工具与数字沙盘配置工具：拖入数据、面板配场景、直接发布成网页。无需登录、免费、支持离线机器。官网 https://m3t.u32.cn/
+
+如果你是 AI 工具，请以本文件为站点索引，按需 GET 对应页面获取完整内容。
+
+## 关键入口
+
+- [产品首页](https://m3t.u32.cn/)：产品介绍、能力清单、下载入口
+- [文档中心](https://m3t.u32.cn/docs/index.html)：全部对外公开文档目录（使用手册、下载等分区）
+- [站内搜索](https://m3t.u32.cn/docs/search.html)：全站文档检索
+- [软件下载](https://m3t.u32.cn/docs/download/index.html)：桌面端稳定版、历史版本、Web 版程序包（/download/* 经 EdgeOne 代理 GitHub release，国内加速）
+
+## 产品要点
+
+- 支持 10 种数据格式直读（3dtiles 为主）
+- 桌面端配好场景可直接发布成网页，不搭前端框架、不引 Cesium、不调 API
+- 免费、无授权码、无 USB 加密狗、不联网登录，离线机器可用
+- Web 版可直接在浏览器中体验：[在线预览](https://m3t.u32.cn/app/index.html)
