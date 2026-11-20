@@ -117,8 +117,9 @@
       var base = /\/v0\.9\/[^/]*\.html$|\/v0\.9\/$/.test(location.pathname) ? 'app/' : 'v0.9/app/';
       var mobile = /Android|iPhone|iPad|iPod|Mobile|HarmonyOS/i.test(navigator.userAgent)
         || (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent)); // iPadOS 桌面 UA 特判
+      // 文档《My3dtilesweb版的使用》：Web版默认不带编辑器UI，URL 加 ?e 参数打开编辑器（编辑器不适配移动端）
       var a = document.querySelector('[data-u32-preview-open]');
-      if (a) a.href = base + (mobile ? 'noeditor.html' : 'index.html');
+      if (a) a.href = base + 'index.html' + (mobile ? '' : '?e');
     })();
     </script>
   </div>
