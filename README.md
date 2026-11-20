@@ -6,8 +6,8 @@ My3dtiles（m3t）官网 m3t.u32.cn 的**唯一产物仓库**。根目录即站�
 
 ## 定位
 
-- 本仓库只装**线上产物**（构建产物 + 应用），不含内容源码；公开仓（GitHub `u32-cn/m3t-site`）
-- 内容源码与构建器在 `S:/vtxf/vtxf-work/projects/vtxf/my3dtiles-docs-2026`（内部资料仓库，不对外）：改内容/样式在那边改源、跑 `node scripts/build-site.mjs`，然后把产物拷入本仓库
+- 本仓库是**线上站点本体**：静态 HTML 直接编辑，commit 后 `publish.mjs --push` 即发布；公开仓（GitHub `u32-cn/m3t-site`）
+- **与其他仓库无依赖**：改内容直接改本仓库里的 HTML/静态文件，没有构建步骤
 - 三维地球应用 `v0.9/app/`（约 107M）唯一副本在本仓库
 
 ## 站点结构（线上 m3t.u32.cn 与本仓库一一对应）
@@ -44,12 +44,11 @@ python scripts/privacy-scan.py      # 单独跑隐私扫描
 
 ## 发布流程
 
-1. 改内容：去 `my3dtiles-docs-2026` 改源 → `node scripts/build-site.mjs`
-2. 拷产物：`web/index.html`、`web/assets`、`web/docs` → 本仓库 `v0.9/` 下同名位置，git commit
-3. `node scripts/publish.mjs` 校验（结构 + 隐私扫描必须过）
-4. `--push` 推 GitHub → `--status` 等 Pages 构建完成
-5. 切流后：`--purge` 刷 EdgeOne 缓存
-6. 验收：`https://m3t.u32.cn/` 跳 `/v0.9/`；首页出地球；`/v0.9/app/noeditor.html` 可打开
+1. 改内容：直接编辑本仓库里的 HTML/静态文件，git commit
+2. `node scripts/publish.mjs` 校验（结构 + 隐私扫描必须过）
+3. `--push` 推 GitHub → `--status` 等 Pages 构建完成
+4. 内容有更新时：`--purge` 刷 EdgeOne 缓存
+5. 验收：`https://m3t.u32.cn/` 跳 `/v0.9/`；首页出地球；`/v0.9/app/noeditor.html` 可打开
 
 ## 隐私红线（发布前必查）
 
