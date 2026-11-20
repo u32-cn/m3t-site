@@ -10,7 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 # 站点产物目录之外的文件（脚本/文档）不参与扫描，避免扫描器自身与文档中的示例触发误报
-SCAN_SKIP_TOP = {"scripts", "AGENTS.md", "README.md", ".git"}
+SCAN_SKIP_TOP = {"scripts", "docs", "AGENTS.md", "README.md", ".git"}
 
 TEXT_EXT = {
     ".html", ".htm", ".js", ".css", ".json", ".md", ".txt", ".xml",
