@@ -104,22 +104,17 @@
   <div class="wrap" data-u32-name="preview-wrap">
     <div class="sec-head" data-u32-name="preview-head">
       <h2>Web 版在线预览</h2>
-      <p class="sec-note">My3dtiles(Web) 内核直接跑在浏览器里，下方就是它加载后的三维地球。</p>
-    </div>
-    <div class="app-preview" data-u32-name="preview-frame">
-      <iframe data-u32-preview title="My3dtiles Web 版三维地球在线预览" loading="lazy"></iframe>
+      <p class="sec-note">My3dtiles(Web) 内核直接跑在浏览器里。三维地球内核较大，为避免拖慢首页，点击按钮后在新窗口打开预览。</p>
     </div>
     <div class="actions" data-u32-name="preview-actions">
-      <a class="btn btn-solid" data-u32-preview-open target="_blank" rel="noopener">全屏打开三维地球</a>
+      <a class="btn btn-solid" data-u32-preview-open target="_blank" rel="noopener">进入 Web 版三维地球预览 ↗</a>
       <a class="btn btn-ghost" href="docs/more/示例集合.html">更多示例场景</a>
     </div>
     <script>
     // 预览地址按页面所在层级解析：本地首页在 /，线上首页在 /v0.9/（应用都在其下的 app/）
     (function () {
       var base = /\/v0\.9\/[^/]*\.html$|\/v0\.9\/$/.test(location.pathname) ? 'app/' : 'v0.9/app/';
-      var f = document.querySelector('[data-u32-preview]');
       var a = document.querySelector('[data-u32-preview-open]');
-      if (f) f.src = base + 'noeditor.html';
       if (a) a.href = base + 'noeditor.html';
     })();
     </script>
